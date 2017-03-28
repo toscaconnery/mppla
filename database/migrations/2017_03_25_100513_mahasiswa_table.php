@@ -15,9 +15,9 @@ class MahasiswaTable extends Migration
     {
         //Mahasiswa table
         Schema::create('mahasiswa', function( Blueprint $table) {
-            $table->increments('id');
-            $table->integer('id_proyek');
-            $table->integer('id_lab');
+            $table->increments('id');       //primary key
+            $table->integer('id_proyek');   //foreign key from Lbe
+            $table->integer('id_lab');      //foreign key from Laboratorium
             $table->string('nama');
             $table->string('nrp');
             $table->integer('angkatan');
