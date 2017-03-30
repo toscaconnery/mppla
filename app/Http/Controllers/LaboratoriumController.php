@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Laboratorium;
 
 class LaboratoriumController extends Controller
 {
@@ -13,7 +14,7 @@ class LaboratoriumController extends Controller
      */
     public function index()
     {
-        return view('Laboratorium\index');
+        return view('Laboratorium\nafia');
     }
 
     /**
