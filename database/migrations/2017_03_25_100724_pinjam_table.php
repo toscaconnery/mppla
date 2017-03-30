@@ -20,6 +20,7 @@ class PinjamTable extends Migration
             $table->date('tanggal');
             $table->integer('jam_mulai');
             $table->integer('jam_selesai');
+            $table->string('status_verif');
             $table->string('nrp');
             $table->string('peminjam');
             $table->string('keperluan');
