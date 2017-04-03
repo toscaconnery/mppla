@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Laboratorium;
+use DB;
 
 class LaboratoriumController extends Controller
 {
@@ -13,7 +15,9 @@ class LaboratoriumController extends Controller
      */
     public function index()
     {
-        return view('Laboratorium\index');
+        $this->data['laboratorium'] = DB::select('SELECT nama_lab, deskripsi_lab FROM laboratorium');
+
+        return view('Laboratorium\index', $this->data);
     }
 
     /**
@@ -23,7 +27,9 @@ class LaboratoriumController extends Controller
      */
     public function create()
     {
-        //
+        $this->data['namaLaboratorium'] = DB::select('SELECT id, nama_lab FROM laboratorium');
+
+        return view('Laboratorium\create', $this->data);
     }
 
     /**
@@ -35,6 +41,19 @@ class LaboratoriumController extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+    public function storedeskripsi(Request $request)
+    {
+        //Mencari laboratorium yang akan diedit
+        $id = $request->id_lab;
+        $data = Laboratorium::find($id);
+        //Memberi nilai
+        $data->deskripsi_lab = $request->deskripsi_lab;
+        //Menyimpan nilai
+        $data->save();
+
+        return redirect('deskripsi-laboratorium');
     }
 
     /**
