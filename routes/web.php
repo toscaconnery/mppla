@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('timer.index');
 });
 
-Route::get('deskripsi-laboratorium', 'LaboratoriumController@index');
+Route::get('/', function () {
+    return view('timer.index');
+});
+
+//Route::get('deskripsi-laboratorium', 'LaboratoriumController@index');
+
