@@ -21,6 +21,11 @@ class AdminController extends Controller
         return view('admin\inputdeskripsi');
     }
 
+    public function input_fasil()
+    {
+        return view('admin\inputfasil');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -39,3 +39,5 @@ Route::get('jadwal-lab', 'LaboratoriumController@lihat_jadwal');
 Route::get('index-admin', 'AdminController@index');
 //Menampilkan halaman input deskripsi
 Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
+//Menampilkan halaman input fasilitas lab
+Route::get('inputfasil', 'AdminController@input_fasil');
