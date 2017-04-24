@@ -37,7 +37,7 @@
 
     <header class="main-header">
       <!-- Logo -->
-      <a href="index.html" class="logo">
+      <a href="{{url('')}}/index-admin" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
@@ -125,7 +125,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="inputdeskripsi.html"><i class="fa fa-circle-o"></i> Deskripsi</a></li>
+            <li><a href="{{url('')}}/inputdeskripsi"><i class="fa fa-circle-o"></i> Deskripsi</a></li>
             <li><a href="inputkegiatan.html"><i class="fa fa-circle-o"></i> Input Kegiatan</a></li>
             <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Editors</a></li> -->
           </ul>
@@ -165,7 +165,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="listfasil.html"><i class="fa fa-circle-o"></i> List Fasilitas</a></li>
-            <li><a href="inputfasil.html"><i class="fa fa-circle-o"></i> Input Fasilitas</a></li>
+            <li><a href="{{url('')}}/inputfasil"><i class="fa fa-circle-o"></i> Input Fasilitas</a></li>
           </ul>
         </li>
       </ul>
