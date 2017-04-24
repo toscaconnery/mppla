@@ -24,7 +24,7 @@ Route::get('deskripsi-laboratorium', 'LaboratoriumController@index');
 Route::get('deskripsi-lab', 'LaboratoriumController@deskripsi_lab');
 //Menampilkan halaman tambah deskripsi laboratorium
 Route::get('tambahkan-deskripsi-laboratorium', 'LaboratoriumController@create');
-Route::get('tambah-deskripsi-lab', 'LaboratoriumController@tambah_deskripsi_lab');
+//Route::get('tambah-deskripsi-lab', 'LaboratoriumController@tambah_deskripsi_lab');
 //Menyimpan data dari form Tambah Deskripsi Lab
 Route::post('tambahkan-deskripsi-laboratorium', 'LaboratoriumController@storedeskripsi');
 //Menampilkan halaman kegiatan lab
@@ -33,3 +33,9 @@ Route::get('lihat-kegiatan-lab', 'LaboratoriumController@lihatkegiatan');
 Route::get('input-kegiatan-lab', 'LaboratoriumController@inputkegiatan');
 //Menampilkan halaman jadwal lab
 Route::get('jadwal-lab', 'LaboratoriumController@lihat_jadwal');
+
+/******** HALAMAN ADMIN ********/
+//Menampilkan index untuk admin
+Route::get('index-admin', 'AdminController@index');
+//Menampilkan halaman input deskripsi
+Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
