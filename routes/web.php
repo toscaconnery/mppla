@@ -53,3 +53,13 @@ Route::get('listfasil', 'AdminController@list_fasil');
 Route::get('listpeminjaman', 'AdminController@list_pinjam');
 //Menampilkan halaman verifikasi peminjaman lab
 Route::get('verifpeminjaman', 'AdminController@verif_pinjam');
+
+
+/******** HALAMAN PINJAM *******/
+//Menampilkan index untuk pinjam
+Route::get('pinjam', 'PinjamController@index');
+//Menyimpan permintaan reservasi/pinjam
+Route::post('pinjam', 'PinjamController@lakukan_reservasi');
+//Melihat jadwal peminjaman lab
+Route::get('lihat_jadwal','PinjamController@lihat_jadwal');
+
