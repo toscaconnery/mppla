@@ -5,7 +5,7 @@
         ================================================== -->
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="icon" type="image/png" href="{{url('')}}/timer/images/favicon.png">
+        <link rel="icon" type="image/png" href="{{url('')}}/timer/favicon.ico">
         <title>SI Laboratorium</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -106,7 +106,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="contact.html">Login</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -447,7 +447,7 @@
             <!--
             ==================================================
             Portfolio Section Start
-            ================================================== -->
+            ================================================== 
             <section id="feature">
                 <div class="container">
                     <div class="section-heading">
@@ -536,8 +536,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </section> <!-- /#feature -->
+                </div> 
+            </section>  /#feature -->
                             
             <!--
             ==================================================
