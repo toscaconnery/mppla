@@ -186,11 +186,16 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form">
+              <form role="form" action="" method="POST">
+
                 <!-- text input -->
                 <div class="form-group">
                   <label>Nama Laboratorium:</label>
-                  <input type="int" name="id_lab" class="form-control" placeholder="id lab">
+                  <select name="id_lab">
+                    @foreach ($laboratorium as $data)
+                    <option value="{{$data->id}}">{{$data->nama_lab}}</option>
+                    @endforeach
+                  </select>
                 </div>
 
                 <!-- Date -->
@@ -211,21 +216,24 @@
 
                   <div class="form-group">
                   <label>NRP:</label>
-                  <input type="text" class="form-control" >
+                  <input type="text" name="nrp" class="form-control" >
                 </div>
 
                 <div class="form-group">
                   <label>Peminjam:</label>
-                  <input type="text" class="form-control" >
+                  <input type="text" name="peminjam" class="form-control" >
                 </div>
 
                 <div class="form-group">
                   <label>Keperluan:</label>
-                  <input type="text" class="form-control" >
+                  <input type="text" name="keperluan" class="form-control" >
                 </div>
 
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
+
+
                 <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Pinjam</button>
                 </div>
               </form>
             </div>
