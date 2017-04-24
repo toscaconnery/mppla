@@ -41,3 +41,11 @@ Route::get('index-admin', 'AdminController@index');
 Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
 //Menampilkan halaman input fasilitas lab
 Route::get('inputfasil', 'AdminController@input_fasil');
+
+/******** HALAMAN PINJAM *******/
+//Menampilkan index untuk pinjam
+Route::get('pinjam', 'PinjamController@index');
+//Menyimpan permintaan reservasi/pinjam
+Route::post('pinjam', 'PinjamController@lakukan_reservasi');
+//Melihat jadwal peminjaman lab
+Route::get('lihat_jadwal','PinjamController@lihat_jadwal');

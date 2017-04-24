@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
+use App\Pinjam;
 class PinjamController extends Controller
 {
     /**
@@ -13,7 +14,8 @@ class PinjamController extends Controller
      */
     public function index()
     {
-        //
+        $this->data['laboratorium'] = DB::select('SELECT nama_lab, id FROM laboratorium');
+         return view('Pinjam\index',$this->data);
     }
 
     /**
@@ -80,5 +82,19 @@ class PinjamController extends Controller
     public function destroy($id)
     {
         //
+    }
+     public function lakukan_reservasi(Request $request)
+    {
+        $reservasi= new Pinjam;
+        $reservasi->id_lab = $request->id_lab;
+        $reservasi->tanggal = $request->tanggal;
+        $reservasi->jam_mulai = $request->jam_mulai; 
+        $reservasi->jam_selesai = $request->jam_selesai;
+        $reservasi->nrp = $request->nrp;
+        $reservasi->peminjam = $request->peminjam;  
+        $reservasi->keperluan = $request->keperluan;
+        $reservasi->status_verif = 0;
+        $reservasi->save();
+        return redirect('jadwal-lab'); 
     }
 }
