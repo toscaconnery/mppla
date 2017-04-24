@@ -84,10 +84,10 @@ class DosenTableSeeder extends Seeder
         DB::table('dosen')->insert([
             'id_lab' => '6',
             'nip' => '8',
-            'nama' => 'Hudan Studiawan, S.Kom.,M.Kom.',
-            'email' => 'hudan[at]its.ac.id',
-            'no_hp' => '0812341238345',
-            'alamat' => 'Blok Y No 43 Institut Teknologi Sepuluh Nopember',
+            'nama' => 'Dr. Radityo Anggoro , S.Kom.,M.Sc.',
+            'email' => 'onggo[at]its.ac.id',
+            'no_hp' => '0812383538345',
+            'alamat' => 'Blok Z No 44 Institut Teknologi Sepuluh Nopember',
             'created_at' => new \Carbon\Carbon
         ]);
     }
