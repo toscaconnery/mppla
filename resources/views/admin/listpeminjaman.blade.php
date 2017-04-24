@@ -170,7 +170,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa  fa-calendar-minus-o"></i> <span>Peminjaman Lab</span>
+            <i class="fa fa-calendar-minus-o"></i> <span>Peminjaman Lab</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -189,11 +189,11 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-    <div class="row">
-            <div class="col-xs-12">
+    <div class="row" >
+            <div class="col-md-8" >
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title" style="font-weight: bold;">Administrator Laboratorium Pemrograman 2</h3>  
+                  <h3 class="box-title" style="font-weight: bold;">List Peminjaman</h3>  
                   <!-- ntar nama labnya diambil dari database -->
                 </div>
                 <!-- /.box-header -->
@@ -201,10 +201,10 @@
                   <table class="table table-hover">
                     <tr>
                       <th>ID</th>
-                      <th>Nama</th>
-                      <th>NRP</th>
-                      <th>No. Handphone</th>
-                      <th>Angkatan</th>
+                      <th>Nama Peminjam</th>
+                      <th>Kegiatan</th>
+                      <th>Tanggal Mulai</th>
+                      <th>Tanggal Selesai</th>
                       <th><i class="fa fa-edit"></i></th>
                     </tr>
                     <!-- <tr>
@@ -260,7 +260,7 @@
 
 <!-- jQuery 2.2.3 -->
 <script src="{{url('')}}/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- jQuery UI 1.11.4 --> 
+<!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
@@ -282,7 +282,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
-<script src="{{url('')}}/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->

@@ -49,3 +49,7 @@ Route::get('inputkegiatan', 'AdminController@input_kegiatan');
 Route::get('listadmin', 'AdminController@list_admin');
 //Menampilkan halaman list admin
 Route::get('listfasil', 'AdminController@list_fasil');
+//Menampilkan halaman list admin
+Route::get('listpeminjaman', 'AdminController@list_pinjam');
+//Menampilkan halaman verifikasi peminjaman lab
+Route::get('verifpeminjaman', 'AdminController@verif_pinjam');

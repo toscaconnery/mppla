@@ -46,6 +46,16 @@ class AdminController extends Controller
         return view('admin\listfasil');
     }
 
+     public function list_pinjam()
+    {
+        return view('admin\listpeminjaman');
+    }
+
+    public function verif_pinjam()
+    {
+        return view('admin\verifpeminjaman');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
