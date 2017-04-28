@@ -37,12 +37,7 @@
 
     <header class="main-header">
       <!-- Logo -->
-      <a href="{{url('')}}/index-admin" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b>LP2</span> <!--nanti pake nama lab dari database-->
-      </a>
+      
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button-->
@@ -90,100 +85,7 @@
     </header>
   </div>
   <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="{{url('')}}/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>Nafia Rizky Yogayana</p>
-          <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
-        </div>
-      </div>
-      <!-- search form -->
-      <!-- <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form> -->
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-home"></i> <span>Laboratorium</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{url('')}}/inputdeskripsi"><i class="fa fa-circle-o"></i> Deskripsi</a></li>
-            <li><a href="{{url('')}}/inputkegiatan"><i class="fa fa-circle-o"></i> Input Kegiatan</a></li>
-            <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Editors</a></li> -->
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-television"></i> <span>LBE</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Input Penugasan</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Daftar Tugas</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Progress</a></li> <!-- donlot tugas yg diupload-->
-            <li><a href="#"><i class="fa fa-circle-o"></i> Modul LBE</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-child"></i> <span>Administrator</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{url('')}}/listadmin"><i class="fa fa-circle-o"></i> List Admin</a></li>
-            <li><a href="{{url('')}}/inputadmin"><i class="fa fa-circle-o"></i> Input Admin</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-gear"></i> <span>Fasilitas</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{url('')}}/listfasil"><i class="fa fa-circle-o"></i> List Fasilitas</a></li>
-            <li><a href="{{url('')}}/inputfasil"><i class="fa fa-circle-o"></i> Input Fasilitas</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa  fa-calendar-minus-o"></i> <span>Peminjaman Lab</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{url('')}}/listpeminjaman"><i class="fa fa-circle-o"></i> List Peminjaman</a></li>
-            <li><a href="{{url('')}}/verifpeminjaman"><i class="fa fa-circle-o"></i> Verifikasi Peminjaman</a></li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -194,48 +96,58 @@
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Kegiatan Laboratorium</h3>
+              <h3 class="box-title">Fasilitas Laboratorium</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form" action=" " method="POST">
+              <form role="form" action="" method="POST">
+
                 <!-- text input -->
                 <div class="form-group">
-                  <label>ID Lab</label>
+                  <label>Nama Laboratorium:</label>
                   <select name="id_lab">
-                    @foreach($id_lab as $list)
-                      <option value="{{$list->id}}">{{$list->nama_lab}}</option>
+                    @foreach ($laboratorium as $data)
+                    <option value="{{$data->id}}">{{$data->nama_lab}}</option>
                     @endforeach
                   </select>
                 </div>
-                  <!-- <input type="hidden" name="id_lab" value=""> -->
-                <div class="form-group">
-                  <label>Judul</label>
-                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                  <input type="text" class="form-control" name="judul" placeholder="Judul">
-                </div>
 
                 <!-- Date -->
-                <div class="form-group">
-                  <label>Date:</label>
-
-                  <div class="input-group date">
-                    <div class="input-group-addon">
-                      <i class="fa fa-calendar"></i>
-                    </div>
-                    <input type="text" class="form-control pull-right" name="tgl" id="datepicker">
-                  </div>
-                  <!-- /.input group -->
+                 <div class="form-group">
+                  <label>Tanggal:</label>
+                  <input type="date" name="tanggal" class="form-control" >
                 </div>
 
-                <!-- textarea -->
                 <div class="form-group">
-                  <label>Kegiatan</label>
-                  <textarea class="form-control" rows="5" name="kegiatan" placeholder="Deskripsi..."></textarea>
+                  <label>Jam Mulai:</label>
+                  <input type="time" name="jam_mulai"  class="form-control" >
                 </div>
+
+                <div class="form-group">
+                  <label>Jam Selesai:</label>
+                  <input type="time" name="jam_selesai"  class="form-control" >
+                </div>
+
+                  <div class="form-group">
+                  <label>NRP:</label>
+                  <input type="text" name="nrp" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                  <label>Peminjam:</label>
+                  <input type="text" name="peminjam" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                  <label>Keperluan:</label>
+                  <input type="text" name="keperluan" class="form-control" >
+                </div>
+
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
+
 
                 <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Pinjam</button>
                 </div>
               </form>
             </div>
@@ -300,12 +212,11 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('')}}/admin/dist/js/demo.js"></script>
 
-<script>
+<!-- <script>
   //Date picker
     $('#datepicker').datepicker({
-      format: 'yyyy-mm-dd'
       autoclose: true
     });
-</script>
+</script> -->
 </body>
 </html>
