@@ -24,4 +24,10 @@ class LBEController extends Controller
         $tugaslbe->save();
         return redirect('inputtugas')->with('message','success');
     }
+
+    public function listtugas()
+    {
+    	
+        return view('admin\listtugas');
+    }
 }

@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('timer.index');
 });
 
+Route::get('home', function () {
+    return view('timer.index');
+});
+
 
 //Route::get('deskripsi-laboratorium', 'LaboratoriumController@index');
 
