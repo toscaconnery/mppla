@@ -63,9 +63,3 @@ Route::post('pinjam', 'PinjamController@lakukan_reservasi');
 //Melihat jadwal peminjaman lab
 Route::get('lihat_jadwal','PinjamController@lihat_jadwal');
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
-Route::get('/toscatesting', 'TestingController@index');
