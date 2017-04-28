@@ -71,6 +71,13 @@ Route::post('pinjam', 'PinjamController@lakukan_reservasi');
 Route::get('lihat_jadwal','PinjamController@lihat_jadwal');
 
 
+/******** HALAMAN PINJAM *******/
+//Menampilkan halaman input tugas LBE
+Route::get('inputtugas', 'LBEController@inputtugas');
+Route::post('inputtugas', 'LBEController@input_tugas');
+//Menampilkan halaman lihat daftar tugas LBE
+Route::get('listtugas', 'LBEController@listtugas');
+
 Auth::routes();
 
 Route::get('login', 'HomeController@index');
