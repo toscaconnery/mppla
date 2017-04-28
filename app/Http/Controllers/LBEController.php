@@ -27,7 +27,8 @@ class LBEController extends Controller
 
     public function listtugas()
     {
-    	
-        return view('admin\listtugas');
+    	$this->data['listtugas'] = ProyekLab::all();
+    	//dd($listtugas);
+        return view('admin\listtugas', $this->data);
     }
 }

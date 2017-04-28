@@ -204,6 +204,15 @@
                       <th>Detail Tugas</th>
                       <th><i class="fa fa-edit"></i></th>
                     </tr>
+                      @if(isset($listtugas))
+                      @foreach ($listtugas as $listtugas)                    
+                      <tr>
+                        <td><?php echo $listtugas->nama_proyek ?>;</td>
+                        <td><?php echo $listtugas->keterangan ?>;</td>
+                        <td><a href="#">Ubah</a></td>
+                      </tr>
+                      @endforeach
+                      @endif
                     <!-- <tr>
                       <td>183</td>
                       <td>John Doe</td>
