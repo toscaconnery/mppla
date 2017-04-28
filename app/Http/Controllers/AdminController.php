@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class AdminController extends Controller
 {
     /**
@@ -29,11 +30,6 @@ class AdminController extends Controller
     public function input_admin()
     {
         return view('admin\inputadmin');
-    }
-
-    public function input_kegiatan()
-    {
-        return view('admin\inputkegiatan');
     }
 
     public function list_admin()

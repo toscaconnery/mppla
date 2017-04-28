@@ -19,6 +19,10 @@ Route::get('/', function () {
 //Route::get('deskripsi-laboratorium', 'LaboratoriumController@index');
 
 
+/******** HALAMAN LOGIN ********/
+//Route::get('login', 'LoginController@index');
+
+
 //Menampilkan halaman laboratorium
 Route::get('deskripsi-laboratorium', 'LaboratoriumController@index');
 Route::get('deskripsi-lab', 'LaboratoriumController@deskripsi_lab');
@@ -34,6 +38,7 @@ Route::get('lihat-kegiatan-lab', 'LaboratoriumController@lihatkegiatan');
 //Menampilkan halaman jadwal lab
 Route::get('jadwal-lab', 'LaboratoriumController@lihat_jadwal');
 
+
 /******** HALAMAN ADMIN ********/
 //Menampilkan index untuk admin
 Route::get('index-admin', 'AdminController@index');
@@ -44,7 +49,8 @@ Route::get('inputfasil', 'AdminController@input_fasil');
 //Menampilkan halaman input admin
 Route::get('inputadmin', 'AdminController@input_admin');
 //Menampilkan halaman input kegiatan lab
-Route::get('inputkegiatan', 'AdminController@input_kegiatan');
+Route::get('inputkegiatan', 'KegiatanController@input_kegiatan');
+Route::post('inputkegiatan', 'KegiatanController@inputkegiatan');
 //Menampilkan halaman list admin
 Route::get('listadmin', 'AdminController@list_admin');
 //Menampilkan halaman list admin
@@ -63,3 +69,7 @@ Route::post('pinjam', 'PinjamController@lakukan_reservasi');
 //Melihat jadwal peminjaman lab
 Route::get('lihat_jadwal','PinjamController@lihat_jadwal');
 
+
+Auth::routes();
+
+Route::get('login', 'HomeController@index');

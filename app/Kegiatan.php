@@ -9,7 +9,7 @@ class Kegiatan extends Model
     protected $table = 'kegiatan';
 
     protected $fillable = [
-    	'id_lab', 'tanggal', 'jam_mulai', 'jam_selesai', 'nama_kegiatan',
+    	'id_lab', 'tanggal', 'jam_mulai', 'jam_selesai', 'nama_kegiatan', 'deskripsi',
     ];
 
     public function laboratorium(){
