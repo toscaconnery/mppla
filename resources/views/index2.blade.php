@@ -85,7 +85,7 @@
                             <li>
                                 <a href="#">
                                     @if(Auth::check())
-                                        {{ Auth::user()->name }}
+                                        {{$namauser}}
                                     @endif
                                 </a>
                             </li>

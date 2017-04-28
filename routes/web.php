@@ -19,6 +19,7 @@ Route::get('home', function () {
     return view('timer.index');
 });
 
+Route::get('index2', 'TestController@index');
 
 //Route::get('deskripsi-laboratorium', 'LaboratoriumController@index');
 
