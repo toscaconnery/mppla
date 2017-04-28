@@ -84,5 +84,3 @@ Route::post('inputtugas', 'LBEController@input_tugas');
 Route::get('listtugas', 'LBEController@listtugas');
 
 Auth::routes();
-
-Route::get('login', 'HomeController@index');
