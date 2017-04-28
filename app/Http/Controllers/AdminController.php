@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
+use App\Laboratorium;
 
 class AdminController extends Controller
 {
@@ -19,7 +20,18 @@ class AdminController extends Controller
 
     public function input_deskripsi()
     {
-        return view('admin\inputdeskripsi');
+        $this->data['id_lab'] = DB::select('SELECT id, nama_lab FROM laboratorium');
+        return view('admin\inputdeskripsi', $this->data);
+    }
+
+    public function inputdesc(Request $request, $id)
+    {
+        $laboratorium = Laboratorium::findOrFail($id);
+        $laboratorium->deskripsi_lab = $request->deskripsi_lab;
+
+        $laboratorium->save();
+
+        return redirect('inputdeskripsi')->with('message','Updated');
     }
 
     public function input_fasil()

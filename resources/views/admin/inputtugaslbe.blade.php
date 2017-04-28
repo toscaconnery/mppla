@@ -13,23 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/all.css">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/colorpicker/bootstrap-colorpicker.min.css">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/timepicker/bootstrap-timepicker.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/select2/select2.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/skins/_all-skins.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/flat/blue.css">
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/morris/morris.css">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   </head>
   
   <body class="hold-transition skin-blue sidebar-mini">
@@ -194,14 +194,12 @@
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Deskripsi Laboratorium</h3>
+              <h3 class="box-title">Kegiatan Laboratorium</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form" action="" method="POST">
+              <form role="form" action=" " method="POST">
                 <!-- text input -->
-                {{ csrf_field() }}
-
                 <div class="form-group">
                   <label>ID Lab</label>
                   <select name="id_lab">
@@ -210,16 +208,18 @@
                     @endforeach
                   </select>
                 </div>
+                  <!-- <input type="hidden" name="id_lab" value=""> -->
+                <div class="form-group">
+                  <label>Judul Penugasan</label>
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="text" class="form-control" name="judul" placeholder="Judul">
+                </div>
 
-                <!-- <div class="form-group">
-                  <label>Judul</label>
-                  <input type="text" class="form-control" placeholder="Judul">
-                </div> -->
 
                 <!-- textarea -->
                 <div class="form-group">
-                  <label>Deskripsi</label>
-                  <textarea class="form-control" rows="5" placeholder="Deskripsi..."></textarea>
+                  <label>Kegiatan</label>
+                  <textarea class="form-control" rows="10" name="kegiatan" placeholder="Penugasan ..."></textarea>
                 </div>
 
                 <div class="box-footer">
@@ -287,5 +287,13 @@
 <script src="{{url('')}}/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('')}}/admin/dist/js/demo.js"></script>
+
+<script>
+  //Date picker
+    $('#datepicker').datepicker({
+      format: 'yyyy-mm-dd'
+      autoclose: true
+    });
+</script>
 </body>
 </html>
