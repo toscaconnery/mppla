@@ -126,7 +126,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{url('')}}/inputdeskripsi"><i class="fa fa-circle-o"></i> Deskripsi</a></li>
-            <li><a href="inputkegiatan.html"><i class="fa fa-circle-o"></i> Input Kegiatan</a></li>
+            <li><a href="{{url('')}}/inputkegiatan"><i class="fa fa-circle-o"></i> Input Kegiatan</a></li>
             <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Editors</a></li> -->
           </ul>
         </li>
@@ -152,8 +152,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="listadmin.html"><i class="fa fa-circle-o"></i> List Admin</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Input Admin</a></li>
+            <li><a href="{{url('')}}/listadmin"><i class="fa fa-circle-o"></i> List Admin</a></li>
+            <li><a href="{{url('')}}/inputadmin"><i class="fa fa-circle-o"></i> Input Admin</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -164,7 +164,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="listfasil.html"><i class="fa fa-circle-o"></i> List Fasilitas</a></li>
+            <li><a href="{{url('')}}/listfasil"><i class="fa fa-circle-o"></i> List Fasilitas</a></li>
             <li><a href="{{url('')}}/inputfasil"><i class="fa fa-circle-o"></i> Input Fasilitas</a></li>
           </ul>
         </li>

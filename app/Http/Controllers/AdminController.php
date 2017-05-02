@@ -26,6 +26,26 @@ class AdminController extends Controller
         return view('admin\inputfasil');
     }
 
+    public function input_admin()
+    {
+        return view('admin\inputadmin');
+    }
+
+    public function input_kegiatan()
+    {
+        return view('admin\inputkegiatan');
+    }
+
+    public function list_admin()
+    {
+        return view('admin\listadmin');
+    }
+
+    public function list_fasil()
+    {
+        return view('admin\listfasil');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

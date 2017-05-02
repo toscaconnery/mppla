@@ -26,11 +26,11 @@ Route::get('deskripsi-lab', 'LaboratoriumController@deskripsi_lab');
 Route::get('tambahkan-deskripsi-laboratorium', 'LaboratoriumController@create');
 //Route::get('tambah-deskripsi-lab', 'LaboratoriumController@tambah_deskripsi_lab');
 //Menyimpan data dari form Tambah Deskripsi Lab
-Route::post('tambahkan-deskripsi-laboratorium', 'LaboratoriumController@storedeskripsi');
+//Route::post('tambahkan-deskripsi-laboratorium', 'LaboratoriumController@storedeskripsi');
 //Menampilkan halaman kegiatan lab
 Route::get('lihat-kegiatan-lab', 'LaboratoriumController@lihatkegiatan');
 //Menampilkan halaman input kegiatan lab
-Route::get('input-kegiatan-lab', 'LaboratoriumController@inputkegiatan');
+//Route::get('input-kegiatan-lab', 'LaboratoriumController@inputkegiatan');
 //Menampilkan halaman jadwal lab
 Route::get('jadwal-lab', 'LaboratoriumController@lihat_jadwal');
 
@@ -49,3 +49,12 @@ Route::get('pinjam', 'PinjamController@index');
 Route::post('pinjam', 'PinjamController@lakukan_reservasi');
 //Melihat jadwal peminjaman lab
 Route::get('lihat_jadwal','PinjamController@lihat_jadwal');
+
+//Menampilkan halaman input admin
+Route::get('inputadmin', 'AdminController@input_admin');
+//Menampilkan halaman input kegiatan lab
+Route::get('inputkegiatan', 'AdminController@input_kegiatan');
+//Menampilkan halaman list admin
+Route::get('listadmin', 'AdminController@list_admin');
+//Menampilkan halaman list admin
+Route::get('listfasil', 'AdminController@list_fasil');

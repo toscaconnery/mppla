@@ -16,6 +16,7 @@ class LaboratoriumController extends Controller
     public function index()
     {
         $this->data['laboratorium'] = DB::select('SELECT nama_lab, deskripsi_lab FROM laboratorium');
+        //dd($this->data['laboratorium']);
 
         return view('Laboratorium\index', $this->data);
     }

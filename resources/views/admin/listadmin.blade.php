@@ -13,23 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- daterange picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
-    <!-- bootstrap datepicker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
-    <!-- iCheck for checkboxes and radio inputs -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/all.css">
-    <!-- Bootstrap Color Picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/colorpicker/bootstrap-colorpicker.min.css">
-    <!-- Bootstrap time Picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/timepicker/bootstrap-timepicker.min.css">
-    <!-- Select2 -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/select2/select2.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/skins/_all-skins.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/flat/blue.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/morris/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   </head>
   
   <body class="hold-transition skin-blue sidebar-mini">
@@ -126,7 +126,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{url('')}}/inputdeskripsi"><i class="fa fa-circle-o"></i> Deskripsi</a></li>
-            <li><a href="inputkegiatan.html"><i class="fa fa-circle-o"></i> Input Kegiatan</a></li>
+            <li><a href="{{url('')}}/inputkegiatan"><i class="fa fa-circle-o"></i> Input Kegiatan</a></li>
             <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Editors</a></li> -->
           </ul>
         </li>
@@ -152,8 +152,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="listadmin.html"><i class="fa fa-circle-o"></i> List Admin</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Input Admin</a></li>
+            <li><a href="{{url('')}}/listadmin"><i class="fa fa-circle-o"></i> List Admin</a></li>
+            <li><a href="{{url('')}}/inputadmin"><i class="fa fa-circle-o"></i> Input Admin</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -164,8 +164,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="listfasil.html"><i class="fa fa-circle-o"></i> List Fasilitas</a></li>
-            <li><a href="inputfasil.html"><i class="fa fa-circle-o"></i> Input Fasilitas</a></li>
+            <li><a href="{{url('')}}/listfasil"><i class="fa fa-circle-o"></i> List Fasilitas</a></li>
+            <li><a href="{{url('')}}/inputfasil"><i class="fa fa-circle-o"></i> Input Fasilitas</a></li>
           </ul>
         </li>
       </ul>
@@ -178,53 +178,62 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
     <div class="row">
-      <div class="col-md-6">
-          <!-- general form elements disabled -->
-          <div class="box box-warning">
-            <div class="box-header with-border">
-              <h3 class="box-title">Fasilitas Laboratorium</h3>
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title" style="font-weight: bold;">Administrator Laboratorium Pemrograman 2</h3>  
+                  <!-- ntar nama labnya diambil dari database -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tr>
+                      <th>ID</th>
+                      <th>Nama</th>
+                      <th>NRP</th>
+                      <th>No. Handphone</th>
+                      <th>Angkatan</th>
+                      <th><i class="fa fa-edit"></i></th>
+                    </tr>
+                    <!-- <tr>
+                      <td>183</td>
+                      <td>John Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-success">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>219</td>
+                      <td>Alexander Pierce</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-warning">Pending</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>657</td>
+                      <td>Bob Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-primary">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>175</td>
+                      <td>Mike Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-danger">Denied</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr> -->
+                  </table>
+                </div>
+                <!-- /.box-body -->
+              </div>
+              <!-- /.box -->
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <form role="form">
-                <!-- text input -->
-                <div class="form-group">
-                  <label>Nama:</label>
-                  <input type="text" class="form-control" placeholder="Nama Fasilitas">
-                </div>
-
-                <div class="form-group">
-                  <label>NRP:</label>
-                  <input type="text" class="form-control" placeholder="511...">
-                </div>
-
-                <!-- Date -->
-                 <div class="form-group">
-                  <label>Nomor Handphone:</label>
-                  <input type="text" class="form-control" placeholder="">
-                </div>
-
-                 <div class="form-group">
-                  <label>Angkatan:</label>
-                  <input type="text" class="form-control" placeholder="">
-                </div>
-
-                <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
-            </div>
-            <!-- /.box-body -->
           </div>
-          <!-- /.box -->
-        </div>
-        <!--/.col (right) -->
-      </div>
-      <!-- /.row -->
-    </section>
+
+      </section>
     <!-- /.content -->
-  </div>      
-    
+  </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -274,12 +283,5 @@
 <script src="{{url('')}}/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('')}}/admin/dist/js/demo.js"></script>
-
-<!-- <script>
-  //Date picker
-    $('#datepicker').datepicker({
-      autoclose: true
-    });
-</script> -->
 </body>
 </html>
