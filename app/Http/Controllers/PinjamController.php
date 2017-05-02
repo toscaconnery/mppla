@@ -15,7 +15,7 @@ class PinjamController extends Controller
     public function index()
     {
         $this->data['laboratorium'] = DB::select('SELECT nama_lab, id FROM laboratorium');
-         return view('Pinjam\index',$this->data);
+         return view('Pinjam\pinjam',$this->data);
     }
 
     /**

@@ -18,9 +18,10 @@ class KegiatanTable extends Migration
             $table->increments('id');
             $table->integer('id_lab');
             $table->date('tanggal');
-            $table->integer('jam_mulai');
-            $table->integer('jam_selesai');
+            $table->integer('jam_mulai')->nullable();
+            $table->integer('jam_selesai')->nullable();
             $table->string('nama_kegiatan');
+            $table->string('deskripsi');
             $table->softDeletes();
             $table->timestamps();
         });

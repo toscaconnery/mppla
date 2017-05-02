@@ -32,17 +32,19 @@
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/skins/_all-skins.min.css">
   </head>
   
-  <body class="hold-transition skin-blue sidebar-mini">
+  <body class="skin-blue sidebar-mini">
   <div class="wrapper">
 
-    <header class="main-header">
+    
+  </div>
+  <!-- Left side column. contains the logo and sidebar -->
+  <header class="main-header">
       <!-- Logo -->
+      
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button-->
-        <!-- <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-          <span class="sr-only">Toggle navigation</span>
-        </a> -->
+        
 
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
@@ -51,14 +53,13 @@
             <!-- Tasks: style can be found in dropdown.less -->
             <!-- User Account: style can be found in dropdown.less -->
             
+              </ul>
+            </li>
             </ul>
             <!-- Control Sidebar Toggle Button -->
         </div>
       </nav>
     </header>
-  </div>
-  <!-- Left side column. contains the logo and sidebar -->
-  
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

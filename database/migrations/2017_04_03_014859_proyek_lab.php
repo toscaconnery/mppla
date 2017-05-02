@@ -16,8 +16,10 @@ class ProyekLab extends Migration
         Schema::create('proyek_lab', function(Blueprint $table){
             $table->increments('id');
             $table->string('nama_proyek');
-            $table->string('keterangan');
+            $table->text('keterangan');
             $table->integer('id_lab');
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
