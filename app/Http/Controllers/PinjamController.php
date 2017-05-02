@@ -97,4 +97,11 @@ class PinjamController extends Controller
         $reservasi->save();
         return redirect('jadwal-lab'); 
     }
+
+     public function melihat_jadwal_lab()
+    {
+        $this->data['pinjam'] = DB::select('SELECT p.id_lab, p.tanggal, p.jam_mulai, p.jam_selesai, p.nrp, p.peminjam, p.keperluan FROM pinjam p, laboratorium l where p.id_lab=l.id');
+
+        return view('Pinjam/lihatjadwal', $this->data);
+    }   
 }

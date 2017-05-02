@@ -52,7 +52,7 @@ Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
 Route::post('inputdeskripsi', 'AdminController@inputdesc');
 //Menampilkan halaman input fasilitas lab
 Route::get('inputfasil', 'AdminController@input_fasil');
- HEAD
+ 
 
 //Menampilkan halaman input admin
 Route::get('inputadmin', 'AdminController@input_admin');
@@ -68,7 +68,6 @@ Route::get('listpeminjaman', 'AdminController@list_pinjam');
 //Menampilkan halaman verifikasi peminjaman lab
 Route::get('verifpeminjaman', 'AdminController@verif_pinjam');
 
-22b899c4f16252e5071ad2e6310cc01eb18ac9f0
 
 /******** HALAMAN PINJAM *******/
 //Menampilkan index untuk pinjam
@@ -78,7 +77,7 @@ Route::post('pinjam', 'PinjamController@lakukan_reservasi');
 //Melihat jadwal peminjaman lab
 Route::get('lihat_jadwal','PinjamController@lihat_jadwal');
 
-HEAD
+
 //Menampilkan halaman input admin
 Route::get('inputadmin', 'AdminController@input_admin');
 //Menampilkan halaman input kegiatan lab
@@ -95,6 +94,8 @@ Route::get('inputtugas', 'LBEController@inputtugas');
 Route::post('inputtugas', 'LBEController@input_tugas');
 //Menampilkan halaman lihat daftar tugas LBE
 Route::get('listtugas', 'LBEController@listtugas');
+//Menampilkan halaman lihat peminjaman lab
+Route::get('lihatjadwal','PinjamController@Melihat_jadwal_lab');
 
 Auth::routes();
-22b899c4f16252e5071ad2e6310cc01eb18ac9f0
+
