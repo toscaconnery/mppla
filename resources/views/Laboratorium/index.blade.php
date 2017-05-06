@@ -6,6 +6,7 @@
 		<h2>Institut Teknologi Sepuluh Nopember</h2>
 	</div>
 	<br>
+
 	<div class="col-md-12">
 		@foreach($laboratorium as $list)
 			<div class="col-md-12">

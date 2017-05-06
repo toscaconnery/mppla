@@ -26,7 +26,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Silakan Log In</p>
+    <p class="login-box-msg">Belum pernah terdaftar?</p>
 
     <form action="{{ url('/register') }}" method="post">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -72,18 +72,15 @@
       </div>
 
       <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
-          </div>
+        <div class="col-xs-4">
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
           <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
         </div>
         <!-- /.col -->
+        <div class="col-xs-4">
+        </div>
       </div>
     </form>
 

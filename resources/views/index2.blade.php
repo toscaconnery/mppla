@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="no-js">
     <head>
@@ -86,7 +85,7 @@
                             <li>
                                 <a href="#">
                                     @if(Auth::check())
-                                        {{ Auth::user()->name }}
+                                        {{$namauser}}
                                     @endif
                                 </a>
                             </li>
@@ -199,10 +198,10 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/lp.jpg" class="img-responsive" alt="this is a title" >
+                                    <img src="{{url('')}}/timer/images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/lp.jpg">Demo</a>
+                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/portfolio/item-1.jpg">Demo</a>
                                             <a target="_blank" href="single-portfolio.html">Details</a>
                                         </div>
                                     </div>
@@ -222,10 +221,10 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/lp2.png" class="img-responsive" alt="this is a title" >
+                                    <img src="{{url('')}}/timer/images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/lp2.png">Demo</a>
+                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/portfolio/item-2.jpg">Demo</a>
                                             <a target="_blank" href="single-portfolio.html">Details</a>
                                         </div>
                                     </div>
@@ -245,10 +244,10 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}//timer/images/logo/alpro1.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}//timer/images/portfolio/item-3.jpg" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/alpro1.jpg">Demo</a>
+                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/portfolio/item-3.jpg">Demo</a>
                                             <a target="_blank" href="single-portfolio.html">Details</a>
                                         </div>
                                     </div>
@@ -291,10 +290,10 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="900ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}//timer/images/logo/mi.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}//timer/images/portfolio/item-5.jpg" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}//timer/images/logo/mi.jpg">Demo</a>
+                                            <a rel="gallery" class="fancybox" href="{{url('')}}//timer/images/portfolio/item-5.jpg">Demo</a>
                                             <a target="_blank" href="single-portfolio.html">Details</a>
                                         </div>
                                     </div>
@@ -314,10 +313,10 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/ncc.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}/timer/images/portfolio/item-6.jpg" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/ncc.jpg">Demo</a>
+                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/portfolio/item-6.jpg">Demo</a>
                                             <a target="_blank" href="single-portfolio.html">Details</a>
                                         </div>
                                     </div>
@@ -337,10 +336,10 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/kcv.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}/timer/images/portfolio/item-6.jpg" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/kcv.jpg">Demo</a>
+                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/portfolio/item-6.jpg">Demo</a>
                                             <a target="_blank" href="single-portfolio.html">Details</a>
                                         </div>
                                     </div>
@@ -360,10 +359,10 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/igs.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}/timer/images/portfolio/item-6.jpg" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/igs.jpg">Demo</a>
+                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/portfolio/item-6.jpg">Demo</a>
                                             <a target="_blank" href="single-portfolio.html">Details</a>
                                         </div>
                                     </div>
@@ -406,10 +405,10 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/rpl.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}/timer/images/portfolio/item-6.jpg" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/rpl.jpg">Demo</a>
+                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/portfolio/item-6.jpg">Demo</a>
                                             <a target="_blank" href="single-portfolio.html">Details</a>
                                         </div>
                                     </div>
