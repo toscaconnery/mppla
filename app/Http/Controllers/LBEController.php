@@ -22,7 +22,7 @@ class LBEController extends Controller
         $tugaslbe->keterangan = $request->tugas;
 
         $tugaslbe->save();
-        return redirect('inputtugas')->with('message','success');
+        return redirect('listtugas')->with('message','success');
     }
 
     public function listtugas()
@@ -31,4 +31,12 @@ class LBEController extends Controller
     	//dd($listtugas);
         return view('admin\listtugas', $this->data);
     }
+
+    // public function list_tugas()
+    // {
+    //     $this->data['listtugas'] = ProyekLab::all();
+    //     //dd($listtugas);
+    //     return view('admin\listtugas', $this->data);
+    // }
+
 }

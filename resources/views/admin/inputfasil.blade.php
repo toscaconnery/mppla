@@ -198,22 +198,37 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form">
+              <form role="form" action=" " method="POST">
+
+                <div class="form-group">
+                  <label>Nama Lab</label>
+                  <select name="id_lab">
+                    @foreach($id_lab as $list)
+                      <option value="{{$list->id}}">{{$list->nama_lab}}</option>
+                    @endforeach
+                  </select>
+                </div>
                 <!-- text input -->
                 <div class="form-group">
                   <label>Nama Fasilitas:</label>
-                  <input type="text" class="form-control" placeholder="Nama Fasilitas">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="text" class="form-control" name="fasil" placeholder="Nama Fasilitas">
                 </div>
 
                 <!-- Date -->
-                 <div class="form-group">
+                <div class="form-group">
                   <label>Tahun Masuk:</label>
-                  <input type="text" class="form-control" placeholder="2000">
+                  <input type="text" class="form-control" name="tahun" placeholder="2000">
+                </div>
+
+                <div class="form-group">
+                  <label>Jumlah:</label>
+                  <input type="text" class="form-control" name="jumlah" placeholder="1">
                 </div>
 
                  <div class="form-group">
                   <label>Kondisi:</label>
-                  <input type="text" class="form-control" placeholder="Sangat Baik/Baik/Kurang Baik/Rusak">
+                  <input type="text" class="form-control" name="kondisi" placeholder="Sangat Baik/Baik/Kurang Baik/Rusak">
                 </div>
 
                 <div class="box-footer">

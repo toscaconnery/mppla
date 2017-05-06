@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Kegiatan;
+use App\User;
+use App\Http\Controllers\Auth;
 
 
 class KegiatanController extends Controller
 {
     public function input_kegiatan()
     {
-        $this->data['id_lab'] = DB::select('SELECT id, nama_lab FROM laboratorium');
+        $this->data['id_lab'] = Auth::user();
+        dd($this->data['id_lab']);
         return view('admin\inputkegiatan', $this->data);
     }
 

@@ -13,23 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/all.css">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/colorpicker/bootstrap-colorpicker.min.css">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/timepicker/bootstrap-timepicker.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/select2/select2.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/skins/_all-skins.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/flat/blue.css">
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/morris/morris.css">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   </head>
   
   <body class="hold-transition skin-blue sidebar-mini">
@@ -170,7 +170,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-calendar-minus-o"></i> <span>Peminjaman Lab</span>
+            <i class="fa  fa-calendar-minus-o"></i> <span>Peminjaman Lab</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -189,69 +189,53 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-    <div class="row" >
-            <div class="col-md-8" >
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title" style="font-weight: bold;">Daftar Penugasan LBE</h3>  
-                  <!-- ntar nama labnya diambil dari database -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tr>
-                      <th>Judul Penugasan</th>
-                      <th>Detail Tugas</th>
-                      <th><i class="fa fa-edit"></i></th>
-                    </tr>
-                      @if(isset($listtugas))
-                      @foreach ($listtugas as $listtugas)                    
-                      <tr>
-                        <td><?php echo $listtugas->nama_proyek ?></td>
-                        <td><?php echo $listtugas->keterangan ?></td>
-                        <td><a href="#">Ubah</a></td>
-                      </tr>
-                      @endforeach
-                      @endif
-                    <!-- <tr>
-                      <td>183</td>
-                      <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-success">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>219</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-warning">Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>657</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-primary">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>175</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-danger">Denied</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr> -->
-                  </table>
-                </div>
-                <!-- /.box-body -->
-              </div>
-              <!-- /.box -->
+    <div class="row">
+      <div class="col-md-6">
+          <!-- general form elements disabled -->
+          <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Modul LBE</h3>
             </div>
-          </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <form role="form" action=" " method="POST">
+                <!-- text input -->
+                <div class="form-group">
+                  <label>ID Lab</label>
+                  <select name="id_lab">
+                    @foreach($id_lab as $list)
+                      <option value="{{$list->id}}">{{$list->nama_lab}}</option>
+                    @endforeach
+                  </select>
+                </div>
+                  <!-- <input type="hidden" name="id_lab" value=""> -->
+                <div class="form-group">
+                  <label>Judul Modul</label>
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="text" class="form-control" name="judul" placeholder="Judul">
+                </div>
+                <!-- file input -->
+                <div class="form-group">
+                  <label for="modul">File input</label>
+                  <input type="file" id="modul">
+                </div>
 
-      </section>
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </section>
     <!-- /.content -->
-  </div>
+  </div>      
+    
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -266,7 +250,7 @@
 
 <!-- jQuery 2.2.3 -->
 <script src="{{url('')}}/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
+<!-- jQuery UI 1.11.4 --> 
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
@@ -288,7 +272,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
-<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="{{url('')}}/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
@@ -301,5 +285,13 @@
 <script src="{{url('')}}/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('')}}/admin/dist/js/demo.js"></script>
+
+<script>
+  //Date picker
+    $('#datepicker').datepicker({
+      format: 'yyyy-mm-dd'
+      autoclose: true
+    });
+</script>
 </body>
 </html>

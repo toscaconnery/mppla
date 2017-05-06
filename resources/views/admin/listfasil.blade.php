@@ -202,10 +202,24 @@
                     <tr>
                       <th>ID</th>
                       <th>Nama Fasilitas</th>
-                      <th>Kondisi</th>
                       <th>Tahun Masuk</th>
+                      <th>Jumlah</th>
+                      <th>Kondisi</th>
                       <th><i class="fa fa-edit"></i></th>
                     </tr>
+
+                    @if(isset($listfasil))
+                      @foreach ($listfasil as $listfasil)                    
+                      <tr>
+                        <td><?php echo $listfasil->id?></td>
+                        <td><?php echo $listfasil->nama_fasil?></td>
+                        <td><?php echo $listfasil->tahun_masuk?></td>
+                        <td><?php echo $listfasil->jumlah?></td>
+                        <td><?php echo $listfasil->kondisi?></td>
+                        <td><a href="#">Ubah</a></td>
+                      </tr>
+                      @endforeach
+                      @endif
                     <!-- <tr>
                       <td>183</td>
                       <td>John Doe</td>

@@ -201,13 +201,16 @@
               <form role="form" action=" " method="POST">
                 <!-- text input -->
                 <div class="form-group">
-                  <label>ID Lab</label>
-                  <select name="id_lab">
+                  <!-- <label>ID Lab</label> -->
+                  <!-- <select name="id_lab">
                     @foreach($id_lab as $list)
                       <option value="{{$list->id}}">{{$list->nama_lab}}</option>
                     @endforeach
-                  </select>
+                  </select> -->
+                  <input type="hidden" name="id_lab" value="{{ $id_lab }}">
                 </div>
+
+
                   <!-- <input type="hidden" name="id_lab" value=""> -->
                 <div class="form-group">
                   <label>Judul</label>

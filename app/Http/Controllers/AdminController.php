@@ -34,11 +34,6 @@ class AdminController extends Controller
         return redirect('inputdeskripsi')->with('message','Updated');
     }
 
-    public function input_fasil()
-    {
-        return view('admin\inputfasil');
-    }
-
     public function input_admin()
     {
         return view('admin\inputadmin');
@@ -47,11 +42,6 @@ class AdminController extends Controller
     public function list_admin()
     {
         return view('admin\listadmin');
-    }
-
-    public function list_fasil()
-    {
-        return view('admin\listfasil');
     }
 
      public function list_pinjam()
