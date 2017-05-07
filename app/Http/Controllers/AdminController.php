@@ -72,6 +72,23 @@ class AdminController extends Controller
         return redirect('list_user');
     }
 
+    public function nonaktifkan_admin($id)
+    {
+        $this->data['admin'] = User::find($id);
+
+        return view('admin\nonaktifkan-admin',$this->data);
+    }
+
+    public function update_nonaktifkan_admin($id)
+    {
+        $admin = User::find($id);
+        $admin->is_admin = null;
+        $admin->id_lab = null;
+        $admin->save();
+
+        return redirect('list_user');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
