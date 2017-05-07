@@ -63,10 +63,11 @@ class AdminController extends Controller
         return view('admin\jadikan-admin', $this->data);
     }
 
-    public function update_jadikan_admin($id)
+    public function update_jadikan_admin(Request $request, $id)
     {
         $admin = User::find($id);
         $admin->is_admin = 1;
+        $admin->id_lab = $request->get('id_lab');
         $admin->save();
 
         return redirect('list_user');

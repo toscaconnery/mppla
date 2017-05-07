@@ -210,7 +210,24 @@
                   <div class="col-md-9">{{$admin->email}}</div>
                 </h3>
               </div>
-              <a href="{{url('')}}/update_jadikan_admin/{{$admin->id}}"><button>Jadikan Admin</button></a>                
+              <div class="col-md-12">
+                <h3>
+                  <div class="col-md-3">Laboratorium:</div>
+                  <div class="col-md-9">
+                    <form role="form" action="{{url('')}}/update_jadikan_admin/{{$admin->id}}" method="POST">
+                      <div class="form-group">
+                        <select name="id_lab">
+                          @foreach($namaLaboratorium as $list)
+                            <option value="{{$list->id}}">{{$list->nama_lab}}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <button type="submit" class="btn btn-primary">Jadikan Admin</button>
+                    </form>
+                  </div>
+                </h3>
+              </div>                
             </div>
             <!-- /.box-body -->
           </div>

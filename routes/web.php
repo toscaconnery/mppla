@@ -48,7 +48,7 @@ Route::get('jadwal-lab', 'LaboratoriumController@lihat_jadwal');
 //Menampilkan index untuk admin
 Route::get('index-admin', 'AdminController@index');
 Route::get('jadikan_admin/{id}', 'AdminController@jadikan_admin');
-Route::get('update_jadikan_admin/{id}', 'AdminController@update_jadikan_admin');
+Route::post('update_jadikan_admin/{id}', 'AdminController@update_jadikan_admin');
 Route::get('nonaktifkan_admin/{id}', 'AdminController@nonaktifkan_admin');
 Route::get('update_nonaktifkan_admin/{id}', 'AdminController@update_nonaktifkan_admin');
 
