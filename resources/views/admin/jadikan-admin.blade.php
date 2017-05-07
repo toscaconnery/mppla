@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,23 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/all.css">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/colorpicker/bootstrap-colorpicker.min.css">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/timepicker/bootstrap-timepicker.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/select2/select2.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/skins/_all-skins.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/flat/blue.css">
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/morris/morris.css">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   </head>
   
   <body class="hold-transition skin-blue sidebar-mini">
@@ -40,7 +41,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b>LP2</span> <!--nanti pake nama lab dari database-->
+        <span class="logo-lg"><b>Dosen</b>Laboratorium</span> <!--nanti pake nama lab dari database-->
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -58,7 +59,7 @@
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="{{url('')}}/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                <span class="hidden-xs">Nafia Rizky Yogayana</span>
+                <span class="hidden-xs"></span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
@@ -189,47 +190,39 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
     <div class="row">
-            <div class="col-xs-12">
-            @foreach($lab as $listLab)
-              <div class="box">
-                <div class="box-header">
-                
-                  <h3 class="box-title" style="font-weight: bold;">Dosen {{$listLab['namaLab']}}</h3>  
-                  <!-- ntar nama labnya diambil dari database -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tr>
-                      <th>NIP</th>
-                      <th>Nama</th>
-                      <th>Email</th>
-                      <th>Telepon</th>
-                      <th>Alamat</th>
-                      <th>Action</th>
-                    </tr>
-                    @foreach($dosen[$listLab['id']] as $listDosen)
-                      <tr>
-                        <td>{{$listDosen['nip']}}</td>
-                        <td><a href="{{url('')}}/detail_dosen/{{$listDosen['nip']}}">{{$listDosen['nama']}}</a></td>
-                        <td>{{$listDosen['email']}}</td>
-                        <td>{{$listDosen['no_hp']}}</td>
-                        <td>{{$listDosen['alamat']}}</td>
-                        <td><a href="{{url('')}}/edit_dosen/{{$listDosen['id']}}">Edit</a></td>
-                      </tr>
-                    @endforeach
-                  </table>
-                </div>
-                <!-- /.box-body -->
-              </div>
-              @endforeach
-              <!-- /.box -->
+      <div class="col-md-6">
+          <!-- general form elements disabled -->
+          <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Detail Dosen</h3>
             </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="col-md-12">
+                <h3>
+                  <div class="col-md-3">Nama:</div>
+                  <div class="col-md-9">{{$admin->name}}</div>
+                </h3>
+              </div>
+              <div class="col-md-12">
+                <h3>
+                  <div class="col-md-3">Email:</div>
+                  <div class="col-md-9">{{$admin->email}}</div>
+                </h3>
+              </div>
+              <a href="{{url('')}}/update_jadikan_admin/{{$admin->id}}"><button>Jadikan Admin</button></a>                
+            </div>
+            <!-- /.box-body -->
           </div>
-
-      </section>
+          <!-- /.box -->
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </section>
     <!-- /.content -->
-  </div>
+  </div>      
+    
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -279,5 +272,13 @@
 <script src="{{url('')}}/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('')}}/admin/dist/js/demo.js"></script>
+
+<script>
+  //Date picker
+    $('#datepicker').datepicker({
+      format: 'yyyy-mm-dd'
+      autoclose: true
+    });
+</script>
 </body>
 </html>

@@ -47,6 +47,9 @@ Route::get('jadwal-lab', 'LaboratoriumController@lihat_jadwal');
 /******** HALAMAN ADMIN ********/
 //Menampilkan index untuk admin
 Route::get('index-admin', 'AdminController@index');
+Route::get('jadikan_admin/{id}', 'AdminController@jadikan_admin');
+Route::get('update_jadikan_admin/{id}', 'AdminController@update_jadikan_admin');
+
 
 //Menampilkan halaman input deskripsi
 Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
@@ -113,12 +116,19 @@ Route::get('lihatjadwal','PinjamController@Melihat_jadwal_lab');
 //Menampilkan halaman upload modul LBE
 Route::get('inputmodul', 'ModulController@inputmodul');
 
+
+/******** HALAMAN DOSEN *******/
 Route::get('tambahkan_dosen', 'DosenController@tambahkan_dosen');
 Route::post('tambahkan_dosen', 'DosenController@store_dosen');
 Route::get('list_dosen', 'DosenController@list_dosen');
 Route::get('detail_dosen/{id}', 'DosenController@detail_dosen');
 Route::get('edit_dosen/{id}', 'DosenController@edit_dosen');
 Route::post('edit_dosen/{id}', 'DosenController@update_dosen');
+
+
+/******** HALAMAN USER *******/
+Route::get('list_user', 'UserController@list_user');
+
 
 Auth::routes();
 

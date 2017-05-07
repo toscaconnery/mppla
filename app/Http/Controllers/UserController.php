@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-use App\Laboratorium;
 use App\User;
+use DB;
 
-class AdminController extends Controller
+class UserController extends Controller
 {
+    public function list_user()
+    {
+        $this->data['user'] = DB::select('SELECT * FROM users');
+
+        return view('User\list-user', $this->data);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,60 +21,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin\index-admin');
-    }
-
-    public function input_deskripsi()
-    {
-        $this->data['id_lab'] = DB::select('SELECT id, nama_lab FROM laboratorium');
-        return view('admin\inputdeskripsi', $this->data);
-    }
-
-    public function inputdesc(Request $request, $id)
-    {
-        $laboratorium = Laboratorium::findOrFail($id);
-        $laboratorium->deskripsi_lab = $request->deskripsi_lab;
-
-        $laboratorium->save();
-
-        return redirect('inputdeskripsi')->with('message','Updated');
-    }
-
-    public function input_admin()
-    {
-        return view('admin\inputadmin');
-    }
-
-    public function list_admin()
-    {
-        return view('admin\listadmin');
-    }
-
-     public function list_pinjam()
-    {
-        return view('admin\listpeminjaman');
-    }
-
-    public function verif_pinjam()
-    {
-        return view('admin\verifpeminjaman');
-    }
-
-    public function jadikan_admin($id)
-    {
-        $this->data['namaLaboratorium'] = DB::select('SELECT id, nama_lab FROM laboratorium');
-        $this->data['admin'] = User::find($id);
-
-        return view('admin\jadikan-admin', $this->data);
-    }
-
-    public function update_jadikan_admin($id)
-    {
-        $admin = User::find($id);
-        $admin->is_admin = 1;
-        $admin->save();
-
-        return redirect('list_user');
+        //
     }
 
     /**

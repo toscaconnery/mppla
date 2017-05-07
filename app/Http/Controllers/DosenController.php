@@ -39,6 +39,7 @@ class DosenController extends Controller
         foreach($data as $list) {
             $this->data['lab'][$list->id_lab]['id'] = $list->id_lab;
             $this->data['lab'][$list->id_lab]['namaLab'] = $list->nama_lab;
+            $this->data['dosen'][$list->id_lab][$list->nip]['id'] = $list->id;
             $this->data['dosen'][$list->id_lab][$list->nip]['nama'] = $list->nama;
             $this->data['dosen'][$list->id_lab][$list->nip]['nip'] = $list->nip;
             $this->data['dosen'][$list->id_lab][$list->nip]['email'] = $list->email;

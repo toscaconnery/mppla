@@ -222,7 +222,7 @@
                 </div>
 
                 <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">Tambah Dosen</button>
+                  <button type="submit" class="btn btn-primary">Simpan Data</button>
                 </div>
               </form>
             </div>
