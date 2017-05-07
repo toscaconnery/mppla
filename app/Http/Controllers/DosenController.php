@@ -29,4 +29,30 @@ class DosenController extends Controller
     	$dosen->save();
     	return redirect('home');
     }
+
+    public function list_dosen()
+    {
+        $query = 'SELECT d.*, l.nama_lab FROM dosen d, laboratorium l
+                WHERE d.id_lab = l.id';
+        $data = DB::select($query);
+        $dosen = array();
+        foreach($data as $list) {
+            $this->data['lab'][$list->id_lab]['id'] = $list->id_lab;
+            $this->data['lab'][$list->id_lab]['namaLab'] = $list->nama_lab;
+            $this->data['dosen'][$list->id_lab][$list->nip]['nama'] = $list->nama;
+            $this->data['dosen'][$list->id_lab][$list->nip]['nip'] = $list->nip;
+            $this->data['dosen'][$list->id_lab][$list->nip]['email'] = $list->email;
+            $this->data['dosen'][$list->id_lab][$list->nip]['no_hp'] = $list->no_hp;
+            $this->data['dosen'][$list->id_lab][$list->nip]['alamat'] = $list->alamat;
+        }
+        // dd($this->data['lab']);
+        return view('Dosen\list-dosen', $this->data);
+    }
+
+    public function detail_dosen($id)
+    {
+        $this->data['dosen'] = DB::select('SELECT * FROM dosen WHERE id = '.$id)[0];
+        //dd($this->data['dosen']);
+        return view('Dosen\detail-dosen', $this->data);
+    }
 }

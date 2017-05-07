@@ -57,7 +57,7 @@ Route::get('inputfasil', 'FasilController@input_fasil');
 Route::post('inputfasil', 'FasilController@inputfasil');
 //Menampilkan halaman list admin
 Route::get('listfasil', 'FasilController@list_fasil');
-=======
+
 Route::get('inputfasil', 'AdminController@input_fasil');
  
 
@@ -112,6 +112,11 @@ Route::get('lihatjadwal','PinjamController@Melihat_jadwal_lab');
 
 //Menampilkan halaman upload modul LBE
 Route::get('inputmodul', 'ModulController@inputmodul');
+
+Route::get('tambahkan_dosen', 'DosenController@tambahkan_dosen');
+Route::post('tambahkan_dosen', 'DosenController@store_dosen');
+Route::get('list_dosen', 'DosenController@list_dosen');
+Route::get('detail_dosen/{id}', 'DosenController@detail_dosen');
 
 Auth::routes();
 
