@@ -52,7 +52,27 @@ class DosenController extends Controller
     public function detail_dosen($id)
     {
         $this->data['dosen'] = DB::select('SELECT * FROM dosen WHERE id = '.$id)[0];
-        //dd($this->data['dosen']);
+        
         return view('Dosen\detail-dosen', $this->data);
+    }
+
+    public function edit_dosen($id)
+    {
+        $this->data['dosen'] = DB::select('SELECT * FROM dosen WHERE id = '.$id)[0];
+
+        return view('Dosen\edit-dosen', $this->data);
+    }
+
+    public function update_dosen(Request $request, $id)
+    {
+        $dosen = Dosen::find($id);
+        $dosen->nama = $request->get('nama');
+        $dosen->nip = $request->get('nip');
+        $dosen->email = $request->get('email');
+        $dosen->no_hp = $request->get('no_hp');
+        $dosen->alamat = $request->get('alamat');
+        $dosen->save();
+
+        return redirect('list_dosen');
     }
 }

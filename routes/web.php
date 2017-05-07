@@ -117,6 +117,8 @@ Route::get('tambahkan_dosen', 'DosenController@tambahkan_dosen');
 Route::post('tambahkan_dosen', 'DosenController@store_dosen');
 Route::get('list_dosen', 'DosenController@list_dosen');
 Route::get('detail_dosen/{id}', 'DosenController@detail_dosen');
+Route::get('edit_dosen/{id}', 'DosenController@edit_dosen');
+Route::post('edit_dosen/{id}', 'DosenController@update_dosen');
 
 Auth::routes();
 
