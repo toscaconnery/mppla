@@ -23,4 +23,8 @@ class Laboratorium extends Model
     public function lbe(){
     	return $this->hasMany('App\Lbe');
     }
+
+    public function dosenlab(){
+        return $this->hasMany('App\DosenLab', 'id');
+    }
 }

@@ -51,6 +51,11 @@ Route::get('jadwal-lab', 'LaboratoriumController@lihat_jadwal');
 /******** LAB ********/
 //Menampilkan index untuk admin
 Route::get('index-admin', 'AdminController@index');
+Route::get('jadikan_admin/{id}', 'AdminController@jadikan_admin');
+Route::post('update_jadikan_admin/{id}', 'AdminController@update_jadikan_admin');
+Route::get('nonaktifkan_admin/{id}', 'AdminController@nonaktifkan_admin');
+Route::get('update_nonaktifkan_admin/{id}', 'AdminController@update_nonaktifkan_admin');
+
 
 //Menampilkan halaman input deskripsi
 Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
@@ -59,7 +64,23 @@ Route::post('inputdeskripsi', 'AdminController@inputdesc');
 Route::get('inputfasil', 'FasilController@input_fasil');
 Route::post('inputfasil', 'FasilController@inputfasil');
 //Menampilkan halaman list admin
+<<<<<<< HEAD
 Route::get('listfasil', 'FasilController@list_fasil'); 
+=======
+Route::get('listfasil', 'FasilController@list_fasil');
+
+Route::get('inputfasil', 'AdminController@input_fasil');
+ 
+
+
+//Menampilkan halaman input admin
+Route::get('inputadmin', 'AdminController@input_admin');
+//Menampilkan halaman list admin
+Route::get('listadmin', 'AdminController@list_admin');
+//Menampilkan halaman list admin
+Route::get('listpeminjaman', 'AdminController@list_pinjam');
+
+>>>>>>> 69c5fa06ea87552e381ef6aa4ffadd186c0fe42e
 //Menampilkan halaman input kegiatan lab
 Route::get('inputkegiatan', 'KegiatanController@input_kegiatan');
 Route::post('inputkegiatan', 'KegiatanController@inputkegiatan');
@@ -99,6 +120,28 @@ Route::get('downloadprogres', 'LBEController@downloadprogres');
 Route::get('inputmodul', 'ModulController@inputmodul');
 
 
+<<<<<<< HEAD
+=======
+/******** HALAMAN DOSEN *******/
+Route::get('tambahkan_dosen', 'DosenController@tambahkan_dosen');
+Route::post('tambahkan_dosen', 'DosenController@store_dosen');
+Route::get('list_dosen', 'DosenController@list_dosen');
+Route::get('detail_dosen/{id}', 'DosenController@detail_dosen');
+Route::get('edit_dosen/{id}', 'DosenController@edit_dosen');
+Route::post('edit_dosen/{id}', 'DosenController@update_dosen');
+
+
+/******** HALAMAN USER *******/
+Route::get('list_user', 'UserController@list_user');
+
+
+/******** HALAMAN LABORATORIUM *******/
+Route::get('list-laboratorium', 'LaboratoriumController@list_laboratorium');
+Route::get('pengaturan-laboratorium/{id}', 'LaboratoriumController@pengaturan_laboratorium');
+Route::post('pengaturan-laboratorium/{id}', 'LaboratoriumController@save_pengaturan_laboratorium');
+Route::get('tambahkan-dosen-laboratorium', 'LaboratoriumController@tambahkan_dosen_laboratorium');
+Route::post('tambahkan-dosen-laboratorium', 'LaboratoriumController@save_tambahkan_dosen_laboratorium');
+>>>>>>> 69c5fa06ea87552e381ef6aa4ffadd186c0fe42e
 
 Auth::routes();
 

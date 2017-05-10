@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Laboratorium;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -45,6 +46,41 @@ class AdminController extends Controller
     }
 
 
+
+    public function jadikan_admin($id)
+    {
+        $this->data['namaLaboratorium'] = DB::select('SELECT id, nama_lab FROM laboratorium');
+        $this->data['admin'] = User::find($id);
+
+        return view('admin\jadikan-admin', $this->data);
+    }
+
+    public function update_jadikan_admin(Request $request, $id)
+    {
+        $admin = User::find($id);
+        $admin->is_admin = 1;
+        $admin->id_lab = $request->get('id_lab');
+        $admin->save();
+
+        return redirect('list_user');
+    }
+
+    public function nonaktifkan_admin($id)
+    {
+        $this->data['admin'] = User::find($id);
+
+        return view('admin\nonaktifkan-admin',$this->data);
+    }
+
+    public function update_nonaktifkan_admin($id)
+    {
+        $admin = User::find($id);
+        $admin->is_admin = null;
+        $admin->id_lab = null;
+        $admin->save();
+
+        return redirect('list_user');
+    }
 
     /**
      * Show the form for creating a new resource.
