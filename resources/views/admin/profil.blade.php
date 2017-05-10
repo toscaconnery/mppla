@@ -13,23 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/all.css">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/colorpicker/bootstrap-colorpicker.min.css">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/timepicker/bootstrap-timepicker.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/select2/select2.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/skins/_all-skins.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/flat/blue.css">
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/morris/morris.css">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   </head>
   
   <body class="hold-transition skin-blue sidebar-mini">
@@ -39,7 +39,7 @@
       <!-- Logo -->
       <a href="{{url('')}}/index-admin" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>SI</b>Lab</span>
+        <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>Admin</b>LP2</span> <!--nanti pake nama lab dari database-->
       </a>
@@ -52,6 +52,10 @@
 
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
+            <!-- Messages: style can be found in dropdown.less-->
+            <!-- Notifications: style can be found in dropdown.less -->
+            <!-- Tasks: style can be found in dropdown.less -->
+            <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="{{url('')}}/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
@@ -68,12 +72,10 @@
                   </p>
                 </li>
                 <!-- Menu Body -->
-                <li class="user-body">
-                </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="{{url('')}}/profil" class="btn btn-default btn-flat">Profile</a>
+                    <a href="#" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
                     <a href="#" class="btn btn-default btn-flat">Sign out</a>
@@ -86,7 +88,7 @@
         </div>
       </nav>
     </header>
-  
+  </div>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -186,49 +188,90 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <!-- <section class="content-header">
-      <h1>
-        Blank page
-        <small>it all starts here</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
-      </ol>
-    </section> -->
+    <section class="content-header">
 
-    <!-- Main content -->
-    <section class="content">
-
-      <!-- Default box -->
-      <!-- <div class="box">
+    <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
+          <h3 class="box-title">Profil Diri</h3>
         </div>
+        <!-- /.box-header -->
         <div class="box-body">
-          Start creating your amazing application!
-        </div> -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                  <label>Nama:</label>
+                  <input type="text" class="form-control" name="nama" placeholder="Nafia Rizky">
+                </div>
+
+                <div class="form-group">
+                  <label>Email:</label>
+                  <input type="text" class="form-control" name="email" placeholder="nafia.ry@gmail.com">
+                </div>
+
+                <div class="form-group">
+                  <label>Nomor Handphone:</label>
+                  <input type="text" class="form-control" name="nohp" placeholder="082216612220">
+                </div>
+
+                <div class="form-group">
+                  <label>Tanggal Lahir:</label>
+                  <input type="text" class="form-control" name="tgllahir" placeholder="09 Juli 1996">
+                </div>
+
+                <div class="form-group">
+                  <label>Tempat Lahir:</label>
+                  <input type="text" class="form-control" name="tempatlhr" placeholder="Batam">
+                </div>
+              <!-- /.form-group -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-6">
+              <div class="form-group">
+                  <label>Alamat Asal:</label>
+                  <input type="text" class="form-control" name="asal" placeholder="DutaMas Cluster Victoria No.8D">
+                </div>
+
+                <div class="form-group">
+                  <label>Alamat Surabaya:</label>
+                  <input type="text" class="form-control" name="addsby" placeholder="Perumdos J-45">
+                </div>
+
+                <div class="form-group">
+                  <label>Agama:</label>
+                  <input type="text" class="form-control" name="agama" placeholder="Islam">
+                </div>
+
+                <div class="form-group">
+                  <label>Motivasi:</label>
+                  <input type="text" class="form-control" name="motivasi" placeholder="Salah pilih">
+                </div>
+
+                <div class="form-group">
+                  <label>Password:</label>
+                  <input type="text" class="form-control" name="passwd" placeholder="xxxx">
+                </div>
+              <!-- /.form-group -->
+            </div>
+
+            <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
         <!-- /.box-body -->
         <!-- <div class="box-footer">
-          Footer
+          Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
+          the plugin.
         </div> -->
-        <!-- /.box-footer-->
-      <!-- </div> -->
+      </div>
       <!-- /.box -->
-
     </section>
     <!-- /.content -->
-  </div>
+  </div>      
+    
   <!-- /.content-wrapper -->
-
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.8
@@ -236,17 +279,13 @@
     <strong>Copyright &copy; 5114100017-5114100061-5114100702 .</strong> SI Laboratorium Teknik Informatika
   </footer>
 
-  <!-- Control Sidebar -->
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
 <script src="{{url('')}}/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
+<!-- jQuery UI 1.11.4 --> 
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
@@ -281,5 +320,12 @@
 <script src="{{url('')}}/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('')}}/admin/dist/js/demo.js"></script>
+
+<!-- <script>
+  //Date picker
+    $('#datepicker').datepicker({
+      autoclose: true
+    });
+</script> -->
 </body>
 </html>

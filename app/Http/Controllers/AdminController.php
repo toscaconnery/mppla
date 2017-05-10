@@ -92,6 +92,11 @@ class AdminController extends Controller
         return view('admin\detailuser');
     }
 
+    public function profil()
+    {
+        return view('admin\profil');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
