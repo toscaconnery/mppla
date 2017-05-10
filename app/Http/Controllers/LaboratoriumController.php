@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Laboratorium;
 use DB;
+use App\DosenLab;
 
 class LaboratoriumController extends Controller
 {
@@ -100,11 +101,28 @@ class LaboratoriumController extends Controller
         return view('Laboratorium\pengaturan-laboratorium', $this->data);
     }
 
-    public function save_pengaturan_laboratorium(Request $request,$id) {
+    public function save_pengaturan_laboratorium(Request $request,$id) 
+    {
         $laboratorium = Laboratorium::find($id);
         $laboratorium->reservasiable = $request->reservasiable;
         $laboratorium->save();
-        return redirect('list_laboratorium');
+        return redirect('list-laboratorium');
+    }
+
+    public function tambahkan_dosen_laboratorium() 
+    {
+        $this->data['laboratorium'] = DB::select('SELECT * FROM laboratorium');
+        $this->data['dosen'] = DB::select('SELECT * FROM dosen');
+        return view('Laboratorium\tambahkan-dosen-laboratorium', $this->data);
+    }
+
+    public function save_tambahkan_dosen_laboratorium(Request $request) 
+    {
+        $dosenLab = new DosenLab;
+        $dosenLab->id_lab = $request->id_lab;
+        $dosenLab->id_dosen = $request->id_dosen;
+        $dosenLab->save();
+        return redirect('home');
     }
 
     /**

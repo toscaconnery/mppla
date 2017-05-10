@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DosenLab extends Model
 {
-    protected $table = 'dosen';
+    protected $table = 'dosen_lab';
 
     protected $fillable = [
     	'id_lab', 'id_dosen',

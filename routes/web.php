@@ -133,9 +133,11 @@ Route::get('list_user', 'UserController@list_user');
 
 
 /******** HALAMAN LABORATORIUM *******/
-Route::get('list_laboratorium', 'LaboratoriumController@list_laboratorium');
-Route::get('pengaturan_laboratorium/{id}', 'LaboratoriumController@pengaturan_laboratorium');
-Route::post('pengaturan_laboratorium/{id}', 'LaboratoriumController@save_pengaturan_laboratorium');
+Route::get('list-laboratorium', 'LaboratoriumController@list_laboratorium');
+Route::get('pengaturan-laboratorium/{id}', 'LaboratoriumController@pengaturan_laboratorium');
+Route::post('pengaturan-laboratorium/{id}', 'LaboratoriumController@save_pengaturan_laboratorium');
+Route::get('tambahkan-dosen-laboratorium', 'LaboratoriumController@tambahkan_dosen_laboratorium');
+Route::post('tambahkan-dosen-laboratorium', 'LaboratoriumController@save_tambahkan_dosen_laboratorium');
 
 Auth::routes();
 
