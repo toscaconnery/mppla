@@ -64,9 +64,7 @@ Route::post('inputdeskripsi', 'AdminController@inputdesc');
 Route::get('inputfasil', 'FasilController@input_fasil');
 Route::post('inputfasil', 'FasilController@inputfasil');
 //Menampilkan halaman list admin
-<<<<<<< HEAD
-Route::get('listfasil', 'FasilController@list_fasil'); 
-=======
+
 Route::get('listfasil', 'FasilController@list_fasil');
 
 Route::get('inputfasil', 'AdminController@input_fasil');
@@ -80,7 +78,6 @@ Route::get('listadmin', 'AdminController@list_admin');
 //Menampilkan halaman list admin
 Route::get('listpeminjaman', 'AdminController@list_pinjam');
 
->>>>>>> 69c5fa06ea87552e381ef6aa4ffadd186c0fe42e
 //Menampilkan halaman input kegiatan lab
 Route::get('inputkegiatan', 'KegiatanController@input_kegiatan');
 Route::post('inputkegiatan', 'KegiatanController@inputkegiatan');
@@ -119,9 +116,6 @@ Route::get('downloadprogres', 'LBEController@downloadprogres');
 //Menampilkan halaman upload modul LBE
 Route::get('inputmodul', 'ModulController@inputmodul');
 
-
-<<<<<<< HEAD
-=======
 /******** HALAMAN DOSEN *******/
 Route::get('tambahkan_dosen', 'DosenController@tambahkan_dosen');
 Route::post('tambahkan_dosen', 'DosenController@store_dosen');
@@ -141,7 +135,6 @@ Route::get('pengaturan-laboratorium/{id}', 'LaboratoriumController@pengaturan_la
 Route::post('pengaturan-laboratorium/{id}', 'LaboratoriumController@save_pengaturan_laboratorium');
 Route::get('tambahkan-dosen-laboratorium', 'LaboratoriumController@tambahkan_dosen_laboratorium');
 Route::post('tambahkan-dosen-laboratorium', 'LaboratoriumController@save_tambahkan_dosen_laboratorium');
->>>>>>> 69c5fa06ea87552e381ef6aa4ffadd186c0fe42e
 
 Auth::routes();
 
