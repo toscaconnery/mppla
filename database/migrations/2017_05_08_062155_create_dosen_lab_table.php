@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ProyekLab extends Migration
+class CreateDosenLabTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class ProyekLab extends Migration
      */
     public function up()
     {
-        Schema::create('proyek_lab', function(Blueprint $table){
+        Schema::create('dosen_lab', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_proyek');
-            $table->text('keterangan');
             $table->integer('id_lab');
+            $table->integer('id_dosen');
             $table->softDeletes();
             $table->timestamps();
-        });
-    }
+        });    }
 
     /**
      * Reverse the migrations.
@@ -30,6 +28,6 @@ class ProyekLab extends Migration
      */
     public function down()
     {
-        Schema::drop('proyek_lab');
+        Schema::drop('dosen_lab');
     }
 }
