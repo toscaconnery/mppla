@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLaboratoriumTable extends Migration
+class CreateFasilitasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateLaboratoriumTable extends Migration
      */
     public function up()
     {
-        Schema::create('laboratorium', function( Blueprint $table) {
+        Schema::create('fasilitas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_lab');
-            $table->string('deskripsi_lab')->nullable();
-            $table->integer('reservasiable')->default(0);
+            $table->integer('id_lab');
+            $table->string('nama_fasil');
+            $table->integer('tahun_masuk');
+            $table->integer('jumlah');
+            $table->string('kondisi');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,6 +32,6 @@ class CreateLaboratoriumTable extends Migration
      */
     public function down()
     {
-        Schema::drop('laboratorium');    
+        Schema::dropIfExists('fasilitas');
     }
 }

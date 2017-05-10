@@ -132,5 +132,10 @@ Route::post('edit_dosen/{id}', 'DosenController@update_dosen');
 Route::get('list_user', 'UserController@list_user');
 
 
+/******** HALAMAN LABORATORIUM *******/
+Route::get('list_laboratorium', 'LaboratoriumController@list_laboratorium');
+Route::get('pengaturan_laboratorium/{id}', 'LaboratoriumController@pengaturan_laboratorium');
+Route::post('pengaturan_laboratorium/{id}', 'LaboratoriumController@save_pengaturan_laboratorium');
+
 Auth::routes();
 

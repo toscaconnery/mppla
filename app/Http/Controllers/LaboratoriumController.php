@@ -90,6 +90,23 @@ class LaboratoriumController extends Controller
         return redirect('deskripsi-laboratorium');
     }
 
+    public function list_laboratorium() {
+        $this->data['laboratorium'] = DB::select('SELECT * FROM laboratorium');
+        return view('Laboratorium\list-laboratorium', $this->data);
+    }
+
+    public function pengaturan_laboratorium($id) {
+        $this->data['laboratorium'] = DB::select('SELECT * FROM laboratorium WHERE id = '.$id)[0];
+        return view('Laboratorium\pengaturan-laboratorium', $this->data);
+    }
+
+    public function save_pengaturan_laboratorium(Request $request,$id) {
+        $laboratorium = Laboratorium::find($id);
+        $laboratorium->reservasiable = $request->reservasiable;
+        $laboratorium->save();
+        return redirect('list_laboratorium');
+    }
+
     /**
      * Display the specified resource.
      *
