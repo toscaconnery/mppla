@@ -34,6 +34,9 @@ Route::get('listfasil', 'FasilController@list_fasil');
 Route::get('inputkegiatan', 'KegiatanController@input_kegiatan');
 Route::post('inputkegiatan', 'KegiatanController@inputkegiatan');
 
+//Menampilkan halaman melihat data user lain
+Route::get('lihatuser', 'AdminController@lihatuser');
+Route::get('detailuser', 'AdminController@detailuser');
 
 /******** HALAMAN PINJAM ********/
 Route::get('pinjam', 'PinjamController@index');
