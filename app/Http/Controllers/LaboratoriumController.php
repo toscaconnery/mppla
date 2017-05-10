@@ -67,9 +67,9 @@ class LaboratoriumController extends Controller
      * untuk halaman jadwal pinjam lab
     */
 
-    public function lihat_jadwal()
+    public function lihat_jadwal_reservasi()
     {
-        return view('timer\lihat-jadwal');
+        return view('timer\lihat-jadwal-reservasi');
     }
 
     /**

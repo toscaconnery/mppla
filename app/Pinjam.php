@@ -9,7 +9,7 @@ class Pinjam extends Model
     protected $table = 'pinjam';
 
     protected $fillable = [
-    	'id_lab', 'tanggal', 'jam_mulai', 'jam_selesai', 'nrp', 'peminjam', 'keperluan',
+    	'id_lab', 'peminjam', 'email', 'keperluan', 'tanggal', 'jam_mulai', 'jam_selesai', 'status_verif',
     ];
 
     public function laboratorium() {

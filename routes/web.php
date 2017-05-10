@@ -21,64 +21,16 @@ Route::get('home', function () {
     return view('timer.index');
 });
 
-Route::get('kegiatanlab', 'LaboratoriumController@kegiatanlab');
-Route::get('deskripsi-lab', 'LaboratoriumController@deskripsi_lab');
-Route::get('jadwal-lab', 'LaboratoriumController@lihat_jadwal');
-
-//Route::get('index2', 'TestController@index');
-
-//Route::get('deskripsi-laboratorium', 'LaboratoriumController@index');
-
-
-/******** HALAMAN LOGIN ********/
-//Route::get('login', 'LoginController@index');
-
-
-//Menampilkan halaman laboratorium
-//Route::get('deskripsi-laboratorium', 'LaboratoriumController@index');
-//Menampilkan halaman tambah deskripsi laboratorium
-//Route::get('tambahkan-deskripsi-laboratorium', 'LaboratoriumController@create');
-//Route::get('tambah-deskripsi-lab', 'LaboratoriumController@tambah_deskripsi_lab');
-//Menyimpan data dari form Tambah Deskripsi Lab
-//Route::post('tambahkan-deskripsi-laboratorium', 'LaboratoriumController@storedeskripsi');
-//Menampilkan halaman kegiatan lab
-//Route::get('lihat-kegiatan-lab', 'LaboratoriumController@lihatkegiatan');
-//Menampilkan halaman input kegiatan lab
-//Route::get('input-kegiatan-lab', 'LaboratoriumController@inputkegiatan');
-//Menampilkan halaman jadwal lab
-
-
-/******** LAB ********/
-//Menampilkan index untuk admin
-Route::get('index-admin', 'AdminController@index');
-Route::get('jadikan_admin/{id}', 'AdminController@jadikan_admin');
-Route::post('update_jadikan_admin/{id}', 'AdminController@update_jadikan_admin');
-Route::get('nonaktifkan_admin/{id}', 'AdminController@nonaktifkan_admin');
-Route::get('update_nonaktifkan_admin/{id}', 'AdminController@update_nonaktifkan_admin');
-
-
-//Menampilkan halaman input deskripsi
+//things
 Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
 Route::post('inputdeskripsi', 'AdminController@inputdesc');
-//Menampilkan halaman input fasilitas lab
 Route::get('inputfasil', 'FasilController@input_fasil');
 Route::post('inputfasil', 'FasilController@inputfasil');
-//Menampilkan halaman list admin
-
 Route::get('listfasil', 'FasilController@list_fasil');
 
-Route::get('inputfasil', 'AdminController@input_fasil');
  
 
-
-//Menampilkan halaman input admin
-Route::get('inputadmin', 'AdminController@input_admin');
-//Menampilkan halaman list admin
-Route::get('listadmin', 'AdminController@list_admin');
-//Menampilkan halaman list admin
-Route::get('listpeminjaman', 'AdminController@list_pinjam');
-
-//Menampilkan halaman input kegiatan lab
+/******** HALAMAN KEGIATAN *******/
 Route::get('inputkegiatan', 'KegiatanController@input_kegiatan');
 Route::post('inputkegiatan', 'KegiatanController@inputkegiatan');
 
@@ -86,37 +38,30 @@ Route::post('inputkegiatan', 'KegiatanController@inputkegiatan');
 Route::get('lihatuser', 'AdminController@lihatuser');
 Route::get('detailuser', 'AdminController@detailuser');
 
-
-/******** HALAMAN PINJAM *******/
-//Menampilkan index untuk pinjam
+/******** HALAMAN PINJAM ********/
 Route::get('pinjam', 'PinjamController@index');
-//Menyimpan permintaan reservasi/pinjam
 Route::post('pinjam', 'PinjamController@lakukan_reservasi');
-//Melihat jadwal peminjaman lab
 Route::get('lihat_jadwal','PinjamController@lihat_jadwal');
 Route::get('lihatjadwal','PinjamController@Melihat_jadwal_lab');
-//Menampilkan halaman verifikasi peminjaman lab
 Route::get('verifpeminjaman', 'PinjamController@verif_pinjam');
-//Menampilkan halaman list admin
 Route::get('listpeminjaman', 'PinjamController@list_pinjam');
 
 
-/******** ADMIN *******/
-//Menampilkan halaman input admin
+/******** HALAMAN ADMIN *******/
 Route::get('inputadmin', 'AdminController@input_admin');
-//Menampilkan halaman list admin
 Route::get('listadmin', 'AdminController@list_admin');
-
+Route::get('index-admin', 'AdminController@index');
+Route::get('jadikan_admin/{id}', 'AdminController@jadikan_admin');
+Route::post('update_jadikan_admin/{id}', 'AdminController@update_jadikan_admin');
+Route::get('nonaktifkan_admin/{id}', 'AdminController@nonaktifkan_admin');
+Route::get('update_nonaktifkan_admin/{id}', 'AdminController@update_nonaktifkan_admin');
+//Route::get('listpeminjaman', 'AdminController@list_pinjam'); Untuk dicek
 
 /******** LBE *******/
-//Menampilkan halaman input tugas LBE
 Route::get('inputtugas', 'LBEController@inputtugas');
 Route::post('inputtugas', 'LBEController@input_tugas');
-//Menampilkan halaman lihat daftar tugas LBE
 Route::get('listtugas', 'LBEController@listtugas');
-//Menampilkan halaman untuk donlod progres
 Route::get('downloadprogres', 'LBEController@downloadprogres');
-//Menampilkan halaman upload modul LBE
 Route::get('inputmodul', 'ModulController@inputmodul');
 
 /******** HALAMAN DOSEN *******/
@@ -140,6 +85,10 @@ Route::get('pengaturan-laboratorium/{id}', 'LaboratoriumController@pengaturan_la
 Route::post('pengaturan-laboratorium/{id}', 'LaboratoriumController@save_pengaturan_laboratorium');
 Route::get('tambahkan-dosen-laboratorium', 'LaboratoriumController@tambahkan_dosen_laboratorium');
 Route::post('tambahkan-dosen-laboratorium', 'LaboratoriumController@save_tambahkan_dosen_laboratorium');
+Route::get('kegiatanlab', 'LaboratoriumController@kegiatanlab');
+Route::get('deskripsi-lab', 'LaboratoriumController@deskripsi_lab');
+Route::get('jadwal-lab', 'LaboratoriumController@lihat_jadwal_reservasi');
+
 
 Auth::routes();
 

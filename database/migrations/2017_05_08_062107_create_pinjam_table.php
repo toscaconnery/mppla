@@ -16,16 +16,17 @@ class CreatePinjamTable extends Migration
         Schema::create('pinjam', function( Blueprint $table) {
             $table->increments('id');
             $table->integer('id_lab');
+            $table->string('peminjam');
+            $table->string('email');
+            $table->string('keperluan');
             $table->date('tanggal');
             $table->time('jam_mulai');
             $table->time('jam_selesai');
             $table->string('status_verif');
-            $table->string('nrp');
-            $table->string('peminjam');
-            $table->string('keperluan');
             $table->softDeletes();
             $table->timestamps();
-        });    }
+        });    
+    }
 
     /**
      * Reverse the migrations.
