@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->integer('id_lab')->nullable();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('no_hp');->nullable();
+            $table->string('no_hp')->nullable();
             $table->string('password');
             $table->integer('is_admin')->nullable();
             $table->date('tanggal_lahir')->nullable();
