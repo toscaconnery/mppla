@@ -82,6 +82,9 @@ Route::get('listpeminjaman', 'AdminController@list_pinjam');
 Route::get('inputkegiatan', 'KegiatanController@input_kegiatan');
 Route::post('inputkegiatan', 'KegiatanController@inputkegiatan');
 
+//Menampilkan halaman melihat data user lain
+Route::get('lihatuser', 'AdminController@lihatuser');
+Route::get('detailuser', 'AdminController@detailuser');
 
 
 /******** HALAMAN PINJAM *******/

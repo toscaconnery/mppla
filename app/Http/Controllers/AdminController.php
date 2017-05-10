@@ -82,6 +82,16 @@ class AdminController extends Controller
         return redirect('list_user');
     }
 
+    public function lihatuser()
+    {
+        return view('admin\lihatuser');
+    }
+
+    public function detailuser()
+    {
+        return view('admin\detailuser');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
