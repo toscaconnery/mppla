@@ -32,6 +32,13 @@ class LBEController extends Controller
         return view('admin\listtugas', $this->data);
     }
 
+    public function downloadprogres()
+    {
+        // $this->data['listtugas'] = ProyekLab::all();
+        //dd($listtugas);
+        return view('admin\downloadprogres');
+    }
+
     // public function list_tugas()
     // {
     //     $this->data['listtugas'] = ProyekLab::all();

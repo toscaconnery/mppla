@@ -104,4 +104,14 @@ class PinjamController extends Controller
 
         return view('Pinjam/lihatjadwal', $this->data);
     }   
+
+    public function verif_pinjam()
+    {
+        return view('admin\verifpeminjaman');
+    }
+
+    public function list_pinjam()
+    {
+        return view('admin\listpeminjaman');
+    }
 }

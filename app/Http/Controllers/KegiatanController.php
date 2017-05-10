@@ -30,4 +30,6 @@ class KegiatanController extends Controller
         return redirect('inputkegiatan');
         //return view('admin\inputkegiatan');
     }
+
+
 }

@@ -337,10 +337,10 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/kcv.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}/timer/images/logo/kcv.png" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/kcv.jpg">Demo</a>
+                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/kcv.png">Demo</a>
                                             <a target="_blank" href="single-portfolio.html">Details</a>
                                         </div>
                                     </div>

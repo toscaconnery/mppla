@@ -26,6 +26,11 @@ class LaboratoriumController extends Controller
         return view('timer\deskripsi_lab');
     }
 
+    public function kegiatanlab()
+    {
+        return view('timer\kegiatan_lab');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -38,24 +43,24 @@ class LaboratoriumController extends Controller
         return view('Laboratorium\create', $this->data);
     }
 
-    public function tambah_deskripsi_lab()
-    {
-        return view('timer\input_deskripsi');
-    }
+    // public function tambah_deskripsi_lab()
+    // {
+    //     return view('timer\input_deskripsi');
+    // }
 
     /**
      * untuk halaman kegiatan lab
     */
 
-    public function lihatkegiatan()
-    {
-        return view('timer\kegiatan_lab');
-    }
+    // public function lihatkegiatan()
+    // {
+    //     return view('timer\kegiatan_lab');
+    // }
 
-    public function inputkegiatan()
-    {
-        return view('timer\input_kegiatan');
-    }
+    // public function inputkegiatan()
+    // {
+    //     return view('timer\input_kegiatan');
+    // }
 
     /**
      * untuk halaman jadwal pinjam lab

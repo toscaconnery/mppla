@@ -39,7 +39,7 @@
       <!-- Logo -->
       <a href="{{url('')}}/index-admin" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>SI</b>Lab</span>
+        <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>Admin</b>LP2</span> <!--nanti pake nama lab dari database-->
       </a>
@@ -52,6 +52,10 @@
 
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
+            <!-- Messages: style can be found in dropdown.less-->
+            <!-- Notifications: style can be found in dropdown.less -->
+            <!-- Tasks: style can be found in dropdown.less -->
+            <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="{{url('')}}/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
@@ -68,8 +72,6 @@
                   </p>
                 </li>
                 <!-- Menu Body -->
-                <li class="user-body">
-                </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
@@ -86,7 +88,7 @@
         </div>
       </nav>
     </header>
-  
+  </div>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -168,7 +170,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa  fa-calendar-minus-o"></i> <span>Peminjaman Lab</span>
+            <i class="fa fa-calendar-minus-o"></i> <span>Peminjaman Lab</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -186,49 +188,73 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <!-- <section class="content-header">
-      <h1>
-        Blank page
-        <small>it all starts here</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
-      </ol>
-    </section> -->
-
-    <!-- Main content -->
-    <section class="content">
-
-      <!-- Default box -->
-      <!-- <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
+    <section class="content-header">
+    <div class="row" >
+            <div class="col-md-8" >
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title" style="font-weight: bold;">Progres LBE</h3>  
+                  <!-- ntar nama labnya diambil dari database -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tr>
+                      <th>No.</th>
+                      <th>NRP</th>
+                      <th>Progres</th>
+                      <th>Unduh</th>
+                    </tr>
+                      @if(isset($progres))
+                      @foreach ($progres as $progres)                    
+                      <tr>
+                        <td><?php echo $progres->id ?></td>
+                        <td><?php echo $progres->id_mhs ?></td>
+                        <td><?php echo $progres->upload_tugas ?></td>
+                        <td><a href="#"><i class="fa fa-download"></i></a></td>
+                      </tr>
+                      @endforeach
+                      @endif
+                    <!-- <tr>
+                      <td>183</td>
+                      <td>John Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-success">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>219</td>
+                      <td>Alexander Pierce</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-warning">Pending</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>657</td>
+                      <td>Bob Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-primary">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>175</td>
+                      <td>Mike Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-danger">Denied</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr> -->
+                  </table>
+                </div>
+                <!-- /.box-body -->
+              </div>
+              <!-- /.box -->
+            </div>
           </div>
-        </div>
-        <div class="box-body">
-          Start creating your amazing application!
-        </div> -->
-        <!-- /.box-body -->
-        <!-- <div class="box-footer">
-          Footer
-        </div> -->
-        <!-- /.box-footer-->
-      <!-- </div> -->
-      <!-- /.box -->
 
-    </section>
+      </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.8
@@ -236,10 +262,6 @@
     <strong>Copyright &copy; 5114100017-5114100061-5114100702 .</strong> SI Laboratorium Teknik Informatika
   </footer>
 
-  <!-- Control Sidebar -->
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
@@ -268,7 +290,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
-<script src="{{url('')}}/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
