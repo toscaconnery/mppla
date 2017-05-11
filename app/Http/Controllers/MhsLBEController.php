@@ -10,4 +10,14 @@ class MhsLBEController extends Controller
     {
     	return view('mhslbe\lihattugas');
     }
+
+    public function submitprogres()
+    {
+    	return view('mhslbe\submitprogres');
+    }
+
+    public function historiprogres()
+    {
+    	return view('mhslbe\histori');
+    }
 }

@@ -153,15 +153,15 @@
             <div class="col-md-8" >
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title" style="font-weight: bold;">Penugasan LBE</h3>  
+                  <h3 class="box-title" style="font-weight: bold;">Histori Progres Tugas LBE</h3>  
                   <!-- ntar nama labnya diambil dari database -->
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
                     <tr>
-                      <th>Judul Penugasan</th>
-                      <th>Detail Tugas</th>
+                      <th>Tanggal Submit</th>
+                      <th>Detail Progres</th>
                     </tr>
                       @if(isset($listtugas))
                       @foreach ($listtugas as $listtugas)                    

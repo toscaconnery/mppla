@@ -87,7 +87,7 @@
       </nav>
     </header>
 
-  <!-- Left side column. contains the logo and sidebar -->
+    <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -123,7 +123,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Lihat Tugas</a></li>
+            <li><a href="{{url('')}}/lihattugas"><i class="fa fa-circle-o"></i> Lihat Tugas</a></li>
             <li><a href="{{url('')}}/submitprogres"><i class="fa fa-circle-o"></i> Progress</a></li>
             <li><a href="{{url('')}}/histori"><i class="fa fa-circle-o"></i> Histori Progress</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Modul LBE</a></li>
@@ -149,67 +149,43 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-    <div class="row" >
-            <div class="col-md-8" >
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title" style="font-weight: bold;">Penugasan LBE</h3>  
-                  <!-- ntar nama labnya diambil dari database -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tr>
-                      <th>Judul Penugasan</th>
-                      <th>Detail Tugas</th>
-                    </tr>
-                      @if(isset($listtugas))
-                      @foreach ($listtugas as $listtugas)                    
-                      <tr>
-                        <td><?php echo $listtugas->nama_proyek ?></td>
-                        <td><?php echo $listtugas->keterangan ?></td>
-                      </tr>
-                      @endforeach
-                      @endif
-                    <!-- <tr>
-                      <td>183</td>
-                      <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-success">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>219</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-warning">Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>657</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-primary">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>175</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-danger">Denied</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr> -->
-                  </table>
-                </div>
-                <!-- /.box-body -->
-              </div>
-              <!-- /.box -->
+    <div class="row">
+      <div class="col-md-6">
+          <!-- general form elements disabled -->
+          <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Submit Progres Tugas LBE</h3>
             </div>
-          </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <form role="form" action=" " method="POST">
+                <div class="form-group">
+                  <label>Keterangan</label>
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="text" class="form-control" name="judul" placeholder="...">
+                </div>
+                <!-- file input -->
+                <div class="form-group">
+                  <label for="modul">File input</label>
+                  <input type="file" id="modul">
+                </div>
 
-      </section>
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </section>
     <!-- /.content -->
-  </div>
+  </div>      
+    
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -224,7 +200,7 @@
 
 <!-- jQuery 2.2.3 -->
 <script src="{{url('')}}/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
+<!-- jQuery UI 1.11.4 --> 
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
@@ -246,7 +222,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
-<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="{{url('')}}/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
@@ -259,5 +235,13 @@
 <script src="{{url('')}}/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('')}}/admin/dist/js/demo.js"></script>
+
+<script>
+  //Date picker
+    $('#datepicker').datepicker({
+      format: 'yyyy-mm-dd'
+      autoclose: true
+    });
+</script>
 </body>
 </html>
