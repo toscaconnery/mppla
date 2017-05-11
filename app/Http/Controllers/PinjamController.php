@@ -12,10 +12,23 @@ class PinjamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    // public function index()
+    // {
+    //     $this->data['laboratorium'] = DB::select('SELECT nama_lab, id FROM laboratorium');
+    //     return view('Pinjam\index',$this->data);
+    // }
+
+    public function lakukan_reservasi_laboratorium()
     {
-        $this->data['laboratorium'] = DB::select('SELECT nama_lab, id FROM laboratorium');
-         return view('Pinjam\pinjam',$this->data);
+        $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l');
+        return view('Pinjam\lakukan-reservasi-laboratorium', $this->data);
+    }
+
+    public function lihat_jadwal_reservasi()
+    {
+        $query = 'SELECT p.* FROM pinjam p WHERE p.tanggal > CURDATE()';
+        $this->data['jadwal'] = DB::select($query);
+        return view('Laboratorium\lihat-jadwal-reservasi');
     }
 
     /**
