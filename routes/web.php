@@ -89,6 +89,10 @@ Route::get('kegiatanlab', 'LaboratoriumController@kegiatanlab');
 Route::get('deskripsi-lab', 'LaboratoriumController@deskripsi_lab');
 Route::get('jadwal-lab', 'LaboratoriumController@lihat_jadwal_reservasi');
 
+/******** HALAMAN UNTUK MHS LBE *******/
+//Menampilkan halaman untuk melihat tugas LBE
+Route::get('lihattugas', 'MhsLBEController@lihattugas');
+
 
 Auth::routes();
 

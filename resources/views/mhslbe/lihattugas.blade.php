@@ -13,23 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- daterange picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
-    <!-- bootstrap datepicker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
-    <!-- iCheck for checkboxes and radio inputs -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/all.css">
-    <!-- Bootstrap Color Picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/colorpicker/bootstrap-colorpicker.min.css">
-    <!-- Bootstrap time Picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/timepicker/bootstrap-timepicker.min.css">
-    <!-- Select2 -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/select2/select2.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/skins/_all-skins.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/flat/blue.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/morris/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   </head>
   
   <body class="hold-transition skin-blue sidebar-mini">
@@ -39,9 +39,9 @@
       <!-- Logo -->
       <a href="{{url('')}}/index-admin" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
+        <span class="logo-mini"><b>SI</b>Lab</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b>LP2</span> <!--nanti pake nama lab dari database-->
+        <span class="logo-lg"><b>LBE </b>LP2</span> <!--nanti pake nama lab dari database-->
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -52,10 +52,6 @@
 
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
-            <!-- Messages: style can be found in dropdown.less-->
-            <!-- Notifications: style can be found in dropdown.less -->
-            <!-- Tasks: style can be found in dropdown.less -->
-            <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="{{url('')}}/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
@@ -72,10 +68,12 @@
                   </p>
                 </li>
                 <!-- Menu Body -->
+                <li class="user-body">
+                </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="{{url('')}}/profil" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
                     <a href="#" class="btn btn-default btn-flat">Sign out</a>
@@ -88,7 +86,7 @@
         </div>
       </nav>
     </header>
-  </div>
+
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -119,65 +117,26 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-home"></i> <span>Laboratorium</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{url('')}}/inputdeskripsi"><i class="fa fa-circle-o"></i> Deskripsi</a></li>
-            <li><a href="{{url('')}}/inputkegiatan"><i class="fa fa-circle-o"></i> Input Kegiatan</a></li>
-            <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Editors</a></li> -->
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
             <i class="fa fa-television"></i> <span>LBE</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Input Penugasan</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Daftar Tugas</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Lihat Tugas</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Progress</a></li> <!-- donlot tugas yg diupload-->
             <li><a href="#"><i class="fa fa-circle-o"></i> Modul LBE</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-child"></i> <span>Administrator</span>
+            <i class="fa fa-child"></i> <span>User</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{url('')}}/listadmin"><i class="fa fa-circle-o"></i> List Admin</a></li>
-            <li><a href="{{url('')}}/inputadmin"><i class="fa fa-circle-o"></i> Input Admin</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-gear"></i> <span>Fasilitas</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{url('')}}/listfasil"><i class="fa fa-circle-o"></i> List Fasilitas</a></li>
-            <li><a href="{{url('')}}/inputfasil"><i class="fa fa-circle-o"></i> Input Fasilitas</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa  fa-calendar-minus-o"></i> <span>Peminjaman Lab</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{url('')}}/listpeminjaman"><i class="fa fa-circle-o"></i> List Peminjaman</a></li>
-            <li><a href="{{url('')}}/verifpeminjaman"><i class="fa fa-circle-o"></i> Verifikasi Peminjaman</a></li>
+            <li><a href="{{url('')}}/listadmin"><i class="fa fa-circle-o"></i> Data User</a></li>
           </ul>
         </li>
       </ul>
@@ -189,88 +148,67 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-
-    <div class="box box-default">
-        <div class="box-header with-border">
-          <h3 class="box-title">Profil Diri</h3>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                  <label>Nama:</label>
-                  <input type="text" class="form-control" name="nama" placeholder="Nafia Rizky">
+    <div class="row" >
+            <div class="col-md-8" >
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title" style="font-weight: bold;">Penugasan LBE</h3>  
+                  <!-- ntar nama labnya diambil dari database -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tr>
+                      <th>Judul Penugasan</th>
+                      <th>Detail Tugas</th>
+                    </tr>
+                      @if(isset($listtugas))
+                      @foreach ($listtugas as $listtugas)                    
+                      <tr>
+                        <td><?php echo $listtugas->nama_proyek ?></td>
+                        <td><?php echo $listtugas->keterangan ?></td>
+                      </tr>
+                      @endforeach
+                      @endif
+                    <!-- <tr>
+                      <td>183</td>
+                      <td>John Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-success">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>219</td>
+                      <td>Alexander Pierce</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-warning">Pending</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>657</td>
+                      <td>Bob Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-primary">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>175</td>
+                      <td>Mike Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-danger">Denied</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr> -->
+                  </table>
+                </div>
+                <!-- /.box-body -->
               </div>
-
-              <div class="form-group">
-                <label>Email:</label>
-                <input type="text" class="form-control" name="email" placeholder="nafia.ry@gmail.com">
-              </div>
-
-              <div class="form-group">
-                <label>Nomor Handphone:</label>
-                <input type="text" class="form-control" name="nohp" placeholder="082216612220">
-              </div>
-
-              <div class="form-group">
-                <label>Tanggal Lahir:</label>
-                <input type="text" class="form-control" name="tgllahir" placeholder="09 Juli 1996">
-              </div>
-
-              <div class="form-group">
-                <label>Tempat Lahir:</label>
-                <input type="text" class="form-control" name="tempatlhr" placeholder="Batam">
-              </div>
-              <!-- /.form-group -->
+              <!-- /.box -->
             </div>
-            <!-- /.col -->
-            <div class="col-md-6">
-              <div class="form-group">
-                  <label>Alamat Asal:</label>
-                  <input type="text" class="form-control" name="asal" placeholder="DutaMas Cluster Victoria No.8D">
-                </div>
-
-                <div class="form-group">
-                  <label>Alamat Surabaya:</label>
-                  <input type="text" class="form-control" name="addsby" placeholder="Perumdos J-45">
-                </div>
-
-                <div class="form-group">
-                  <label>Agama:</label>
-                  <input type="text" class="form-control" name="agama" placeholder="Islam">
-                </div>
-
-                <div class="form-group">
-                  <label>Motivasi:</label>
-                  <input type="text" class="form-control" name="motivasi" placeholder="Salah pilih">
-                </div>
-
-                <div class="form-group">
-                  <label>Password:</label>
-                  <input type="text" class="form-control" name="passwd" placeholder="xxxx">
-                </div>
-              <!-- /.form-group -->
-            </div>
-
-            <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Simpan</button>
-            </div>
-            <!-- /.col -->
           </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.box-body -->
-        <!-- <div class="box-footer">
-          Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
-          the plugin.
-        </div> -->
-      </div>
-      <!-- /.box -->
-    </section>
+
+      </section>
     <!-- /.content -->
-  </div>      
-    
+  </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -285,7 +223,7 @@
 
 <!-- jQuery 2.2.3 -->
 <script src="{{url('')}}/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- jQuery UI 1.11.4 --> 
+<!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
@@ -307,7 +245,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
-<script src="{{url('')}}/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
@@ -320,12 +258,5 @@
 <script src="{{url('')}}/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('')}}/admin/dist/js/demo.js"></script>
-
-<!-- <script>
-  //Date picker
-    $('#datepicker').datepicker({
-      autoclose: true
-    });
-</script> -->
 </body>
 </html>
