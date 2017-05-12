@@ -18,17 +18,35 @@ class PinjamController extends Controller
     //     return view('Pinjam\index',$this->data);
     // }
 
-    public function lakukan_reservasi_laboratorium()
+    public function lakukan_reservasi()
     {
         $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l');
         return view('Pinjam\lakukan-reservasi-laboratorium', $this->data);
+    }
+
+    public function save_lakukan_reservasi(Request $request)
+    {
+        $pinjam = new Pinjam;
+        $pinjam->id_lab = $request->id_lab;
+        $pinjam->peminjam = $request->peminjam;
+        $pinjam->no_hp = $request->no_hp;
+        $pinjam->email = $request->email;
+        $pinjam->keperluan = $request->keperluan;
+        $pinjam->tanggal = $request->tanggal;
+        $pinjam->jam_mulai = $request->jam_mulai;
+        $pinjam->jam_selesai = $request->jam_selesai;
+        $pinjam->status_verif = 0;
+        $pinjam->save();
+        return redirect('/');
     }
 
     public function lihat_jadwal_reservasi()
     {
         $query = 'SELECT p.* FROM pinjam p WHERE p.tanggal > CURDATE()';
         $this->data['jadwal'] = DB::select($query);
-        return view('Laboratorium\lihat-jadwal-reservasi');
+        $this->data['lab'] = DB::select('SELECT * FROM laboratorium');
+        //dd($this->data['jadwal']);
+        return view('Pinjam\lihat-jadwal-reservasi-laboratorium', $this->data);
     }
 
     /**
@@ -96,20 +114,7 @@ class PinjamController extends Controller
     {
         //
     }
-     public function lakukan_reservasi(Request $request)
-    {
-        $reservasi= new Pinjam;
-        $reservasi->id_lab = $request->id_lab;
-        $reservasi->tanggal = $request->tanggal;
-        $reservasi->jam_mulai = $request->jam_mulai; 
-        $reservasi->jam_selesai = $request->jam_selesai;
-        $reservasi->nrp = $request->nrp;
-        $reservasi->peminjam = $request->peminjam;  
-        $reservasi->keperluan = $request->keperluan;
-        $reservasi->status_verif = 0;
-        $reservasi->save();
-        return redirect('jadwal-lab'); 
-    }
+    
 
      public function melihat_jadwal_lab()
     {

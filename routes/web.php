@@ -82,9 +82,9 @@ Route::get('deskripsi-lab', 'LaboratoriumController@deskripsi_lab');
 
 
 /******** HALAMAN PINJAM ********/
-Route::get('lakukan-reservasi-laboratorium', 'PinjamController@lakukan_reservasi_laboratorium');
-Route::get('jadwal-reservasi-laboratorium', 'PinjamController@lihat_jadwal_reservasi');
-/******** HALAMAN PINJAM ********/
+Route::get('lakukan-reservasi-laboratorium', 'PinjamController@lakukan_reservasi');
+Route::post('lakukan-reservasi-laboratorium', 'PinjamController@save_lakukan_reservasi');
+Route::get('lihat-jadwal-reservasi-laboratorium', 'PinjamController@lihat_jadwal_reservasi');
 Route::get('pinjam', 'PinjamController@index');
 Route::post('pinjam', 'PinjamController@lakukan_reservasi');
 Route::get('lihat_jadwal','PinjamController@lihat_jadwal');
