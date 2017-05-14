@@ -96,6 +96,8 @@ Route::get('lihattugas', 'MhsLBEController@lihattugas');
 Route::get('submitprogres', 'MhsLBEController@submitprogres');
 //Menampilkan halaman untuk melihat history submit progres tugas LBE
 Route::get('histori', 'MhsLBEController@historiprogres');
+//Menampilkan halaman untuk mendownload modul LBE
+Route::get('modul', 'MhsLBEController@unduhmodul');
 
 
 Auth::routes();

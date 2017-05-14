@@ -90,30 +90,9 @@
                                     @endif
                                 </a>
                             </li>
-                            <li>
-                                <a href="index.html" >Home</a>
-                            </li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="service.html">Service</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="404.html">404 Page</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span class="caret"></span></a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="blog-fullwidth.html">Blog Full</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog Left sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right sidebar</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+                            <li><a href="{{url('')}}/">Home</a></li>
+                            <li><a href="#works">Laboratorium</a></li>
+                            <li><a href="service.html">Reservasi</a></li>
                             <li><a href="contact.html">Login</a></li>
                         </ul>
                     </div>
@@ -135,7 +114,9 @@
                             <!-- Slider -->
                             <section class="cd-intro">
                                 <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s" >
-                                <span>SELAMAT DATANG DI SISTEM INFORMASI LABORATORIUM</span><br>
+                                <span style="font-size: 80px;">SELAMAT DATANG</span><br>
+                                <span>DI</span><br>
+                                <span style="font-size: 60px;">SISTEM INFORMASI LABORATORIUM</span><br>
                                 <span class="cd-words-wrapper">
                                     <b class="is-visible">TEKNIK INFORMATIKA</b>
                                     <b>INSTITUT TEKNOLOGI SEPULUH NOPEMBER</b>
@@ -143,12 +124,7 @@
                                 </span>
                                 </h1>
                                 </section> <!-- cd-intro -->
-                                <!-- /.slider -->
-                                <h2 class="wow fadeInUp animated" data-wow-delay=".6s" >
-                                    With 10 years experience, I've occupied many roles including digital design director,<br> web designer and developer. This site showcases some of my work.
-                                </h2>
-                                <a class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" data-wow-delay=".9s" href="#works" data-section="#works" >View Works</a>
-                                
+                                <!-- /.slider -->                                
                             </div>
                         </div>
                     </div>
@@ -182,7 +158,7 @@
                         </div>
                     </div>
                 </div>
-            </section> <!-- /#about --> -->
+            </section> <!-- /#about -->
             <!--
             ==================================================
             Portfolio Section Start
@@ -192,25 +168,25 @@
                     <div class="section-heading">
                         <h1 class="title wow fadeInDown" data-wow-delay=".3s">LABORATORIUM TEKNIK INFORMATIKA</h1>
                         <p class="wow fadeInDown" data-wow-delay=".5s">
-                            Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean posuere <br> tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.
+                            Teknik Informatika ITS memiliki 11 laboratorium. Laboratorium ini berfungsi sebagai penunjang bagi <br> mahasiswa dan dosen dalam melaksanakan kegiatan belajar mengajar. Yuk, kita simak apa saja <br> laboratorium yang ada di Teknik Informatika!
                         </p>
                     </div>
                     <div class="row">
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/lp.jpg" class="img-responsive" alt="this is a title" >
+                                    <img src="{{url('')}}/timer/images/logo/lp.png" class="img-responsive" alt="this is a title" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/lp.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
+                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
+                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
                                         </div>
                                     </div>
                                 </div>
                                 <figcaption>
                                 <h4>
                                 <a href="#">
-                                    Laboratorium Pemrograman
+                                    Workshop Pemrograman
                                 </a>
                                 </h4>
                                 <p>
@@ -222,18 +198,18 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/lp2.png" class="img-responsive" alt="this is a title" >
+                                    <img src="{{url('')}}/timer/images/logo/lpp.png" class="img-responsive" alt="this is a title" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/lp2.png">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
+                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
+                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
                                         </div>
                                     </div>
                                 </div>
                                 <figcaption>
                                 <h4>
                                 <a href="#">
-                                    Workshop Pemrograman
+                                    Laboratorium Pemrograman 2
                                 </a>
                                 </h4>
                                 <p>
@@ -245,11 +221,11 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}//timer/images/logo/alpro1.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}/timer/images/logo/alpro1.jpg" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/alpro1.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
+                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
+                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
                                         </div>
                                     </div>
                                 </div>
@@ -268,11 +244,11 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}//timer/images/portfolio/item-4.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}/timer/images/logo/rpl.png" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/portfolio/item-4.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
+                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
+                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a> 
                                         </div>
                                     </div>
                                 </div>
@@ -291,11 +267,11 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="900ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}//timer/images/logo/mi.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}/timer/images/logo/mi.jpg" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}//timer/images/logo/mi.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
+                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
+                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
                                         </div>
                                     </div>
                                 </div>
@@ -314,11 +290,11 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/ncc.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}/timer/images/logo/ncc.png" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/ncc.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
+                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
+                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
                                         </div>
                                     </div>
                                 </div>
@@ -337,11 +313,11 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/kcv.png" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}/timer/images/logo/kcvkcv.png" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/kcv.png">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
+                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
+                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
                                         </div>
                                     </div>
                                 </div>
@@ -363,8 +339,8 @@
                                     <img src="{{url('')}}/timer/images/logo/igs.jpg" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/igs.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
+                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
+                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
                                         </div>
                                     </div>
                                 </div>
@@ -383,11 +359,11 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/portfolio/item-6.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}/timer/images/logo/mis.png" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/portfolio/item-6.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
+                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
+                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
                                         </div>
                                     </div>
                                 </div>
@@ -406,11 +382,11 @@
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/rpl.jpg" class="img-responsive" alt="" >
+                                    <img src="{{url('')}}/timer/images/logo/rpl.png" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/logo/rpl.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
+                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
+                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
                                         </div>
                                     </div>
                                 </div>
@@ -432,8 +408,8 @@
                                     <img src="{{url('')}}/timer/images/portfolio/item-6.jpg" class="img-responsive" alt="" >
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="{{url('')}}/timer/images/portfolio/item-6.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
+                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
+                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
                                         </div>
                                     </div>
                                 </div>
@@ -572,10 +548,10 @@
             <footer id="footer">
                 <div class="container">
                     <div class="col-md-8">
-                        <p class="copyright">Copyright: <span>2015</span> . Design and Developed by <a href="http://www.Themefisher.com">Themefisher</a></p>
+                        <p class="copyright">Copyright: <span>5114100017-5114100061-5114100702</span> . SI Laboratorium Teknik Informatika</p>
                     </div>
-                    <div class="col-md-4">
-                        <!-- Social Media -->
+                    <!-- <div class="col-md-4">
+                        
                         <ul class="social">
                             <li>
                                 <a href="http://wwww.fb.com/themefisher" class="Facebook">
@@ -598,7 +574,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </footer> <!-- /#footer -->
                 

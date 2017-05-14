@@ -20,4 +20,9 @@ class MhsLBEController extends Controller
     {
     	return view('mhslbe\histori');
     }
+
+    public function unduhmodul()
+    {
+    	return view('mhslbe\downloadmodul');
+    }
 }
