@@ -101,7 +101,7 @@ class AdminController extends Controller
     {
         $this->data['admin'] = DB::select('SELECT * from users WHERE id='.$id)[0];
         // dd($this->data);
-        return view('admin\profil', $this->data);
+        return view('Administrator\profil', $this->data);
     }
 
     public function update_profil(Request $request, $id)
@@ -116,7 +116,7 @@ class AdminController extends Controller
         $profil->alamat_surabaya = $request->get('addsby');
         $profil->agama = $request->get('agama');
         $profil->motivasi = $request->get('motivasi');
-        $profil->password = $request->get('passwd');
+        //$profil->password = $request->get('passwd');
         $profil->save();
 
         return redirect('profil/'.$id);
