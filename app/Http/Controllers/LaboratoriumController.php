@@ -127,48 +127,21 @@ class LaboratoriumController extends Controller
         return redirect('home');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function tambahkan_laboratorium()
     {
-        //
+        return view('Laboratorium\tambahkan-laboratorium');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function save_tambahkan_laboratorium(Request $request)
     {
-        //
+        $laboratorium = new Laboratorium;
+        $laboratorium->nama_lab = $request->nama_lab;
+        $laboratorium->deskripsi_lab = $request->deskripsi_lab;
+        $laboratorium->reservasiable = $request->reservasiable;
+        $laboratorium->save();
+
+        return redirect('list-laboratorium');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

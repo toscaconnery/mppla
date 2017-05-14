@@ -75,8 +75,10 @@ Route::get('pengaturan-laboratorium/{id}', 'LaboratoriumController@pengaturan_la
 Route::post('pengaturan-laboratorium/{id}', 'LaboratoriumController@save_pengaturan_laboratorium');
 Route::get('tambahkan-dosen-laboratorium', 'LaboratoriumController@tambahkan_dosen_laboratorium');
 Route::post('tambahkan-dosen-laboratorium', 'LaboratoriumController@save_tambahkan_dosen_laboratorium');
+Route::get('tambahkan-laboratorium', 'LaboratoriumController@tambahkan_laboratorium');
+Route::post('tambahkan-laboratorium', 'LaboratoriumController@save_tambahkan_laboratorium');
 // Route::get('kegiatanlab', 'LaboratoriumController@kegiatanlab');
-Route::get('deskripsi-lab', 'LaboratoriumController@deskripsi_lab');
+Route::get('deskripsi-laboratorium/{id}', 'LaboratoriumController@deskripsi_lab');
 
 
 /******** HALAMAN PINJAM ********/
