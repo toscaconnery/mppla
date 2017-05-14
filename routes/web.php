@@ -95,8 +95,9 @@ Route::get('decline-peminjaman-laboratorium/{id}', 'PinjamController@decline_pem
 
 
 /******** HALAMAN KEGIATAN *******/
+Route::get('lihat-kegiatan', 'KegiatanController@lihat_kegiatan');
 Route::get('input-kegiatan', 'KegiatanController@input_kegiatan');
-Route::post('input-kegiatan', 'KegiatanController@saveinput_kegiatan');
+Route::post('input-kegiatan', 'KegiatanController@save_input_kegiatan');
 
 
 

@@ -194,28 +194,19 @@
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Kegiatan Laboratorium</h3>
+              <h3 class="box-title">Kegiatan Laboratorium {{$laboratorium->nama_lab}}</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <form role="form" action=" " method="POST">
                 <!-- text input -->
                 <div class="form-group">
-                  <!-- <label>ID Lab</label> -->
-                  <!-- <select name="id_lab">
-                    @foreach($id_lab as $list)
-                      <option value="{{$list->id}}">{{$list->nama_lab}}</option>
-                    @endforeach
-                  </select> -->
-                  <input type="hidden" name="id_lab" value="{{ $id_lab }}">
-                </div>
-
-
-                  <!-- <input type="hidden" name="id_lab" value=""> -->
-                <div class="form-group">
-                  <label>Judul</label>
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                  <input type="text" class="form-control" name="judul" placeholder="Judul">
+                  <input type="hidden" name="id_lab" value="{{ $laboratorium->id }}">
+                </div>
+                <div class="form-group">
+                  <label>Nama kegiatan</label>
+                  <input type="text" class="form-control" name="nama_kegiatan" placeholder="Judul">
                 </div>
 
                 <!-- Date -->
@@ -226,15 +217,21 @@
                     <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="text" class="form-control pull-right" name="tgl" id="datepicker">
+                    <input type="date" class="form-control pull-right" name="tanggal" id="datepicker">
                   </div>
                   <!-- /.input group -->
                 </div>
-
-                <!-- textarea -->
                 <div class="form-group">
-                  <label>Kegiatan</label>
-                  <textarea class="form-control" rows="5" name="kegiatan" placeholder="Deskripsi..."></textarea>
+                  <label>Jam mulai</label>
+                  <input type="time" name="jam_mulai"  class="form-control" >
+                </div>
+                <div class="form-group">
+                  <label>Jam selesai</label>
+                  <input type="time" name="jam_selesai"  class="form-control" >
+                </div>
+                <div class="form-group">
+                  <label>Silahkan deskripsikan kegiatan tersebut :</label>
+                  <input type="text" name="deskripsi"  class="form-control" >
                 </div>
 
                 <div class="box-footer">
