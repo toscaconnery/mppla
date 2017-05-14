@@ -190,11 +190,10 @@
     <section class="content-header">
     <div class="row">
             <div class="col-xs-12">
-            @foreach($lab as $listLab)
               <div class="box">
                 <div class="box-header">
                 
-                  <h3 class="box-title" style="font-weight: bold;">Dosen {{$listLab['namaLab']}}</h3>  
+                  <h3 class="box-title" style="font-weight: bold;">Dosen Teknik Informatika ITS</h3>  
                   <!-- ntar nama labnya diambil dari database -->
                 </div>
                 <!-- /.box-header -->
@@ -208,21 +207,20 @@
                       <th>Alamat</th>
                       <th>Action</th>
                     </tr>
-                    @foreach($dosen[$listLab['id']] as $listDosen)
+                    @foreach($dosen as $dosen)
                       <tr>
-                        <td>{{$listDosen['nip']}}</td>
-                        <td><a href="{{url('')}}/detail_dosen/{{$listDosen['nip']}}">{{$listDosen['nama']}}</a></td>
-                        <td>{{$listDosen['email']}}</td>
-                        <td>{{$listDosen['no_hp']}}</td>
-                        <td>{{$listDosen['alamat']}}</td>
-                        <td><a href="{{url('')}}/edit_dosen/{{$listDosen['id']}}">Edit</a></td>
+                        <td>{{$dosen->nip}}</td>
+                        <td><a href="{{url('')}}/detail_dosen/{{$dosen->id}}">{{$dosen->nama}}</a></td>
+                        <td>{{$dosen->email}}</td>
+                        <td>{{$dosen->no_hp}}</td>
+                        <td>{{$dosen->alamat}}</td>
+                        <td><a href="{{url('')}}/edit_dosen/{{$dosen->id}}">Edit</a></td>
                       </tr>
                     @endforeach
                   </table>
                 </div>
                 <!-- /.box-body -->
               </div>
-              @endforeach
               <!-- /.box -->
             </div>
           </div>
