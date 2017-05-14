@@ -17,7 +17,7 @@ class DosenController extends Controller
     	return view('Dosen\tambah-dosen', $this->data);
     }
 
-    public function store_dosen(Request $request)
+    public function store_tambahkan_dosen(Request $request)
     {
     	$dosen = new Dosen;
     	$dosen->id_lab = $request->get('id_lab');
