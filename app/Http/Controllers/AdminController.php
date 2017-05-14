@@ -40,7 +40,7 @@ class AdminController extends Controller
         return view('admin\inputadmin');
     }
 
-    public function list_admin()
+    public function list_administrator()
     {
         $this->data['administrator'] = DB::select('SELECT u.*, l.nama_lab
                                                     FROM users u, laboratorium l
