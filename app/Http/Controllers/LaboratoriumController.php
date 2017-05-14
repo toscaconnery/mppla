@@ -45,6 +45,22 @@ class LaboratoriumController extends Controller
         return view('Laboratorium\create', $this->data);
     }
 
+    public function edit_deskripsi_laboratorium($id)
+    {
+        $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l WHERE l.id = '.$id)[0];
+
+        return view('Laboratorium\edit-deskripsi-laboratorium', $this->data);
+    }
+
+    public function save_edit_deskripsi_laboratorium(Request $request, $id)
+    {
+        $laboratorium = Laboratorium::find($id);
+        $laboratorium->deskripsi_lab = $request->deskripsi_lab;
+        $laboratorium->save();
+
+        return redirect('list-laboratorium');
+    }
+
     // public function tambah_deskripsi_lab()
     // {
     //     return view('timer\input_deskripsi');

@@ -213,6 +213,7 @@
                         <td>{{$list->deskripsi_lab}}</td>
                         <td>{{$list->reservasiable}}</td>
                         <td><a href="{{url('')}}/pengaturan-laboratorium/{{$list->id}}">Config Lab</a></td>
+                        <td><a href="{{url('')}}/edit-deskripsi-laboratorium/{{$list->id}}">Edit Description</a></td>
                       </tr>
                     @endforeach
                   </table>

@@ -22,8 +22,8 @@ Route::get('home', function () {
 });
 
 
-Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
-Route::post('inputdeskripsi', 'AdminController@inputdesc');
+//Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
+//Route::post('inputdeskripsi', 'AdminController@inputdesc');
 Route::get('inputfasil', 'FasilController@input_fasil');
 Route::post('inputfasil', 'FasilController@inputfasil');
 Route::get('listfasil', 'FasilController@list_fasil');
@@ -77,6 +77,8 @@ Route::get('tambahkan-dosen-laboratorium', 'LaboratoriumController@tambahkan_dos
 Route::post('tambahkan-dosen-laboratorium', 'LaboratoriumController@save_tambahkan_dosen_laboratorium');
 Route::get('tambahkan-laboratorium', 'LaboratoriumController@tambahkan_laboratorium');
 Route::post('tambahkan-laboratorium', 'LaboratoriumController@save_tambahkan_laboratorium');
+Route::get('edit-deskripsi-laboratorium/{id}', 'LaboratoriumController@edit_deskripsi_laboratorium');
+Route::post('edit-deskripsi-laboratorium/{id}', 'LaboratoriumController@save_edit_deskripsi_laboratorium');
 // Route::get('kegiatanlab', 'LaboratoriumController@kegiatanlab');
 Route::get('deskripsi-laboratorium/{id}', 'LaboratoriumController@deskripsi_lab');
 

@@ -13,23 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- daterange picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
-    <!-- bootstrap datepicker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
-    <!-- iCheck for checkboxes and radio inputs -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/all.css">
-    <!-- Bootstrap Color Picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/colorpicker/bootstrap-colorpicker.min.css">
-    <!-- Bootstrap time Picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/timepicker/bootstrap-timepicker.min.css">
-    <!-- Select2 -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/select2/select2.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/skins/_all-skins.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/flat/blue.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/morris/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   </head>
   
   <body class="hold-transition skin-blue sidebar-mini">
@@ -41,7 +41,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Dosen</b>Laboratorium</span> <!--nanti pake nama lab dari database-->
+        <span class="logo-lg"><b>Admin</b>LP2</span> <!--nanti pake nama lab dari database-->
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -52,10 +52,14 @@
 
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
+            <!-- Messages: style can be found in dropdown.less-->
+            <!-- Notifications: style can be found in dropdown.less -->
+            <!-- Tasks: style can be found in dropdown.less -->
+            <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="{{url('')}}/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                <span class="hidden-xs"></span>
+                <span class="hidden-xs">Nafia Rizky Yogayana</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
@@ -190,31 +194,31 @@
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Kegiatan Laboratorium</h3>
+              <h3 class="box-title">Deskripsi Laboratorium</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <form role="form" action="" method="POST">
+                <!-- text input -->
+                {{ csrf_field() }}
+
                 <div class="form-group">
-                  <label>Pilih Laboratorium</label>
-                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                  <br>
+                  <label>{{$laboratorium->nama_lab}}</label>
                 </div>
+
+                <!-- <div class="form-group">
+                  <label>Judul</label>
+                  <input type="text" class="form-control" placeholder="Judul">
+                </div> -->
+
+                <!-- textarea -->
                 <div class="form-group">
-                  <label>Nama Laboratorium</label>
-                  <input type="text" name="nama_lab">
+                  <label>Deskripsi</label>
+                  <textarea name="deskripsi_lab" class="form-control" rows="5">{{$laboratorium->deskripsi_lab}}</textarea>
                 </div>
-                <div class="form-group">
-                  <label>Deskripsi Laboratorium</label>
-                  <textarea name="deskripsi_lab" class="form-control" rows="5"></textarea>
-                </div>
-                <div class="form-group">
-                  <label>Reservasi</label><br>
-                  <input type="radio" name="reservasiable" value="1">Bisa direservasi<br>
-                  <input type="radio" name="reservasiable" value="0">Tidak bisa direservasi<br>
-                </div>
+
                 <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">Simpan Data</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
             </div>
@@ -278,13 +282,5 @@
 <script src="{{url('')}}/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('')}}/admin/dist/js/demo.js"></script>
-
-<script>
-  //Date picker
-    $('#datepicker').datepicker({
-      format: 'yyyy-mm-dd'
-      autoclose: true
-    });
-</script>
 </body>
 </html>
