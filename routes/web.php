@@ -39,7 +39,7 @@ Route::get('detailuser', 'AdminController@detailuser');
 
 /******** HALAMAN ADMIN *******/
 Route::get('inputadmin', 'AdminController@input_admin');
-Route::get('list-admin', 'AdminController@list_admin');
+Route::get('list-administrator', 'AdminController@list_administrator');
 Route::get('index-admin', 'AdminController@index');
 Route::get('jadikan_admin/{id}', 'AdminController@jadikan_admin');
 Route::post('update_jadikan_admin/{id}', 'AdminController@update_jadikan_admin');

@@ -35,7 +35,7 @@ class AdminController extends Controller
         return redirect('inputdeskripsi')->with('message','Updated');
     }
 
-    public function input_admin()
+    public function input_administrator()
     {
         return view('admin\inputadmin');
     }
@@ -46,6 +46,7 @@ class AdminController extends Controller
                                                     FROM users u, laboratorium l
                                                     WHERE u.is_admin = 1
                                                     AND l.id = u.id_lab');
+        //dd($this->data['administrator']);
         return view('Administrator\list-administrator', $this->data);
     }
 

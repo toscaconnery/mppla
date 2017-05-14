@@ -205,7 +205,6 @@
                       <th>NRP</th>
                       <th>Laboratorium</th>
                       <th>No. Handphone</th>
-                      <th>Angkatan</th>
                       <th><i class="fa fa-edit"></i></th>
                     </tr>
                     @php
@@ -218,7 +217,6 @@
                         <td>{{$data->nrp}}</td>
                         <td>{{$data->nama_lab}}</td>
                         <td>{{$data->no_hp}}</td>
-                        <td>{{$data->angkatan}}</td>
                       </tr>
                     @endforeach
                     <!-- <tr>
