@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html class="no-js">
     <head>
@@ -92,8 +93,19 @@
                             </li>
                             <li><a href="{{url('')}}/">Home</a></li>
                             <li><a href="#works">Laboratorium</a></li>
+                            @if(Auth::check())
+                                @if(Auth::user()->is_admin == 1)
+                                    <li><a href="{{url('')}}/index-admin">Dashboard</a></li>
+                                @else
+                                    <li><a href="{{url('')}}/lihattugas">Dashboard</a></li>
+                                @endif
+                            @endif
                             <li><a href="service.html">Reservasi</a></li>
-                            <li><a href="contact.html">Login</a></li>
+                            @if(Auth::check())
+                                <li><a href="#">Logout</a></li>
+                            @else
+                                <li><a href="{{url('')}}/login">Login</a></li>
+                            @endif
                         </ul>
                     </div>
                 </nav>
