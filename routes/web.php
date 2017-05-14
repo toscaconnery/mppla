@@ -24,9 +24,9 @@ Route::get('home', function () {
 
 //Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
 //Route::post('inputdeskripsi', 'AdminController@inputdesc');
-Route::get('inputfasil', 'FasilController@input_fasil');
-Route::post('inputfasil', 'FasilController@inputfasil');
-Route::get('listfasil', 'FasilController@list_fasil');
+// Route::get('inputfasil', 'FasilController@input_fasil');
+// Route::post('inputfasil', 'FasilController@inputfasil');
+
 
 
 
@@ -79,6 +79,11 @@ Route::get('tambahkan-laboratorium', 'LaboratoriumController@tambahkan_laborator
 Route::post('tambahkan-laboratorium', 'LaboratoriumController@save_tambahkan_laboratorium');
 Route::get('edit-deskripsi-laboratorium/{id}', 'LaboratoriumController@edit_deskripsi_laboratorium');
 Route::post('edit-deskripsi-laboratorium/{id}', 'LaboratoriumController@save_edit_deskripsi_laboratorium');
+Route::get('tambahkan-fasilitas-laboratorium', 'LaboratoriumController@tambahkan_fasilitas_laboratorium');
+Route::post('tambahkan-fasilitas-laboratorium', 'LaboratoriumController@save_tambahkan_fasilitas_laboratorium');
+Route::get('edit-fasilitas-laboratorium/{id}', 'LaboratoriumController@edit_fasilitas_laboratorium');
+Route::post('edit-fasilitas-laboratorium/{id}', 'LaboratoriumController@save_edit_fasilitas_laboratorium');
+Route::get('list-fasilitas-laboratorium', 'LaboratoriumController@list_fasilitas_laboratorium');
 // Route::get('kegiatanlab', 'LaboratoriumController@kegiatanlab');
 Route::get('deskripsi-laboratorium/{id}', 'LaboratoriumController@deskripsi_lab');
 
@@ -117,5 +122,3 @@ Route::get('modul', 'MhsLBEController@unduhmodul');
 
 
 Auth::routes();
-
-Auth::logout();
