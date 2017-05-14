@@ -15,7 +15,7 @@ class KegiatanController extends Controller
     {
         $this->data['id_lab'] = Auth::user();
         dd($this->data['id_lab']);
-        return view('admin\inputkegiatan', $this->data);
+        return view('Kegiatan\input-kegiatan-laboratorium', $this->data);
     }
 
     public function inputkegiatan(Request $request)

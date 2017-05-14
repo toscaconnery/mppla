@@ -28,9 +28,7 @@ Route::get('inputfasil', 'FasilController@input_fasil');
 Route::post('inputfasil', 'FasilController@inputfasil');
 Route::get('listfasil', 'FasilController@list_fasil');
 
-/******** HALAMAN KEGIATAN *******/
-Route::get('inputkegiatan', 'KegiatanController@input_kegiatan');
-Route::post('inputkegiatan', 'KegiatanController@inputkegiatan');
+
 
 //Menampilkan halaman melihat data user lain
 Route::get('lihatuser', 'AdminController@lihatuser');
@@ -77,7 +75,7 @@ Route::get('pengaturan-laboratorium/{id}', 'LaboratoriumController@pengaturan_la
 Route::post('pengaturan-laboratorium/{id}', 'LaboratoriumController@save_pengaturan_laboratorium');
 Route::get('tambahkan-dosen-laboratorium', 'LaboratoriumController@tambahkan_dosen_laboratorium');
 Route::post('tambahkan-dosen-laboratorium', 'LaboratoriumController@save_tambahkan_dosen_laboratorium');
-Route::get('kegiatanlab', 'LaboratoriumController@kegiatanlab');
+// Route::get('kegiatanlab', 'LaboratoriumController@kegiatanlab');
 Route::get('deskripsi-lab', 'LaboratoriumController@deskripsi_lab');
 
 
@@ -85,12 +83,22 @@ Route::get('deskripsi-lab', 'LaboratoriumController@deskripsi_lab');
 Route::get('lakukan-reservasi-laboratorium', 'PinjamController@lakukan_reservasi');
 Route::post('lakukan-reservasi-laboratorium', 'PinjamController@save_lakukan_reservasi');
 Route::get('lihat-jadwal-reservasi-laboratorium', 'PinjamController@lihat_jadwal_reservasi');
-Route::get('pinjam', 'PinjamController@index');
-Route::post('pinjam', 'PinjamController@lakukan_reservasi');
-Route::get('lihat_jadwal','PinjamController@lihat_jadwal');
-Route::get('lihatjadwal','PinjamController@Melihat_jadwal_lab');
-Route::get('verifpeminjaman', 'PinjamController@verif_pinjam');
-Route::get('listpeminjaman', 'PinjamController@list_pinjam');
+Route::get('lihat-semua-jadwal-reservasi-laboratorium', 'PinjamController@lihat_semua_jadwal_reservasi');
+Route::get('accept-peminjaman-laboratorium/{id}', 'PinjamController@accept_peminjaman_laboratorium');
+Route::get('decline-peminjaman-laboratorium/{id}', 'PinjamController@decline_peminjaman_laboratorium');
+// Route::get('pinjam', 'PinjamController@index');
+// Route::post('pinjam', 'PinjamController@lakukan_reservasi');
+// Route::get('lihat_jadwal','PinjamController@lihat_jadwal');
+// Route::get('lihatjadwal','PinjamController@Melihat_jadwal_lab');
+// Route::get('verifpeminjaman', 'PinjamController@verif_pinjam');
+// Route::get('listpeminjaman', 'PinjamController@list_pinjam');
+
+
+/******** HALAMAN KEGIATAN *******/
+Route::get('input-kegiatan', 'KegiatanController@input_kegiatan');
+Route::post('input-kegiatan', 'KegiatanController@saveinput_kegiatan');
+
+
 
 /******** HALAMAN UNTUK MHS LBE *******/
 //Menampilkan halaman untuk melihat tugas LBE
