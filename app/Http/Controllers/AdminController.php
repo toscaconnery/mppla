@@ -97,9 +97,29 @@ class AdminController extends Controller
         return view('admin\detailuser');
     }
 
-    public function profil()
+    public function profil($id)
     {
-        return view('admin\profil');
+        $this->data['admin'] = DB::select('SELECT * from users WHERE id='.$id)[0];
+        // dd($this->data);
+        return view('admin\profil', $this->data);
+    }
+
+    public function update_profil(Request $request, $id)
+    {
+        $profil = User::find($id);
+        $profil->name = $request->get('nama');
+        $profil->email = $request->get('email');
+        $profil->no_hp = $request->get('nohp');
+        $profil->tanggal_lahir = $request->get('tgllahir');
+        $profil->tempat_lahir = $request->get('tempatlhr');
+        $profil->alamat_asal = $request->get('asal');
+        $profil->alamat_surabaya = $request->get('addsby');
+        $profil->agama = $request->get('agama');
+        $profil->motivasi = $request->get('motivasi');
+        $profil->password = $request->get('passwd');
+        $profil->save();
+
+        return redirect('profil/'.$id);
     }
 
     public function nyobamaster()

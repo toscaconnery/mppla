@@ -26,7 +26,7 @@ class DosenController extends Controller
     	$dosen->no_hp = $request->get('no_hp');
     	$dosen->alamat = $request->get('alamat');
     	$dosen->save();
-    	return redirect('home');
+    	return redirect('Dosen\list-dosen');
     }
 
     public function list_dosen()

@@ -66,7 +66,8 @@ Route::post('edit-dosen/{id}', 'DosenController@update_dosen');
 /******** HALAMAN USER *******/
 Route::get('list_user', 'UserController@list_user');
 //Menampilkan halaman untuk mengubah profil diri
-Route::get('profil', 'AdminController@profil');
+Route::get('profil/{id}', 'AdminController@profil');
+Route::post('profil/{id}', 'AdminController@update_profil');
 
 
 /******** HALAMAN LABORATORIUM *******/

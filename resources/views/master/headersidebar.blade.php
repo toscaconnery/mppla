@@ -42,7 +42,7 @@
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="{{url('')}}/profil" class="btn btn-default btn-flat">Profile</a>
+                <a href="{{url('')}}/profil/{{Auth::user()->id}}" class="btn btn-default btn-flat">Profile</a>
               </div>
               <div class="pull-right">
                 <a href="#" class="btn btn-default btn-flat">Sign out</a>
@@ -97,6 +97,7 @@
         <ul class="treeview-menu">
           <li><a href="{{url('')}}/inputdeskripsi"><i class="fa fa-circle-o"></i> Deskripsi</a></li>
           <li><a href="{{url('')}}/inputkegiatan"><i class="fa fa-circle-o"></i> Input Kegiatan</a></li>
+          <li><a href="{{url('')}}/lihat-kegiatan"><i class="fa fa-circle-o"></i> Daftar Kegiatan</a></li>
           <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Editors</a></li> -->
         </ul>
       </li>
