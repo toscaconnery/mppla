@@ -210,11 +210,11 @@
                     @foreach($dosen as $dosen)
                       <tr>
                         <td>{{$dosen->nip}}</td>
-                        <td><a href="{{url('')}}/detail_dosen/{{$dosen->id}}">{{$dosen->nama}}</a></td>
+                        <td><a href="{{url('')}}/detail-dosen/{{$dosen->id}}">{{$dosen->nama}}</a></td>
                         <td>{{$dosen->email}}</td>
                         <td>{{$dosen->no_hp}}</td>
                         <td>{{$dosen->alamat}}</td>
-                        <td><a href="{{url('')}}/edit_dosen/{{$dosen->id}}">Edit</a></td>
+                        <td><a href="{{url('')}}/edit-dosen/{{$dosen->id}}">Edit</a></td>
                       </tr>
                     @endforeach
                   </table>

@@ -58,9 +58,9 @@ Route::get('inputmodul', 'ModulController@inputmodul');
 Route::get('tambahkan-dosen', 'DosenController@tambahkan_dosen');
 Route::post('tambahkan-dosen', 'DosenController@store_tambahkan_dosen');
 Route::get('list-dosen', 'DosenController@list_dosen');
-Route::get('detail_dosen/{id}', 'DosenController@detail_dosen');
-Route::get('edit_dosen/{id}', 'DosenController@edit_dosen');
-Route::post('edit_dosen/{id}', 'DosenController@update_dosen');
+Route::get('detail-dosen/{id}', 'DosenController@detail_dosen');
+Route::get('edit-dosen/{id}', 'DosenController@edit_dosen');
+Route::post('edit-dosen/{id}', 'DosenController@update_dosen');
 
 
 /******** HALAMAN USER *******/
