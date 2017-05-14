@@ -17,6 +17,7 @@ class CreatePinjamTable extends Migration
             $table->increments('id');
             $table->integer('id_lab');
             $table->string('peminjam');
+            $table->string('no_hp');
             $table->string('email');
             $table->string('keperluan');
             $table->date('tanggal');

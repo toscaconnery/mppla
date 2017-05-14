@@ -12,11 +12,70 @@ class PinjamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    // public function index()
+    // {
+    //     $this->data['laboratorium'] = DB::select('SELECT nama_lab, id FROM laboratorium');
+    //     return view('Pinjam\index',$this->data);
+    // }
+
+    public function lakukan_reservasi()
     {
-        $this->data['laboratorium'] = DB::select('SELECT nama_lab, id FROM laboratorium');
-         return view('Pinjam\pinjam',$this->data);
+        $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l');
+        return view('Pinjam\lakukan-reservasi-laboratorium', $this->data);
     }
+
+    public function save_lakukan_reservasi(Request $request)
+    {
+        $pinjam = new Pinjam;
+        $pinjam->id_lab = $request->id_lab;
+        $pinjam->peminjam = $request->peminjam;
+        $pinjam->no_hp = $request->no_hp;
+        $pinjam->email = $request->email;
+        $pinjam->keperluan = $request->keperluan;
+        $pinjam->tanggal = $request->tanggal;
+        $pinjam->jam_mulai = $request->jam_mulai;
+        $pinjam->jam_selesai = $request->jam_selesai;
+        $pinjam->status_verif = 0;
+        $pinjam->save();
+        return redirect('/');
+    }
+
+    public function lihat_jadwal_reservasi()
+    {
+        $this->data['jadwal'] = DB::select('SELECT p.*, l.nama_lab
+                                            FROM pinjam p, laboratorium l 
+                                            WHERE p.tanggal > CURDATE()
+                                            AND l.id = p.id_lab
+                                            AND p.status_verif = 1');
+        return view('Pinjam\lihat-jadwal-reservasi-laboratorium', $this->data);
+    }
+
+    public function lihat_semua_jadwal_reservasi()
+    {
+        $this->data['jadwal'] = DB::select('SELECT p.*, l.nama_lab
+                                            FROM pinjam p, laboratorium l
+                                            WHERE p.tanggal > CURDATE()
+                                            AND l.id = p.id_lab
+                                            ');
+        return view('Pinjam\lihat-semua-jadwal-reservasi-laboratorium', $this->data);
+    }
+
+    public function accept_peminjaman_laboratorium($id)
+    {
+        $data = Pinjam::find($id);
+        $data->status_verif = 1;
+        $data->save();
+        return redirect('lihat-semua-jadwal-reservasi-laboratorium');
+    }
+
+    public function decline_peminjaman_laboratorium($id)
+    {
+        $data = Pinjam::find($id);
+        $data->status_verif = 2;
+        $data->save();
+        return redirect('lihat-semua-jadwal-reservasi-laboratorium');
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -83,20 +142,7 @@ class PinjamController extends Controller
     {
         //
     }
-     public function lakukan_reservasi(Request $request)
-    {
-        $reservasi= new Pinjam;
-        $reservasi->id_lab = $request->id_lab;
-        $reservasi->tanggal = $request->tanggal;
-        $reservasi->jam_mulai = $request->jam_mulai; 
-        $reservasi->jam_selesai = $request->jam_selesai;
-        $reservasi->nrp = $request->nrp;
-        $reservasi->peminjam = $request->peminjam;  
-        $reservasi->keperluan = $request->keperluan;
-        $reservasi->status_verif = 0;
-        $reservasi->save();
-        return redirect('jadwal-lab'); 
-    }
+    
 
      public function melihat_jadwal_lab()
     {

@@ -67,10 +67,7 @@ class LaboratoriumController extends Controller
      * untuk halaman jadwal pinjam lab
     */
 
-    public function lihat_jadwal_reservasi()
-    {
-        return view('timer\lihat-jadwal-reservasi');
-    }
+    
 
     /**
      * Store a newly created resource in storage.

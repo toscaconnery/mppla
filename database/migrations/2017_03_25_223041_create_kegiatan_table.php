@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class LbeTable extends Migration
+class CreateKegiatanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class LbeTable extends Migration
      */
     public function up()
     {
-        //LBE table
-        Schema::create('lbe', function( Blueprint $table) {
+        //Kegiatan table
+        Schema::create('kegiatan', function( Blueprint $table) {
             $table->increments('id');
             $table->integer('id_lab');
+            $table->date('tanggal');
+            $table->time('jam_mulai')->nullable();
+            $table->time('jam_selesai')->nullable();
+            $table->string('nama_kegiatan');
             $table->string('deskripsi');
             $table->softDeletes();
             $table->timestamps();
@@ -30,7 +34,7 @@ class LbeTable extends Migration
      */
     public function down()
     {
-        //LBE table
-        Schema::drop('lbe');
+        //Kegiatan table
+        Schema::drop('kegiatan');
     }
 }

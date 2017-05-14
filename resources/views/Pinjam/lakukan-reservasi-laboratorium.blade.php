@@ -85,13 +85,26 @@
                     @endforeach
                   </select>
                 </div>
-
-                <!-- Date -->
-                 <div class="form-group">
+                <div class="form-group">
+                  <label>Nama Lengkap:</label>
+                  <input type="text" name="peminjam" class="form-control" >
+                </div>
+                <div class="form-group">
+                  <label>No. Telepon:</label>
+                  <input type="text" name="no_hp" class="form-control" >
+                </div>
+                <div class="form-group">
+                  <label>Email:</label>
+                  <input type="text" name="email" class="form-control" >
+                </div>
+                <div class="form-group">
+                  <label>Keperluan:</label>
+                  <input type="text" name="keperluan" class="form-control" >
+                </div>
+                <div class="form-group">
                   <label>Tanggal:</label>
                   <input type="date" name="tanggal" class="form-control" >
                 </div>
-
                 <div class="form-group">
                   <label>Jam Mulai:</label>
                   <input type="time" name="jam_mulai"  class="form-control" >
@@ -102,20 +115,8 @@
                   <input type="time" name="jam_selesai"  class="form-control" >
                 </div>
 
-                  <div class="form-group">
-                  <label>NRP:</label>
-                  <input type="text" name="nrp" class="form-control" >
-                </div>
 
-                <div class="form-group">
-                  <label>Peminjam:</label>
-                  <input type="text" name="peminjam" class="form-control" >
-                </div>
-
-                <div class="form-group">
-                  <label>Keperluan:</label>
-                  <input type="text" name="keperluan" class="form-control" >
-                </div>
+                
 
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
 
