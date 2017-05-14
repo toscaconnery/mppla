@@ -113,4 +113,3 @@ Route::get('modul', 'MhsLBEController@unduhmodul');
 
 
 Auth::routes();
-
