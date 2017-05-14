@@ -20,7 +20,6 @@ class DosenController extends Controller
     public function store_tambahkan_dosen(Request $request)
     {
     	$dosen = new Dosen;
-    	$dosen->id_lab = $request->get('id_lab');
     	$dosen->nip = $request->get('nip');
     	$dosen->nama = $request->get('nama');
     	$dosen->email = $request->get('email');

@@ -57,7 +57,7 @@ Route::get('inputmodul', 'ModulController@inputmodul');
 /******** HALAMAN DOSEN *******/
 Route::get('tambahkan-dosen', 'DosenController@tambahkan_dosen');
 Route::post('tambahkan-dosen', 'DosenController@store_tambahkan_dosen');
-Route::get('list_dosen', 'DosenController@list_dosen');
+Route::get('list-dosen', 'DosenController@list_dosen');
 Route::get('detail_dosen/{id}', 'DosenController@detail_dosen');
 Route::get('edit_dosen/{id}', 'DosenController@edit_dosen');
 Route::post('edit_dosen/{id}', 'DosenController@update_dosen');

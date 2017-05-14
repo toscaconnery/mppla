@@ -200,15 +200,7 @@
             <div class="box-body">
               <form role="form" action="" method="POST">
                 <!-- text input -->
-                <div class="form-group">
-                  <label>ID Lab</label>
-                  <select name="id_lab">
-                    @foreach($laboratorium as $list)
-                      <option value="{{$list->id}}">{{$list->nama_lab}}</option>
-                    @endforeach
-                  </select>
-                </div>
-                  <!-- <input type="hidden" name="id_lab" value=""> -->
+                <!-- <input type="hidden" name="id_lab" value=""> -->
                 <div class="form-group">
                   <label>Nama Dosen</label>
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
