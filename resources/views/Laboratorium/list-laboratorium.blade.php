@@ -209,7 +209,7 @@
                     @foreach($laboratorium as $list)
                       <tr>
                         <td>{{$list->id}}</td>
-                        <td>{{$list->nama_lab}}</td>
+                        <td><a href="{{url('')}}/deskripsi-laboratorium/{{$list->id}}">{{$list->nama_lab}}</a></td>
                         <td>{{$list->deskripsi_lab}}</td>
                         <td>{{$list->reservasiable}}</td>
                         <td><a href="{{url('')}}/pengaturan-laboratorium/{{$list->id}}">Config Lab</a></td>

@@ -22,9 +22,10 @@ class LaboratoriumController extends Controller
         return view('Laboratorium\index', $this->data);
     }
 
-    public function deskripsi_lab()
+    public function deskripsi_lab($id)
     {
-        return view('timer\deskripsi_lab');
+        $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l WHERE l.id = '.$id)[0];
+        return view('Laboratorium\deskripsi-laboratorium', $this->data);
     }
 
     public function kegiatanlab()
