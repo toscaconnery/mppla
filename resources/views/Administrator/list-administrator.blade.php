@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -192,31 +193,60 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                
-                  <h3 class="box-title" style="font-weight: bold;">Dosen Teknik Informatika ITS</h3>  
+                  <h3 class="box-title" style="font-weight: bold;">Administrator Laboratorium Pemrograman 2</h3>  
                   <!-- ntar nama labnya diambil dari database -->
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
                     <tr>
-                      <th>NIP</th>
+                      <th>No</th>
                       <th>Nama</th>
-                      <th>Email</th>
-                      <th>Telepon</th>
-                      <th>Alamat</th>
-                      <th>Action</th>
+                      <th>NRP</th>
+                      <th>Laboratorium</th>
+                      <th>No. Handphone</th>
+                      <th><i class="fa fa-edit"></i></th>
                     </tr>
-                    @foreach($dosen as $dosen)
+                    @php
+                      $x = 1;
+                    @endphp
+                    @foreach($administrator as $data)
                       <tr>
-                        <td>{{$dosen->nip}}</td>
-                        <td><a href="{{url('')}}/detail-dosen/{{$dosen->id}}">{{$dosen->nama}}</a></td>
-                        <td>{{$dosen->email}}</td>
-                        <td>{{$dosen->no_hp}}</td>
-                        <td>{{$dosen->alamat}}</td>
-                        <td><a href="{{url('')}}/edit-dosen/{{$dosen->id}}">Edit</a></td>
+                        <td>{{$x++}}</td>
+                        <td>{{$data->name}}</td>
+                        <td>{{$data->nrp}}</td>
+                        <td>{{$data->nama_lab}}</td>
+                        <td>{{$data->no_hp}}</td>
                       </tr>
                     @endforeach
+                    <!-- <tr>
+                      <td>183</td>
+                      <td>John Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-success">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>219</td>
+                      <td>Alexander Pierce</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-warning">Pending</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>657</td>
+                      <td>Bob Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-primary">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>175</td>
+                      <td>Mike Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-danger">Denied</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr> -->
                   </table>
                 </div>
                 <!-- /.box-body -->

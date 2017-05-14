@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -169,7 +170,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa  fa-calendar-minus-o"></i> <span>Peminjaman Lab</span>
+            <i class="fa fa-calendar-minus-o"></i> <span>Peminjaman Lab</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -188,35 +189,65 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-    <div class="row">
-            <div class="col-xs-12">
+    <div class="row" >
+            <div class="col-md-8" >
               <div class="box">
                 <div class="box-header">
-                
-                  <h3 class="box-title" style="font-weight: bold;">Dosen Teknik Informatika ITS</h3>  
+                  <h3 class="box-title" style="font-weight: bold;">List Fasilitas Laboratorium Pemrograman 2</h3>  
                   <!-- ntar nama labnya diambil dari database -->
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
                     <tr>
-                      <th>NIP</th>
-                      <th>Nama</th>
-                      <th>Email</th>
-                      <th>Telepon</th>
-                      <th>Alamat</th>
-                      <th>Action</th>
+                      <th>ID</th>
+                      <th>Nama Fasilitas</th>
+                      <th>Tahun Masuk</th>
+                      <th>Jumlah</th>
+                      <th>Kondisi</th>
+                      <th><i class="fa fa-edit"></i></th>
                     </tr>
-                    @foreach($dosen as $dosen)
+
+                    @if(isset($listfasil))
+                      @foreach ($listfasil as $listfasil)                    
                       <tr>
-                        <td>{{$dosen->nip}}</td>
-                        <td><a href="{{url('')}}/detail-dosen/{{$dosen->id}}">{{$dosen->nama}}</a></td>
-                        <td>{{$dosen->email}}</td>
-                        <td>{{$dosen->no_hp}}</td>
-                        <td>{{$dosen->alamat}}</td>
-                        <td><a href="{{url('')}}/edit-dosen/{{$dosen->id}}">Edit</a></td>
+                        <td>{{$listfasil->id}}</td>
+                        <td>{{$listfasil->nama_fasil}}</td>
+                        <td>{{$listfasil->tahun_masuk}}</td>
+                        <td>{{$listfasil->jumlah}}</td>
+                        <td>{{$listfasil->kondisi}}</td>
+                        <td><a href="{{url('')}}\edit-fasilitas-laboratorium\{{$listfasil->id}}">Ubah</a></td>
                       </tr>
-                    @endforeach
+                      @endforeach
+                      @endif
+                    <!-- <tr>
+                      <td>183</td>
+                      <td>John Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-success">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>219</td>
+                      <td>Alexander Pierce</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-warning">Pending</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>657</td>
+                      <td>Bob Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-primary">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>175</td>
+                      <td>Mike Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="label label-danger">Denied</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr> -->
                   </table>
                 </div>
                 <!-- /.box-body -->
@@ -242,7 +273,7 @@
 
 <!-- jQuery 2.2.3 -->
 <script src="{{url('')}}/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- jQuery UI 1.11.4 --> 
+<!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
@@ -264,7 +295,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
-<script src="{{url('')}}/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->

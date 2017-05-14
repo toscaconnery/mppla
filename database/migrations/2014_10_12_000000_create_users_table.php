@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('alamat_surabaya')->nullable();
             $table->string('agama')->nullable();
             $table->string('motivasi')->nullable();
+            $table->bigInteger('nrp')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

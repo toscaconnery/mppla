@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,23 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/all.css">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/colorpicker/bootstrap-colorpicker.min.css">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/timepicker/bootstrap-timepicker.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{url('')}}/admin/plugins/select2/select2.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{url('')}}/admin/dist/css/skins/_all-skins.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/iCheck/flat/blue.css">
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/morris/morris.css">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/datepicker/datepicker3.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   </head>
   
   <body class="hold-transition skin-blue sidebar-mini">
@@ -189,45 +190,58 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
     <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
-                <div class="box-header">
-                
-                  <h3 class="box-title" style="font-weight: bold;">Dosen Teknik Informatika ITS</h3>  
-                  <!-- ntar nama labnya diambil dari database -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tr>
-                      <th>NIP</th>
-                      <th>Nama</th>
-                      <th>Email</th>
-                      <th>Telepon</th>
-                      <th>Alamat</th>
-                      <th>Action</th>
-                    </tr>
-                    @foreach($dosen as $dosen)
-                      <tr>
-                        <td>{{$dosen->nip}}</td>
-                        <td><a href="{{url('')}}/detail-dosen/{{$dosen->id}}">{{$dosen->nama}}</a></td>
-                        <td>{{$dosen->email}}</td>
-                        <td>{{$dosen->no_hp}}</td>
-                        <td>{{$dosen->alamat}}</td>
-                        <td><a href="{{url('')}}/edit-dosen/{{$dosen->id}}">Edit</a></td>
-                      </tr>
-                    @endforeach
-                  </table>
-                </div>
-                <!-- /.box-body -->
-              </div>
-              <!-- /.box -->
+      <div class="col-md-6">
+          <!-- general form elements disabled -->
+          <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Fasilitas Laboratorium</h3>
             </div>
-          </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <form role="form" action=" " method="POST">
 
-      </section>
+                <div class="form-group">
+                  <label>{{$laboratorium->nama_lab}}</label>
+                  <input type="hidden" name="id_lab" value="{{$laboratorium->id}}">
+                </div>
+                <!-- text input -->
+                <div class="form-group">
+                  <label>Nama Fasilitas:</label>
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="text" class="form-control" name="nama_fasil" value="{{$fasilitas->nama_fasil}}">
+                </div>
+
+                <div class="form-group">
+                  <label>Jumlah:</label>
+                  <input type="number" class="form-control" name="jumlah" value="{{$fasilitas->jumlah}}">
+                </div>
+
+                 <div class="form-group">
+                  <label>Kondisi:</label>
+                  <select name="kondisi">
+                    <option value="Sangat baik"{{$fasilitas->kondisi == "Sangat baik" ? "checked" : ""}}>Sangat baik</option>
+                    <option value="Baik" {{$fasilitas->kondisi == "Baik" ? "checked" : ""}}>Baik</option>
+                    <option value="Kurang baik" {{$fasilitas->kondisi == "Kurang baik" ? "checked" : ""}}>Kurang baik</option>
+                    <option value="Rusak" {{$fasilitas->kondisi == "Rusak" ? "checked" : ""}}>Rusak</option>
+                  </select>
+                </div>
+
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </section>
     <!-- /.content -->
-  </div>
+  </div>      
+    
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -277,5 +291,12 @@
 <script src="{{url('')}}/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('')}}/admin/dist/js/demo.js"></script>
+
+<!-- <script>
+  //Date picker
+    $('#datepicker').datepicker({
+      autoclose: true
+    });
+</script> -->
 </body>
 </html>

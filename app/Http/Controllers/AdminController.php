@@ -35,14 +35,19 @@ class AdminController extends Controller
         return redirect('inputdeskripsi')->with('message','Updated');
     }
 
-    public function input_admin()
+    public function input_administrator()
     {
         return view('admin\inputadmin');
     }
 
-    public function list_admin()
+    public function list_administrator()
     {
-        return view('admin\listadmin');
+        $this->data['administrator'] = DB::select('SELECT u.*, l.nama_lab
+                                                    FROM users u, laboratorium l
+                                                    WHERE u.is_admin = 1
+                                                    AND l.id = u.id_lab');
+        //dd($this->data['administrator']);
+        return view('Administrator\list-administrator', $this->data);
     }
 
 

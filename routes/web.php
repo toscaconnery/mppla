@@ -22,11 +22,11 @@ Route::get('home', function () {
 });
 
 
-Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
-Route::post('inputdeskripsi', 'AdminController@inputdesc');
-Route::get('inputfasil', 'FasilController@input_fasil');
-Route::post('inputfasil', 'FasilController@inputfasil');
-Route::get('listfasil', 'FasilController@list_fasil');
+//Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
+//Route::post('inputdeskripsi', 'AdminController@inputdesc');
+// Route::get('inputfasil', 'FasilController@input_fasil');
+// Route::post('inputfasil', 'FasilController@inputfasil');
+
 
 
 
@@ -39,7 +39,7 @@ Route::get('detailuser', 'AdminController@detailuser');
 
 /******** HALAMAN ADMIN *******/
 Route::get('inputadmin', 'AdminController@input_admin');
-Route::get('listadmin', 'AdminController@list_admin');
+Route::get('list-administrator', 'AdminController@list_administrator');
 Route::get('index-admin', 'AdminController@index');
 Route::get('jadikan_admin/{id}', 'AdminController@jadikan_admin');
 Route::post('update_jadikan_admin/{id}', 'AdminController@update_jadikan_admin');
@@ -58,9 +58,9 @@ Route::get('inputmodul', 'ModulController@inputmodul');
 Route::get('tambahkan-dosen', 'DosenController@tambahkan_dosen');
 Route::post('tambahkan-dosen', 'DosenController@store_tambahkan_dosen');
 Route::get('list-dosen', 'DosenController@list_dosen');
-Route::get('detail_dosen/{id}', 'DosenController@detail_dosen');
-Route::get('edit_dosen/{id}', 'DosenController@edit_dosen');
-Route::post('edit_dosen/{id}', 'DosenController@update_dosen');
+Route::get('detail-dosen/{id}', 'DosenController@detail_dosen');
+Route::get('edit-dosen/{id}', 'DosenController@edit_dosen');
+Route::post('edit-dosen/{id}', 'DosenController@update_dosen');
 
 
 /******** HALAMAN USER *******/
@@ -75,8 +75,17 @@ Route::get('pengaturan-laboratorium/{id}', 'LaboratoriumController@pengaturan_la
 Route::post('pengaturan-laboratorium/{id}', 'LaboratoriumController@save_pengaturan_laboratorium');
 Route::get('tambahkan-dosen-laboratorium', 'LaboratoriumController@tambahkan_dosen_laboratorium');
 Route::post('tambahkan-dosen-laboratorium', 'LaboratoriumController@save_tambahkan_dosen_laboratorium');
+Route::get('tambahkan-laboratorium', 'LaboratoriumController@tambahkan_laboratorium');
+Route::post('tambahkan-laboratorium', 'LaboratoriumController@save_tambahkan_laboratorium');
+Route::get('edit-deskripsi-laboratorium/{id}', 'LaboratoriumController@edit_deskripsi_laboratorium');
+Route::post('edit-deskripsi-laboratorium/{id}', 'LaboratoriumController@save_edit_deskripsi_laboratorium');
+Route::get('tambahkan-fasilitas-laboratorium', 'LaboratoriumController@tambahkan_fasilitas_laboratorium');
+Route::post('tambahkan-fasilitas-laboratorium', 'LaboratoriumController@save_tambahkan_fasilitas_laboratorium');
+Route::get('edit-fasilitas-laboratorium/{id}', 'LaboratoriumController@edit_fasilitas_laboratorium');
+Route::post('edit-fasilitas-laboratorium/{id}', 'LaboratoriumController@save_edit_fasilitas_laboratorium');
+Route::get('list-fasilitas-laboratorium', 'LaboratoriumController@list_fasilitas_laboratorium');
 // Route::get('kegiatanlab', 'LaboratoriumController@kegiatanlab');
-Route::get('deskripsi-lab', 'LaboratoriumController@deskripsi_lab');
+Route::get('deskripsi-laboratorium/{id}', 'LaboratoriumController@deskripsi_lab');
 
 
 /******** HALAMAN PINJAM ********/
@@ -117,4 +126,3 @@ Route::get('nyobamaster', 'AdminController@nyobamaster');
 
 
 Auth::routes();
-

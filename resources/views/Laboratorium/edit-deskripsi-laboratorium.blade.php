@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -189,45 +190,49 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
     <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
-                <div class="box-header">
-                
-                  <h3 class="box-title" style="font-weight: bold;">Dosen Teknik Informatika ITS</h3>  
-                  <!-- ntar nama labnya diambil dari database -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tr>
-                      <th>NIP</th>
-                      <th>Nama</th>
-                      <th>Email</th>
-                      <th>Telepon</th>
-                      <th>Alamat</th>
-                      <th>Action</th>
-                    </tr>
-                    @foreach($dosen as $dosen)
-                      <tr>
-                        <td>{{$dosen->nip}}</td>
-                        <td><a href="{{url('')}}/detail-dosen/{{$dosen->id}}">{{$dosen->nama}}</a></td>
-                        <td>{{$dosen->email}}</td>
-                        <td>{{$dosen->no_hp}}</td>
-                        <td>{{$dosen->alamat}}</td>
-                        <td><a href="{{url('')}}/edit-dosen/{{$dosen->id}}">Edit</a></td>
-                      </tr>
-                    @endforeach
-                  </table>
-                </div>
-                <!-- /.box-body -->
-              </div>
-              <!-- /.box -->
+      <div class="col-md-6">
+          <!-- general form elements disabled -->
+          <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Deskripsi Laboratorium</h3>
             </div>
-          </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <form role="form" action="" method="POST">
+                <!-- text input -->
+                {{ csrf_field() }}
 
-      </section>
+                <div class="form-group">
+                  <label>{{$laboratorium->nama_lab}}</label>
+                </div>
+
+                <!-- <div class="form-group">
+                  <label>Judul</label>
+                  <input type="text" class="form-control" placeholder="Judul">
+                </div> -->
+
+                <!-- textarea -->
+                <div class="form-group">
+                  <label>Deskripsi</label>
+                  <textarea name="deskripsi_lab" class="form-control" rows="5">{{$laboratorium->deskripsi_lab}}</textarea>
+                </div>
+
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </section>
     <!-- /.content -->
-  </div>
+  </div>      
+    
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">

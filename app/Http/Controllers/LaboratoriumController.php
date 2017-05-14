@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Laboratorium;
+use App\Fasilitas;
 use DB;
 use App\DosenLab;
+use Auth;
 
 class LaboratoriumController extends Controller
 {
@@ -22,9 +24,10 @@ class LaboratoriumController extends Controller
         return view('Laboratorium\index', $this->data);
     }
 
-    public function deskripsi_lab()
+    public function deskripsi_lab($id)
     {
-        return view('timer\deskripsi_lab');
+        $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l WHERE l.id = '.$id)[0];
+        return view('Laboratorium\deskripsi-laboratorium', $this->data);
     }
 
     public function kegiatanlab()
@@ -44,40 +47,20 @@ class LaboratoriumController extends Controller
         return view('Laboratorium\create', $this->data);
     }
 
-    // public function tambah_deskripsi_lab()
-    // {
-    //     return view('timer\input_deskripsi');
-    // }
-
-    /**
-     * untuk halaman kegiatan lab
-    */
-
-    // public function lihatkegiatan()
-    // {
-    //     return view('timer\kegiatan_lab');
-    // }
-
-    // public function inputkegiatan()
-    // {
-    //     return view('timer\input_kegiatan');
-    // }
-
-    /**
-     * untuk halaman jadwal pinjam lab
-    */
-
-    
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function edit_deskripsi_laboratorium($id)
     {
-        //
+        $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l WHERE l.id = '.$id)[0];
+
+        return view('Laboratorium\edit-deskripsi-laboratorium', $this->data);
+    }
+
+    public function save_edit_deskripsi_laboratorium(Request $request, $id)
+    {
+        $laboratorium = Laboratorium::find($id);
+        $laboratorium->deskripsi_lab = $request->deskripsi_lab;
+        $laboratorium->save();
+
+        return redirect('list-laboratorium');
     }
 
     public function storedeskripsi(Request $request)
@@ -127,48 +110,81 @@ class LaboratoriumController extends Controller
         return redirect('home');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function tambahkan_laboratorium()
     {
-        //
+        return view('Laboratorium\tambahkan-laboratorium');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function save_tambahkan_laboratorium(Request $request)
     {
-        //
+        $laboratorium = new Laboratorium;
+        $laboratorium->nama_lab = $request->nama_lab;
+        $laboratorium->deskripsi_lab = $request->deskripsi_lab;
+        $laboratorium->reservasiable = $request->reservasiable;
+        $laboratorium->save();
+
+        return redirect('list-laboratorium');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function tambahkan_fasilitas_laboratorium()
     {
-        //
+        //harus login, harus admin
+        if(Auth::check()) {
+            $id_lab = Auth::user()->id_lab;
+            $this->data['laboratorium'] = DB::select('SELECT l.* 
+                                                    FROM laboratorium l
+                                                    WHERE l.id = '.$id_lab)[0];
+            return view('Laboratorium\tambahkan-fasilitas-laboratorium', $this->data);
+        }
+        else {
+            return redirect('home');
+        }
+        
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function save_tambahkan_fasilitas_laboratorium(Request $request)
     {
-        //
+        $fasil = new Fasilitas;
+        $fasil->id_lab = $request->id_lab;
+        $fasil->nama_fasil = $request->nama_fasil; //kiri database kanan form
+        $fasil->tahun_masuk = $request->tahun_masuk;
+        $fasil->jumlah = $request->jumlah;
+        $fasil->kondisi = $request->kondisi;
+
+        $fasil->save();
+        return redirect('list-fasilitas-laboratorium')->with('message','success');
     }
+
+    public function edit_fasilitas_laboratorium($id)
+    {
+
+        $this->data['fasilitas'] = DB::select('SELECT f.*
+                                                FROM fasilitas f
+                                                WHERE f.id = '.$id)[0];
+        $this->data['laboratorium'] = DB::select('SELECT l.*
+                                                FROM laboratorium l
+                                                WHERE l.id = '.$this->data['fasilitas']->id_lab)[0];
+        return view('Laboratorium\edit-fasilitas-laboratorium', $this->data);
+    }
+
+    public function save_edit_fasilitas_laboratorium(Request $request, $id)
+    {
+        $fasil = Fasilitas::find($id);
+        $fasil->id_lab = $request->id_lab;
+        $fasil->nama_fasil = $request->nama_fasil; //kiri database kanan form
+        $fasil->jumlah = $request->jumlah;
+        $fasil->kondisi = $request->kondisi;
+
+        $fasil->save();
+        return redirect('list-fasilitas-laboratorium')->with('message','success');
+    }
+
+    public function list_fasilitas_laboratorium()
+    {
+        $this->data['listfasil'] = Fasilitas::all();
+        //dd($listtugas);
+        return view('Laboratorium\list-fasilitas-laboratorium', $this->data);
+    }
+
 }

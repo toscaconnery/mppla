@@ -20,7 +20,9 @@ class PinjamController extends Controller
 
     public function lakukan_reservasi()
     {
-        $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l');
+        $this->data['laboratorium'] = DB::select('SELECT l.* 
+                                                FROM laboratorium l
+                                                WHERE l.reservasiable = 1');
         return view('Pinjam\lakukan-reservasi-laboratorium', $this->data);
     }
 
