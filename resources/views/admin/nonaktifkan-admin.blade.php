@@ -39,9 +39,9 @@
       <!-- Logo -->
       <a href="{{url('')}}/index-admin" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
+        <span class="logo-mini"><b>SI</b>Lab</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Dosen</b>Laboratorium</span> <!--nanti pake nama lab dari database-->
+        <span class="logo-lg"><b>Super</b>AdminLab</span> <!--nanti pake nama lab dari database-->
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -52,14 +52,14 @@
 
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
-            <!-- Messages: style can be found in dropdown.less-->
-            <!-- Notifications: style can be found in dropdown.less -->
-            <!-- Tasks: style can be found in dropdown.less -->
-            <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="{{url('')}}/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                <span class="hidden-xs"></span>
+                <span class="hidden-xs">
+                  @if(Auth::check())
+                      {{ Auth::user()->name }}
+                  @endif
+                </span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
@@ -67,15 +67,19 @@
                   <img src="{{url('')}}/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                   <p>
-                    Nafia Rizky Yogayana
-                    <small>Teknik Informatika 2014</small>
+                    @if(Auth::check())
+                      {{ Auth::user()->name }}
+                    @endif
+                    <small>Teknik Informatika</small>
                   </p>
                 </li>
                 <!-- Menu Body -->
+                <li class="user-body">
+                </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="{{url('')}}/profil" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
                     <a href="#" class="btn btn-default btn-flat">Sign out</a>
@@ -88,7 +92,7 @@
         </div>
       </nav>
     </header>
-  </div>
+  
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->

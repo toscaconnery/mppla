@@ -112,5 +112,9 @@ Route::get('histori', 'MhsLBEController@historiprogres');
 Route::get('modul', 'MhsLBEController@unduhmodul');
 
 
+//nyampah
+Route::get('nyobamaster', 'AdminController@nyobamaster');
+
+
 Auth::routes();
 

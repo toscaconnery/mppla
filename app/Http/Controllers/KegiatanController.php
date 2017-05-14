@@ -16,9 +16,9 @@ class KegiatanController extends Controller
     public function input_kegiatan()
     {
         $this->data['user'] = Auth::user();
-        $this->data['laboratorium'] = DB::select('SELECT l.* 
-                                                    FROM laboratorium l
-                                                    WHERE l.id = '.$this->data['user']->id_lab)[0];
+        $this->data['laboratorium'] = DB::select('SELECT * 
+                                                    FROM laboratorium 
+                                                    WHERE id = '.$this->data['user']->id_lab)[0];
 
         return view('Kegiatan\input-kegiatan-laboratorium', $this->data);
     }

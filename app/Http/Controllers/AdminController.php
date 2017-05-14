@@ -97,6 +97,11 @@ class AdminController extends Controller
         return view('admin\profil');
     }
 
+    public function nyobamaster()
+    {
+        return view('admin\nyobamaster');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
