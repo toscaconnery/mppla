@@ -23,7 +23,7 @@ Route::get('home', function () {
 
 //Menampilkan halaman melihat data user lain
 Route::get('lihatuser', 'AdminController@lihatuser');
-Route::get('detailuser', 'AdminController@detailuser');
+
 
 /******** HALAMAN ADMIN *******/
 Route::get('inputadmin', 'AdminController@input_admin');
@@ -53,9 +53,9 @@ Route::post('edit-dosen/{id}', 'DosenController@update_dosen');
 
 /******** HALAMAN USER *******/
 Route::get('list-user', 'UserController@list_user');
-//Menampilkan halaman untuk mengubah profil diri
-Route::get('profil/{id}', 'AdminController@profil');
-Route::post('profil/{id}', 'AdminController@update_profil');
+Route::get('profil/{id}', 'UserController@profil');
+Route::post('profil/{id}', 'UseerController@update_profil');
+Route::get('detail-user/{id}', 'UserController@detail_user');
 
 
 /******** HALAMAN LABORATORIUM *******/
