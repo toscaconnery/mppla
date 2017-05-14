@@ -165,7 +165,6 @@ class LaboratoriumController extends Controller
         $this->data['laboratorium'] = DB::select('SELECT l.*
                                                 FROM laboratorium l
                                                 WHERE l.id = '.$this->data['fasilitas']->id_lab)[0];
-        // dd($this->data['fasilitas']);
         return view('Laboratorium\edit-fasilitas-laboratorium', $this->data);
     }
 
