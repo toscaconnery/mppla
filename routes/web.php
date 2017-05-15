@@ -14,15 +14,17 @@
 /*----- HALAMAN USER UMUM -----*/
 
 Route::get('/', function () {
-    return view('timer.index');
+	$this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l');
+    return view('timer.index', $this->data);
 });
 
 Route::get('home', function () {
-    return view('timer.index');
+    $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l');
+    return view('timer.index', $this->data);
 });
 
-
-//Route::get('inputdeskripsi', 'AdminController@input_deskripsi');
+//Halaman Deskripsi masing2 lab
+Route::get('deskripsi-lab/{nama_lab}', 'UmumController@deskripsilab');
 //Route::post('inputdeskripsi', 'AdminController@inputdesc');
 // Route::get('inputfasil', 'FasilController@input_fasil');
 // Route::post('inputfasil', 'FasilController@inputfasil');

@@ -95,7 +95,10 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{url('')}}/inputdeskripsi"><i class="fa fa-circle-o"></i> Deskripsi</a></li>
+          <li><a href="{{url('')}}/list-laboratorium"><i class="fa fa-circle-o"></i> Daftar Laboratorium</a></li>
+          <li><a href="{{url('')}}/edit-deskripsi-laboratorium/{{Auth::user()->id_lab}}"><i class="fa fa-circle-o"></i> 
+            Deskripsi
+          </a></li>
           <li><a href="{{url('')}}/inputkegiatan"><i class="fa fa-circle-o"></i> Input Kegiatan</a></li>
           <li><a href="{{url('')}}/lihat-kegiatan"><i class="fa fa-circle-o"></i> Daftar Kegiatan</a></li>
           <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Editors</a></li> -->
@@ -123,8 +126,9 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{url('')}}/listadmin"><i class="fa fa-circle-o"></i> List Admin</a></li>
-          <li><a href="{{url('')}}/inputadmin"><i class="fa fa-circle-o"></i> Input Admin</a></li>
+          <li><a href="{{url('')}}/list-administrator"><i class="fa fa-circle-o"></i> List Admin</a></li>
+          <li><a href="{{url('')}}/inputadmin"><i class="fa fa-circle-o"></i> Tambah Admin</a></li>
+          <li><a href="{{url('')}}/list_user"><i class="fa fa-circle-o"></i> Status Admin</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -135,8 +139,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{url('')}}/admin/listfasil"><i class="fa fa-circle-o"></i> List Fasilitas</a></li>
-          <li><a href="{{url('')}}/inputfasil"><i class="fa fa-circle-o"></i> Input Fasilitas</a></li>
+          <li><a href="{{url('')}}/list-fasilitas-laboratorium"><i class="fa fa-circle-o"></i> List Fasilitas</a></li>
+          <li><a href="{{url('')}}/tambahkan-fasilitas-laboratorium"><i class="fa fa-circle-o"></i> Tambah Data Fasilitas</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -147,8 +151,33 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{url('')}}/listpeminjaman"><i class="fa fa-circle-o"></i> List Peminjaman</a></li>
-          <li><a href="{{url('')}}/verifpeminjaman"><i class="fa fa-circle-o"></i> Verifikasi Peminjaman</a></li>
+          <li><a href="{{url('')}}/lihat-semua-jadwal-reservasi-laboratorium"><i class="fa fa-circle-o"></i> 
+            List Peminjaman
+          </a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-child"></i> <span>Dosen</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{url('')}}/list-dosen"><i class="fa fa-circle-o"></i> List Dosen</a></li>
+          <li><a href="{{url('')}}/tambahkan-dosen"><i class="fa fa-circle-o"></i> Tambah Dosen</a></li>
+          <li><a href="{{url('')}}/tambahkan-dosen-laboratorium"><i class="fa fa-circle-o"></i> Tambah Dosen Lab</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-child"></i> <span>User</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{url('')}}/lihatuser"><i class="fa fa-circle-o"></i> List User</a></li>
         </ul>
       </li>
     </ul>

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html class="no-js">
     <head>
@@ -198,11 +196,11 @@
                                 <figcaption>
                                 <h4>
                                 <a href="#">
-                                    Workshop Pemrograman
+                                    Laboratorium Pemrograman 1
                                 </a>
                                 </h4>
                                 <p>
-                                    Redesigne UI Concept
+                                    
                                 </p>
                                 </figcaption>
                             </figure>
@@ -225,7 +223,7 @@
                                 </a>
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor sit.
+                                    
                                 </p>
                                 </figcaption>
                             </figure>
@@ -248,7 +246,7 @@
                                 </a>
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet.
+                                    
                                 </p>
                                 </figcaption>
                             </figure>
@@ -271,7 +269,7 @@
                                 </a>
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor.
+                                    
                                 </p>
                                 </figcaption>
                             </figure>
@@ -294,7 +292,7 @@
                                 </a>
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor.
+                                    
                                 </p>
                                 </figcaption>
                             </figure>
@@ -317,7 +315,7 @@
                                 </a>
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor.
+                                    
                                 </p>
                                 </figcaption>
                             </figure>
@@ -340,7 +338,7 @@
                                 </a>
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor.
+                                    
                                 </p>
                                 </figcaption>
                             </figure>
@@ -363,7 +361,7 @@
                                 </a>
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor.
+                                    
                                 </p>
                                 </figcaption>
                             </figure>
@@ -386,7 +384,7 @@
                                 </a>
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor.
+                                    
                                 </p>
                                 </figcaption>
                             </figure>
@@ -409,7 +407,7 @@
                                 </a>
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor.
+                                    
                                 </p>
                                 </figcaption>
                             </figure>
@@ -432,7 +430,7 @@
                                 </a>
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor.
+                                    
                                 </p>
                                 </figcaption>
                             </figure>
