@@ -14,14 +14,13 @@
 /*----- HALAMAN USER UMUM -----*/
 
 Route::get('/', function () {
-	$this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l');
     return view('timer.index', $this->data);
 });
 
 Route::get('home', function () {
-    $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l');
     return view('timer.index', $this->data);
 });
+
 
 //Halaman Deskripsi masing2 lab
 Route::get('deskripsi-lab/{nama_lab}', 'UmumController@deskripsilab');
@@ -31,13 +30,9 @@ Route::get('deskripsi-lab/{nama_lab}', 'UmumController@deskripsilab');
 
 
 
-
 //Menampilkan halaman melihat data user lain
 Route::get('lihatuser', 'AdminController@lihatuser');
 Route::get('detailuser', 'AdminController@detailuser');
-
-
-
 
 /******** HALAMAN ADMIN *******/
 Route::get('inputadmin', 'AdminController@input_admin');
@@ -66,10 +61,10 @@ Route::post('edit-dosen/{id}', 'DosenController@update_dosen');
 
 
 /******** HALAMAN USER *******/
-Route::get('list_user', 'UserController@list_user');
-//Menampilkan halaman untuk mengubah profil diri
-Route::get('profil/{id}', 'AdminController@profil');
-Route::post('profil/{id}', 'AdminController@update_profil');
+Route::get('list-user', 'UserController@list_user');
+Route::get('profil/{id}', 'UserController@profil');
+Route::post('profil/{id}', 'UseerController@update_profil');
+Route::get('detail-user/{id}', 'UserController@detail_user');
 
 
 /******** HALAMAN LABORATORIUM *******/
@@ -98,13 +93,6 @@ Route::get('lihat-jadwal-reservasi-laboratorium', 'PinjamController@lihat_jadwal
 Route::get('lihat-semua-jadwal-reservasi-laboratorium', 'PinjamController@lihat_semua_jadwal_reservasi');
 Route::get('accept-peminjaman-laboratorium/{id}', 'PinjamController@accept_peminjaman_laboratorium');
 Route::get('decline-peminjaman-laboratorium/{id}', 'PinjamController@decline_peminjaman_laboratorium');
-// Route::get('pinjam', 'PinjamController@index');
-// Route::post('pinjam', 'PinjamController@lakukan_reservasi');
-// Route::get('lihat_jadwal','PinjamController@lihat_jadwal');
-// Route::get('lihatjadwal','PinjamController@Melihat_jadwal_lab');
-// Route::get('verifpeminjaman', 'PinjamController@verif_pinjam');
-// Route::get('listpeminjaman', 'PinjamController@list_pinjam');
-
 
 /******** HALAMAN KEGIATAN *******/
 Route::get('lihat-kegiatan', 'KegiatanController@lihat_kegiatan');
