@@ -8,6 +8,9 @@ class MhsLBEController extends Controller
 {
     public function lihattugas()
     {
+        $this->data['tugas'] = DB::select('SELECT t.* 
+                                            FROM tugas_lbe t
+                                            WHERE id_proyek = '1);
     	return view('mhslbe\lihattugas');
     }
 

@@ -100,9 +100,10 @@
                             @endif
                             <li><a href="service.html">Reservasi</a></li>
                             @if(Auth::check())
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="{{url('')}}/logout">Logout</a></li>
                             @else
                                 <li><a href="{{url('')}}/login">Login</a></li>
+                                <li><a href="{{url('')}}/register">Register</a></li>
                             @endif
                         </ul>
                     </div>

@@ -14,11 +14,12 @@
 /*----- HALAMAN USER UMUM -----*/
 
 Route::get('/', function () {
-    return view('timer.index', $this->data);
+    return view('timer.index');
+
 });
 
-Route::get('home', function () {
-    return view('timer.index', $this->data);
+Route::get('home', function ()  {
+    return view('timer.index');
 });
 
 
@@ -102,18 +103,19 @@ Route::post('input-kegiatan', 'KegiatanController@save_input_kegiatan');
 
 
 /******** HALAMAN UNTUK MHS LBE *******/
-//Menampilkan halaman untuk melihat tugas LBE
 Route::get('lihattugas', 'MhsLBEController@lihattugas');
-//Menampilkan halaman untuk submit progres tugas LBE
 Route::get('submitprogres', 'MhsLBEController@submitprogres');
-//Menampilkan halaman untuk melihat history submit progres tugas LBE
 Route::get('histori', 'MhsLBEController@historiprogres');
-//Menampilkan halaman untuk mendownload modul LBE
 Route::get('modul', 'MhsLBEController@unduhmodul');
-
+Route::get('inputtugas','LBEController@input_tugas');
 
 //nyampah
 Route::get('nyobamaster', 'AdminController@nyobamaster');
 
 
 Auth::routes();
+
+Route::get('logout', function() {
+	Auth::logout();
+	return view('timer.index');
+});
