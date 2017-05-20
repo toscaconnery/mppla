@@ -1,4 +1,5 @@
 @extends('master.master')
+
 @section('content')
 
     <div class="row">
@@ -6,32 +7,32 @@
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Kegiatan Laboratorium</h3>
+              <h3 class="box-title">Input LBE</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form" action="" method="POST">
+              <form role="form" action=" " method="POST">
+                <!-- text input -->
                 <div class="form-group">
-                  <label>Pilih Laboratorium</label>
+                  <label>ID Lab</label>
+                  <h3></h3>
+                </div>
+                  <!-- <input type="hidden" name="id_lab" value=""> -->
+                <div class="form-group">
+                  <label>Judul Penugasan</label>
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                  <br>
-                  <select name="id_lab">
-                    @foreach($laboratorium as $list)
-                      <option value="{{$list->id}}">{{$list->nama_lab}}</option>
-                    @endforeach
-                  </select>
+                  <input type="text" class="form-control" name="judul" placeholder="Judul">
                 </div>
+
+
+                <!-- textarea -->
                 <div class="form-group">
-                  <label>Nama dosen</label>
-                  <br>
-                    <select name="id_dosen">
-                    @foreach($dosen as $list)
-                      <option value="{{$list->id}}">{{$list->nama}}</option>
-                    @endforeach
-                  </select>
+                  <label>Deskripsi Tugas</label>
+                  <textarea class="form-control" rows="15" name="tugas" placeholder="Penugasan ..."></textarea>
                 </div>
+
                 <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">Simpan Data</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
             </div>

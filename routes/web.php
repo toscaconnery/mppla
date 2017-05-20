@@ -46,6 +46,8 @@ Route::get('update_nonaktifkan_admin/{id}', 'AdminController@update_nonaktifkan_
 //Route::get('listpeminjaman', 'AdminController@list_pinjam'); Untuk dicek
 
 /******** LBE *******/
+Route::get('tambahkan-lbe', 'LBEController@tambahkan_lbe');
+Route::post('tambahkan-lbe', 'LBEController@save_tambahkan_lbe');
 Route::get('inputtugas', 'LBEController@inputtugas');
 Route::post('inputtugas', 'LBEController@input_tugas');
 Route::get('listtugas', 'LBEController@listtugas');
@@ -103,6 +105,7 @@ Route::post('input-kegiatan', 'KegiatanController@save_input_kegiatan');
 
 
 /******** HALAMAN UNTUK MHS LBE *******/
+Route::get('jadikan-mahasiswa-lbe/{id}', 'MhsLBEController@jadikan_mahasiswa_lbe');
 Route::get('lihattugas', 'MhsLBEController@lihattugas');
 Route::get('submitprogres', 'MhsLBEController@submitprogres');
 Route::get('histori', 'MhsLBEController@historiprogres');
