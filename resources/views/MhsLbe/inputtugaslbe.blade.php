@@ -16,7 +16,7 @@
                   {{csrf_field()}}
                   <!-- text input -->
                   <div class="form-group">
-                    <label>Laboratorium {{$nama_lab}}</label>
+                    <label>{{$nama_lab}}</label>
                     <h3></h3>
                   </div>
                     <!-- <input type="hidden" name="id_lab" value=""> -->

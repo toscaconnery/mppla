@@ -97,6 +97,7 @@ class LBEController extends Controller
             $tugas = new TugasLbe;
             $tugas->id_proyek = $id_proyek;
             $tugas->id_mhs = $data;
+            $tugas->judul = $request->judul;
             $tugas->tugas = $request->tugas;
             $tugas->upload_tugas = 1;
             $tugas->save();
