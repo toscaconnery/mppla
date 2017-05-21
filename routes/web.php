@@ -53,7 +53,8 @@ Route::post('tambahkan-proyek-lbe', 'LBEController@save_tambahkan_proyek_lbe');
 Route::get('input-tugas-lbe', 'LBEController@input_tugas_lbe');
 Route::post('input-tugas-lbe', 'LBEController@save_input_tugas_lbe');
 Route::get('lihat-tugas-lbe', 'LBEController@lihat_tugas_lbe');
-Route::get('tambahkan-mahasiswa-lbe', 'MhsLbeController@tambahkan_mahasiswa_lbe');
+Route::get('tambahkan-mahasiswa-lbe', 'MhsLBEController@tambahkan_mahasiswa_lbe');
+Route::post('tambahkan-mahasiswa-lbe', 'MhsLBEController@save_tambahkan_mahasiswa_lbe');
 
 Route::get('listtugas', 'LBEController@listtugas');
 Route::get('inputtugas', 'LBEController@inputtugas');
