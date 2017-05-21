@@ -46,8 +46,12 @@ Route::get('update_nonaktifkan_admin/{id}', 'AdminController@update_nonaktifkan_
 //Route::get('listpeminjaman', 'AdminController@list_pinjam'); Untuk dicek
 
 /******** LBE *******/
-Route::get('tambahkan-lbe', 'LBEController@tambahkan_lbe');
-Route::post('tambahkan-lbe', 'LBEController@save_tambahkan_lbe');
+// Route::get('tambahkan-lbe', 'LBEController@tambahkan_lbe');			//mungkin akan dihapus
+// Route::post('tambahkan-lbe', 'LBEController@save_tambahkan_lbe');	//mungkin akan dihapus
+Route::get('tambahkan-proyek-lbe', 'LBEController@tambahkan_proyek_lbe');
+Route::post('tambahkan-proyek-lbe', 'LBEController@save_tambahkan_proyek_lbe');
+Route::get('input-tugas-lbe', 'LBEController@input_tugas_lbe');
+Route::post('input-tugas-lbe', 'LBEController@save_input_tugas_lbe');
 Route::get('inputtugas', 'LBEController@inputtugas');
 Route::post('inputtugas', 'LBEController@input_tugas');
 Route::get('listtugas', 'LBEController@listtugas');
@@ -112,7 +116,7 @@ Route::get('histori', 'MhsLBEController@historiprogres');
 Route::get('modul', 'MhsLBEController@unduhmodul');
 Route::get('inputtugas','LBEController@input_tugas');
 
-//nyampah
+//testing
 Route::get('nyobamaster', 'AdminController@nyobamaster');
 
 

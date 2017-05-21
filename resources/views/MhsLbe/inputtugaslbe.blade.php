@@ -11,30 +11,43 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form" action=" " method="POST">
-                <!-- text input -->
-                <div class="form-group">
-                  <label>ID Lab</label>
-                  <h3></h3>
-                </div>
-                  <!-- <input type="hidden" name="id_lab" value=""> -->
-                <div class="form-group">
-                  <label>Judul Penugasan</label>
-                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                  <input type="text" class="form-control" name="judul" placeholder="Judul">
-                </div>
+              @if($punya_proyek)
+                <form role="form" action=" " method="POST">
+                  {{csrf_field()}}
+                  <!-- text input -->
+                  <div class="form-group">
+                    <label>Laboratorium {{$nama_lab}}</label>
+                    <h3></h3>
+                  </div>
+                    <!-- <input type="hidden" name="id_lab" value=""> -->
+                  <div class="form-group">
+                    <label>Judul Penugasan</label>
+                    <input type="text" class="form-control" name="judul" placeholder="Judul">
+                  </div>
 
+                  <!-- textarea -->
+                  <div class="form-group">
+                    <label>Deskripsi Tugas</label>
+                    <textarea class="form-control" rows="15" name="tugas" placeholder="Penugasan ..."></textarea>
+                  </div>
 
-                <!-- textarea -->
-                <div class="form-group">
-                  <label>Deskripsi Tugas</label>
-                  <textarea class="form-control" rows="15" name="tugas" placeholder="Penugasan ..."></textarea>
-                </div>
+                  <!--Pilih mahasiswa-->
+                  <script type="text/javascript">
+                    $(".js-example-basic-multiple").select2();
+                  </script>
+                  <select class="js-example-basic-multiple" multiple="multiple" name="mhs[]">
+                    @foreach($mahasiswa as $list)
+                    <option value="{{$list->id}}">{{$list->name}}</option>
+                    @endforeach
+                  </select>
 
-                <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </form>
+              @else
+                <h3>{{$nama_lab}} belum memiliki proyek LBE untuk ditambahka tugas. Silahkan tambahkan proyek LBE terlebih dahulu.</h3>
+              @endif
             </div>
             <!-- /.box-body -->
           </div>

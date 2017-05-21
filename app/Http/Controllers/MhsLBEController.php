@@ -16,16 +16,16 @@ class MhsLBEController extends Controller
 
     public function submitprogres()
     {
-    	return view('mhslbe\submitprogres');
+    	return view('MhsLbe\submitprogres');
     }
 
     public function historiprogres()
     {
-    	return view('mhslbe\histori');
+    	return view('MhsLbe\histori');
     }
 
     public function unduhmodul()
     {
-    	return view('mhslbe\downloadmodul');
+    	return view('MhsLbe\downloadmodul');
     }
 }
