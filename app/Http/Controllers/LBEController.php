@@ -105,6 +105,20 @@ class LBEController extends Controller
         return redirect('/');
     }
 
+    public function lihat_tugas_lbe()
+    {
+        if(Auth::check())
+        {
+            $id_mhs = Auth::user()->id;
+            $this->data['tugas'] = DB::select('SELECT t.* FROM tugas_lbe t WHERE t.id_mhs = '.Auth::user()->id);
+            return view('MhsLBe\lihat-tugas-lbe', $this->data);
+        }
+        else
+        {
+            return redirect('/');
+        }
+    }
+
     public function input_tugas(Request $request)
     {
     	$tugaslbe = new ProyekLab;
