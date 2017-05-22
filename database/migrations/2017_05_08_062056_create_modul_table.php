@@ -16,6 +16,7 @@ class CreateModulTable extends Migration
         Schema::create('modul', function( Blueprint $table) {
             $table->increments('id');
             $table->integer('id_proyek');
+            $table->string('judul');
             $table->string('modul');
             $table->softDeletes();
             $table->timestamps();

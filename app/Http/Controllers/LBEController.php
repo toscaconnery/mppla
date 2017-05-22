@@ -145,19 +145,23 @@ class LBEController extends Controller
 
     public function save_kumpulkan_tugas(Request $request, $id)
     {
-        if(Aut)
-        $file = $request->file('berkas');
-        $fileextension = $file->getClientOriginalExtension();
-        $filesize = $file->getSize();
-        $filemime = $file->getMimeType();
-        $path = "tugas-lbe/";
-        $filename = date("Y-m-d-H-i-s").'-'.Auth::user()->id.'.'.$fileextension;
-        $file->move($path, $filename);
-        $tugas = TugasLbe::find($id);
-        $tugas->upload_tugas = $path.$filename;
-        $tugas->deleted_at = date("Y-m-d");
-        $tugas->save();
-        return redirect('/');
+        if(Auth::check()){
+            $file = $request->file('berkas');
+            $fileextension = $file->getClientOriginalExtension();
+            $filesize = $file->getSize();
+            $filemime = $file->getMimeType();
+            $path = "tugas-lbe/";
+            $filename = date("Y-m-d-H-i-s").'-'.Auth::user()->id.'.'.$fileextension;
+            $file->move($path, $filename);
+            $tugas = TugasLbe::find($id);
+            $tugas->upload_tugas = $path.$filename;
+            $tugas->deleted_at = date("Y-m-d");
+            $tugas->save();
+            return redirect('/');
+        }
+        else{
+            return redirect('/');
+        }
         //dd($filemime);
     }
 
@@ -167,9 +171,14 @@ class LBEController extends Controller
             $this->data['progress'] = DB::select('SELECT t.id, u.nrp, t.deleted_at as selesai 
                                                 FROM tugas_lbe t, users u
                                                 WHERE t.id_mhs = u.id');
+            return view('MhsLbe\lihat-progress-tugas-lbe', $this->data);
         }
-        return view('MhsLbe\lihat-progress-tugas-lbe', $this->data);
+        else{
+            return redirect('/');
+        }
     }
+
+    
 
     public function listtugas()
     {
