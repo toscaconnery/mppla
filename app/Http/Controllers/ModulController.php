@@ -48,6 +48,13 @@ class ModulController extends Controller
     public function list_modul_lbe()
     {
     	$this->data['modul'] = DB::select('SELECT m.* FROM modul m');
-    	return view('MhsLbe\downloadmodul', $this->data);
+    	return view('MhsLbe\list-modul-lbe', $this->data);
+    }
+
+    public function download_modul_lbe($id)
+    {
+    	$namafile = Modul::find($id);
+        $file=$namafile->modul;
+        return Response::download($file);
     }
 }

@@ -60,7 +60,7 @@ Route::get('download-jawaban-tugas-lbe/{id}', 'LBEController@download_jawaban_tu
 Route::get('input-modul-lbe', 'ModulController@input_modul_lbe');
 Route::post('input-modul-lbe', 'ModulController@save_input_modul_lbe');
 Route::get('list-modul', 'ModulController@list_modul_lbe');
-Route::get('download-modul-lbe','ModulController@download_modul_lbe');
+Route::get('download-modul-lbe/{id}','ModulController@download_modul_lbe');
 
 // Route::get('listtugas', 'LBEController@listtugas');
 // Route::get('inputtugas', 'LBEController@inputtugas');

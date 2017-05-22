@@ -22,16 +22,14 @@
                       @php
                         $x = 1;
                       @endphp
-                      @if(isset($progress))
-                        @foreach ($progress as $progress)                    
+                      @if(isset($modul))
+                        @foreach ($modul as $modul)                    
                         <tr>
                           <td>{{$x++}}</td>
-                          <td>{{$progress->nrp}}</td>
-                          <td>{{$progress->selesai == NULL ? "Not finished" : "Finished"}}</td>
+                          <td>{{$modul->judul}}</td>
                           <td>
-                            @if($progress->selesai != NULL)
-                              <a href="{{url('')}}/download-jawaban-tugas-lbe/{{$progress->id}}" class="fa fa-download">Lihat</a>
-                            @endif
+                              <a href="{{url('')}}/download-modul-lbe/{{$modul->id}}" class="fa fa-download">Download</a>
+                          </td>
                         </tr>
                         @endforeach
                       @endif
