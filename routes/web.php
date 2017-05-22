@@ -55,6 +55,10 @@ Route::post('input-tugas-lbe', 'LBEController@save_input_tugas_lbe');
 Route::get('lihat-tugas-lbe', 'LBEController@lihat_tugas_lbe');
 Route::get('tambahkan-mahasiswa-lbe', 'MhsLBEController@tambahkan_mahasiswa_lbe');
 Route::post('tambahkan-mahasiswa-lbe', 'MhsLBEController@save_tambahkan_mahasiswa_lbe');
+Route::get('kumpulkan-tugas-lbe/{id}', 'LBEController@kumpulkan_tugas');
+Route::post('kumpulkan-tugas-lbe/{id}', 'LBEController@save_kumpulkan_tugas');
+Route::get('lihat-progress-lbe','LBEController@lihat_progress_tugas_lbe');
+Route::get('download-jawaban-tugas-lbe/{id}', 'LBEController@download_jawaban_tugas_lbe');
 
 Route::get('listtugas', 'LBEController@listtugas');
 Route::get('inputtugas', 'LBEController@inputtugas');

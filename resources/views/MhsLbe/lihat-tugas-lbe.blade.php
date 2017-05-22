@@ -33,7 +33,7 @@
                     <td>{{$data->deleted_at == NULL ? "Not yet completed" : "Completed"}}</td>
                     <td>
                       @if($data->deleted_at == NULL)
-                        <a href="{{url('')}}/kumpulkan-tugas"></a>
+                        <a href="{{url('')}}/kumpulkan-tugas-lbe/{{$data->id}}">Kumpulkan</a>
                       @endif
                     </td>
                   </tr>

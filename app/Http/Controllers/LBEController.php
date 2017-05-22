@@ -8,6 +8,7 @@ use Auth;
 use App\ProyekLab;
 use App\Lbe;
 use App\TugasLbe;
+use Response;
 
 class LBEController extends Controller
 {
@@ -99,7 +100,7 @@ class LBEController extends Controller
             $tugas->id_mhs = $data;
             $tugas->judul = $request->judul;
             $tugas->tugas = $request->tugas;
-            $tugas->upload_tugas = 1;
+            $tugas->upload_tugas = 0;
             $tugas->save();
         }
         return redirect('/');
@@ -111,7 +112,7 @@ class LBEController extends Controller
         {
             $id_mhs = Auth::user()->id;
             $this->data['tugas'] = DB::select('SELECT t.* FROM tugas_lbe t WHERE t.id_mhs = '.Auth::user()->id);
-            return view('MhsLBe\lihat-tugas-lbe', $this->data);
+            return view('MhsLbe\lihat-tugas-lbe', $this->data);
         }
         else
         {
@@ -130,18 +131,57 @@ class LBEController extends Controller
         return redirect('listtugas')->with('message','success');
     }
 
+    public function kumpulkan_tugas($id)
+    {
+        if(Auth::check()){
+            $this->data['tugas'] = DB::select('SELECT t.* FROM tugas_lbe t WHERE t.id = '.$id);
+        return view('MhsLbe\kumpulkan-tugas');
+        }
+        else{
+            return redirect('/');
+        }
+        
+    }
+
+    public function save_kumpulkan_tugas(Request $request, $id)
+    {
+        if(Aut)
+        $file = $request->file('berkas');
+        $fileextension = $file->getClientOriginalExtension();
+        $filesize = $file->getSize();
+        $filemime = $file->getMimeType();
+        $path = "tugas-lbe/";
+        $filename = date("Y-m-d-H-i-s").'-'.Auth::user()->id.'.'.$fileextension;
+        $file->move($path, $filename);
+        $tugas = TugasLbe::find($id);
+        $tugas->upload_tugas = $path.$filename;
+        $tugas->deleted_at = date("Y-m-d");
+        $tugas->save();
+        return redirect('/');
+        //dd($filemime);
+    }
+
+    public function lihat_progress_tugas_lbe()
+    {
+        if(Auth::check() and Auth::user()->is_admin){
+            $this->data['progress'] = DB::select('SELECT t.id, u.nrp, t.deleted_at as selesai 
+                                                FROM tugas_lbe t, users u
+                                                WHERE t.id_mhs = u.id');
+        }
+        return view('MhsLbe\lihat-progress-tugas-lbe', $this->data);
+    }
+
     public function listtugas()
     {
     	$this->data['listtugas'] = ProyekLab::all();
-
         return view('admin\listtugas', $this->data);
     }
 
-    public function downloadprogres()
+    public function download_jawaban_tugas_lbe($id)
     {
-        // $this->data['listtugas'] = ProyekLab::all();
-        //dd($listtugas);
-        return view('admin\downloadprogres');
+        $namafile = TugasLbe::find($id);
+        $file=$namafile->upload_tugas;
+        return Response::download($file);
     }
 
     // public function list_tugas()

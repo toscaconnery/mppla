@@ -9,7 +9,7 @@ class TugasLbe extends Model
     protected $table = 'tugas_lbe';
 
     protected $fillable = [
-    'id_proyek', 'id_mhs', 'tugas', 'upload_tugas',
+    'id_proyek', 'id_mhs', 'tugas', 'upload_tugas', 'deleted_at',
     ];
 
     public function mahasiswa(){
