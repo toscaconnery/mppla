@@ -83,30 +83,27 @@
                     <div class="main-menu">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="index.html" >Home</a>
+                                <a href="#">
+                                    @if(Auth::check())
+                                        {{ Auth::user()->name }}
+                                    @endif
+                                </a>
                             </li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="service.html">Service</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="404.html">404 Page</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span class="caret"></span></a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="blog-fullwidth.html">Blog Full</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog Left sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right sidebar</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="contact.html">Login</a></li>
+                            <li><a href="{{url('')}}/">Home</a></li>
+                            <li><a href="#works">Laboratorium</a></li>
+                            @if(Auth::check())
+                                @if(Auth::user()->is_admin == 1)
+                                    <li><a href="{{url('')}}/index-admin">Dashboard</a></li>
+                                @else
+                                    <li><a href="{{url('')}}/lihattugas">Dashboard</a></li>
+                                @endif
+                            @endif
+                            <li><a href="service.html">Reservasi</a></li>
+                            @if(Auth::check())
+                                <li><a href="#">Logout</a></li>
+                            @else
+                                <li><a href="{{url('')}}/login">Login</a></li>
+                            @endif
                         </ul>
                     </div>
                 </nav>
@@ -120,22 +117,23 @@
             <section id="feature">
                 <div class="container">
                     <div class="section-heading">
+                        <br>
                         <h1 class="title wow fadeInDown" data-wow-delay=".3s">LABORATORIUM PEMROGRAMAN</h1>
-                        <p class="wow fadeInDown" data-wow-delay=".5s">
+                        <!-- <p class="wow fadeInDown" data-wow-delay=".5s">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed,<br> quasi dolores numquam dolor vero ex, tempora commodi repellendus quod laborum.
-                        </p>
+                        </p> -->
                     </div>
                     <div class="row">
                         <div class="col-md-4 col-lg-4 col-xs-12">
                             <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
                                 <div class="media-left">
                                     <div class="icon">
-                                        <i class="ion-ios-flask-outline"></i>
+                                        <i class="ion-ios-lightbulb-outline"></i>
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Kegiatan 1</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
+                                    <h4 class="media-heading">Pelatihan Web</h4>
+                                    <p>Pelatihan ini dilaksanakan pada tanggal 20 Mei 2015 dan ditujukan untuk mahasiswa TC angkatan 2014.</p>
                                 </div>
                             </div>
                         </div>
@@ -147,8 +145,8 @@
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Kegiatan 2</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
+                                    <h4 class="media-heading">Maintenance</h4>
+                                    <p>Agar fasilitas lab selalu terjaga, maka diadakan maintenance rutin dengan mengecek PC dan bersih-bersih.</p>
                                 </div>
                             </div>
                         </div>
@@ -160,8 +158,8 @@
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Kegiatan 3</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
+                                    <h4 class="media-heading">Sesi Lab</h4>
+                                    <p>LP biasa digunakan untuk tempat sesi lab dasar pemrograman dan struktur data.</p>
                                 </div>
                             </div>
                         </div>
@@ -169,16 +167,16 @@
                             <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1200ms">
                                 <div class="media-left">
                                     <div class="icon">
-                                        <i class="ion-ios-americanfootball-outline"></i>
+                                        <i class="ion-ios-lightbulb-outline"></i>
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Kegiatan 4</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
+                                    <h4 class="media-heading">Jalan-Jalan</h4>
+                                    <p>Beberapa waktu lalu, admin-admin LP rekreasi ke Bromo.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-lg-4 col-xs-12">
+                        <!-- <div class="col-md-4 col-lg-4 col-xs-12">
                             <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1500ms">
                                 <div class="media-left">
                                     <div class="icon">
@@ -203,7 +201,7 @@
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section> <!-- /#feature -->
@@ -212,38 +210,15 @@
             ==================================================
             Footer Section Start
             ================================================== -->
-            <footer id="footer">
+            <footer id="footer" style="background-color: #02bdd5;">
                 <div class="container">
-                    <div class="col-md-8">
-                        <p class="copyright">Copyright: <span>2015</span> . Design and Developed by <a href="http://www.Themefisher.com">Themefisher</a></p>
-                    </div>
-                    <div class="col-md-4">
-                        <!-- Social Media -->
-                        <ul class="social">
-                            <li>
-                                <a href="http://wwww.fb.com/themefisher" class="Facebook">
-                                    <i class="ion-social-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://wwww.twitter.com/themefisher" class="Twitter">
-                                    <i class="ion-social-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="Linkedin">
-                                    <i class="ion-social-linkedin"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://wwww.fb.com/themefisher" class="Google Plus">
-                                    <i class="ion-social-googleplus"></i>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p class="copyright">Copyright: <span>5114100017-5114100061-5114100702</span> . SI Laboratorium Teknik Informatika</p>
+                        </div>               
                     </div>
                 </div>
-            </footer> <!-- /#footer -->
+            </footer>
                 
         </body>
     </html>

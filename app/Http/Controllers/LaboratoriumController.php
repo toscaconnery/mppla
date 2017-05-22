@@ -30,10 +30,10 @@ class LaboratoriumController extends Controller
         return view('Laboratorium\deskripsi-laboratorium', $this->data);
     }
 
-    public function kegiatanlab()
-    {
-        return view('timer\kegiatan_lab');
-    }
+    // public function kegiatanlab()
+    // {
+    //     return view('timer\kegiatan_lab');
+    // }
 
     /**
      * Show the form for creating a new resource.

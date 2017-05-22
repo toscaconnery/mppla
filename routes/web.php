@@ -14,16 +14,17 @@
 /*----- HALAMAN USER UMUM -----*/
 
 Route::get('/', function () {
-    return view('timer.index', $this->data);
+    return view('timer.index');
 });
 
 Route::get('home', function () {
-    return view('timer.index', $this->data);
+    return view('timer.index');
 });
 
 
 //Halaman Deskripsi masing2 lab
-Route::get('deskripsi-lab/{nama_lab}', 'UmumController@deskripsilab');
+Route::get('deskripsi-lab', 'UmumController@deskripsilab');
+Route::get('kegiatanlab', 'UmumController@kegiatanlab');
 //Route::post('inputdeskripsi', 'AdminController@inputdesc');
 // Route::get('inputfasil', 'FasilController@input_fasil');
 // Route::post('inputfasil', 'FasilController@inputfasil');

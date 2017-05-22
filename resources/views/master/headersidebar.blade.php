@@ -1,13 +1,13 @@
 <header class="main-header">
   <!-- Logo -->
-  <a href="{{url('')}}/index-admin" class="logo">
+  <a href="{{url('')}}/index-admin" class="logo" style="background-color: #01aec4;">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>SI</b>Lab</span>
     <!-- logo for regular state and mobile devices -->
     <span class="logo-lg"><b>Admin</b>Lab</span> <!--nanti pake nama lab dari database-->
   </a>
   <!-- Header Navbar: style can be found in header.less -->
-  <nav class="navbar navbar-static-top">
+  <nav class="navbar navbar-static-top" style="background-color: #02bdd5;">
     <!-- Sidebar toggle button-->
     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
       <span class="sr-only">Toggle navigation</span>
@@ -26,7 +26,7 @@
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
-            <li class="user-header">
+            <li class="user-header" style="background-color: #02bdd5;">
               <img src="{{url('')}}/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
               <p>
@@ -57,7 +57,7 @@
 </header>
 
 <!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar">
+<aside class="main-sidebar" style="background-color: #017382;">
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->
@@ -86,7 +86,7 @@
     <!-- /.search form -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
-      <li class="header">MAIN NAVIGATION</li>
+      <li class="header" style="background-color: #017382; color: white;">MAIN NAVIGATION</li>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-home"></i> <span>Laboratorium</span>
