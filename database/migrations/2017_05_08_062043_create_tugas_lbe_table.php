@@ -17,11 +17,13 @@ class CreateTugasLbeTable extends Migration
             $table->increments('id');
             $table->integer('id_proyek');
             $table->integer('id_mhs');
-            $table->string('tugas');
+            $table->string('judul');
+            $table->text('tugas');
             $table->string('upload_tugas');
             $table->softDeletes();
             $table->timestamps();
-        });    }
+        });
+    }
 
     /**
      * Reverse the migrations.

@@ -42,10 +42,16 @@
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
+                @if(Auth::check())
                 <a href="{{url('')}}/profil/{{Auth::user()->id}}" class="btn btn-default btn-flat">Profile</a>
+                @endif
               </div>
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                @if(Auth::check())
+                <a href="{{url('')}}/logout" class="btn btn-default btn-flat">Sign out</a>
+                @else
+                <a href="{{url('')}}/login" class="btn btn-default btn-flat">Sign in</a>
+                @endif
               </div>
             </li>
           </ul>
@@ -96,7 +102,9 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="{{url('')}}/list-laboratorium"><i class="fa fa-circle-o"></i> Daftar Laboratorium</a></li>
+          @if(Auth::check())
           <li><a href="{{url('')}}/edit-deskripsi-laboratorium/{{Auth::user()->id_lab}}"><i class="fa fa-circle-o"></i> 
+          @endif
             Deskripsi
           </a></li>
           <li><a href="{{url('')}}/inputkegiatan"><i class="fa fa-circle-o"></i> Input Kegiatan</a></li>

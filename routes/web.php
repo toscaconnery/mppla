@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('timer.index');
 });
 
-Route::get('home', function () {
+
+Route::get('home', function ()  {
     return view('timer.index');
 });
 
@@ -46,11 +47,27 @@ Route::get('update_nonaktifkan_admin/{id}', 'AdminController@update_nonaktifkan_
 //Route::get('listpeminjaman', 'AdminController@list_pinjam'); Untuk dicek
 
 /******** LBE *******/
-Route::get('inputtugas', 'LBEController@inputtugas');
-Route::post('inputtugas', 'LBEController@input_tugas');
-Route::get('listtugas', 'LBEController@listtugas');
-Route::get('downloadprogres', 'LBEController@downloadprogres');
-Route::get('inputmodul', 'ModulController@inputmodul');
+Route::get('tambahkan-proyek-lbe', 'LBEController@tambahkan_proyek_lbe');
+Route::post('tambahkan-proyek-lbe', 'LBEController@save_tambahkan_proyek_lbe');
+Route::get('input-tugas-lbe', 'LBEController@input_tugas_lbe');
+Route::post('input-tugas-lbe', 'LBEController@save_input_tugas_lbe');
+Route::get('lihat-tugas-lbe', 'LBEController@lihat_tugas_lbe');
+Route::get('tambahkan-mahasiswa-lbe', 'MhsLBEController@tambahkan_mahasiswa_lbe');
+Route::post('tambahkan-mahasiswa-lbe', 'MhsLBEController@save_tambahkan_mahasiswa_lbe');
+Route::get('kumpulkan-tugas-lbe/{id}', 'LBEController@kumpulkan_tugas');
+Route::post('kumpulkan-tugas-lbe/{id}', 'LBEController@save_kumpulkan_tugas');
+Route::get('lihat-progress-lbe','LBEController@lihat_progress_tugas_lbe');
+Route::get('download-jawaban-tugas-lbe/{id}', 'LBEController@download_jawaban_tugas_lbe');
+Route::get('input-modul-lbe', 'ModulController@input_modul_lbe');
+Route::post('input-modul-lbe', 'ModulController@save_input_modul_lbe');
+Route::get('list-modul', 'ModulController@list_modul_lbe');
+Route::get('download-modul-lbe/{id}','ModulController@download_modul_lbe');
+
+// Route::get('listtugas', 'LBEController@listtugas');
+// Route::get('inputtugas', 'LBEController@inputtugas');
+// Route::post('inputtugas', 'LBEController@input_tugas');
+// Route::get('downloadprogres', 'LBEController@downloadprogres');
+// Route::get('inputmodul', 'ModulController@inputmodul');
 
 /******** HALAMAN DOSEN *******/
 Route::get('tambahkan-dosen', 'DosenController@tambahkan_dosen');
@@ -103,18 +120,20 @@ Route::post('input-kegiatan', 'KegiatanController@save_input_kegiatan');
 
 
 /******** HALAMAN UNTUK MHS LBE *******/
-//Menampilkan halaman untuk melihat tugas LBE
+Route::get('jadikan-mahasiswa-lbe/{id}', 'MhsLBEController@jadikan_mahasiswa_lbe');
 Route::get('lihattugas', 'MhsLBEController@lihattugas');
-//Menampilkan halaman untuk submit progres tugas LBE
 Route::get('submitprogres', 'MhsLBEController@submitprogres');
-//Menampilkan halaman untuk melihat history submit progres tugas LBE
 Route::get('histori', 'MhsLBEController@historiprogres');
-//Menampilkan halaman untuk mendownload modul LBE
 Route::get('modul', 'MhsLBEController@unduhmodul');
+Route::get('inputtugas','LBEController@input_tugas');
 
-
-//nyampah
+//testing
 Route::get('nyobamaster', 'AdminController@nyobamaster');
 
 
 Auth::routes();
+
+Route::get('logout', function() {
+	Auth::logout();
+	return view('timer.index');
+});

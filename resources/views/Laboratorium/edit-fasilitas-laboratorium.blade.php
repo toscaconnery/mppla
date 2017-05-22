@@ -31,7 +31,7 @@
                  <div class="form-group">
                   <label>Kondisi:</label>
                   <select name="kondisi">
-                    <option value="Sangat baik"{{$fasilitas->kondisi == "Sangat baik" ? "checked" : ""}}>Sangat baik</option>
+                    <option value="Sangat baik" {{$fasilitas->kondisi == "Sangat baik" ? "checked" : ""}}>Sangat baik</option>
                     <option value="Baik" {{$fasilitas->kondisi == "Baik" ? "checked" : ""}}>Baik</option>
                     <option value="Kurang baik" {{$fasilitas->kondisi == "Kurang baik" ? "checked" : ""}}>Kurang baik</option>
                     <option value="Rusak" {{$fasilitas->kondisi == "Rusak" ? "checked" : ""}}>Rusak</option>

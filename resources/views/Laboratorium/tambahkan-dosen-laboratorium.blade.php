@@ -24,7 +24,7 @@
                 <div class="form-group">
                   <label>Nama dosen</label>
                   <br>
-                  <select name="id_dosen">
+                    <select name="id_dosen">
                     @foreach($dosen as $list)
                       <option value="{{$list->id}}">{{$list->nama}}</option>
                     @endforeach

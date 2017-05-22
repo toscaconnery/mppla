@@ -9,7 +9,7 @@ class Modul extends Model
     protected $table = 'modul';
 
     protected $fillable = [
-    	'id_proyek', 'modul',
+    	'id_proyek', 'judul', 'modul',
     ];
 
     public function lbe(){

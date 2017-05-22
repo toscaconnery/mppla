@@ -22,42 +22,42 @@ class LaboratoriumTableSeeder extends Seeder
         ]);
 
         DB::table('laboratorium')->insert([
-        	'nama_lab' => 'Komputasi Cerdas Visual',
+        	'nama_lab' => 'Laboratorium Komputasi Cerdas Visual',
         	'created_at' => new \Carbon\Carbon
         ]);
 
         DB::table('laboratorium')->insert([
-        	'nama_lab' => 'Komputasi Berbasis Jaringan',
+        	'nama_lab' => 'Laboratorium Komputasi Berbasis Jaringan',
         	'created_at' => new \Carbon\Carbon
         ]);
 
         DB::table('laboratorium')->insert([
-        	'nama_lab' => 'Rekayasa Perangkat Lunak',
+        	'nama_lab' => 'Laboratorium Rekayasa Perangkat Lunak',
         	'created_at' => new \Carbon\Carbon
         ]);
 
         DB::table('laboratorium')->insert([
-        	'nama_lab' => 'Arsitektur Jaringan Komputer',
+        	'nama_lab' => 'Laboratorium Arsitektur Jaringan Komputer',
         	'created_at' => new \Carbon\Carbon
         ]);
 
         DB::table('laboratorium')->insert([
-        	'nama_lab' => 'Interaksi Grafika Dan Komputer',
+        	'nama_lab' => 'Laboratorium Interaksi Grafika Dan Komputer',
         	'created_at' => new \Carbon\Carbon
         ]);
 
         DB::table('laboratorium')->insert([
-        	'nama_lab' => 'Algoritma Pemrograman',
+        	'nama_lab' => 'Laboratorium Algoritma Pemrograman',
         	'created_at' => new \Carbon\Carbon
         ]);
 
         DB::table('laboratorium')->insert([
-        	'nama_lab' => 'Manajemen Informasi',
+        	'nama_lab' => 'Laboratorium Manajemen Informasi',
         	'created_at' => new \Carbon\Carbon
         ]);
 
         DB::table('laboratorium')->insert([
-        	'nama_lab' => 'Dasar Terapan Komputer',
+        	'nama_lab' => 'Laboratorium Dasar Terapan Komputer',
         	'created_at' => new \Carbon\Carbon
         ]);
     }
