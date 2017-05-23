@@ -26,3 +26,5 @@
 <link rel="stylesheet" href="{{url('')}}/admin/plugins/daterangepicker/daterangepicker.css">
 <!-- bootstrap wysihtml5 - text editor -->
 <link rel="stylesheet" href="{{url('')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="{{url('')}}/admin/plugins/select2/select2.min.css">

@@ -107,7 +107,7 @@
           @endif
             Deskripsi
           </a></li>
-          <li><a href="{{url('')}}/inputkegiatan"><i class="fa fa-circle-o"></i> Input Kegiatan</a></li>
+          <li><a href="{{url('')}}/input-kegiatan"><i class="fa fa-circle-o"></i> Input Kegiatan</a></li>
           <li><a href="{{url('')}}/lihat-kegiatan"><i class="fa fa-circle-o"></i> Daftar Kegiatan</a></li>
           <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Editors</a></li> -->
         </ul>
@@ -120,10 +120,12 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-circle-o"></i> Input Penugasan</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Daftar Tugas</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Progress</a></li> <!-- donlot tugas yg diupload-->
+          <li><a href="{{url('')}}/tambahkan-proyek-lbe"><i class="fa fa-circle-o"></i> Input Proyek</a></li>
+          <li><a href="{{url('')}}/input-tugas-lbe"><i class="fa fa-circle-o"></i> Beri Penugasan</a></li>
+          <li><a href="{{url('')}}/listtugas"><i class="fa fa-circle-o"></i> Daftar Tugas</a></li>
+          <li><a href="{{url('')}}/lihat-progress-lbe"><i class="fa fa-circle-o"></i> Progress</a></li> <!-- donlot tugas yg diupload-->
           <li><a href="#"><i class="fa fa-circle-o"></i> Modul LBE</a></li>
+          <li><a href="{{url('')}}/tambahkan-mahasiswa-lbe"><i class="fa fa-circle-o"></i> Input Peserta</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -136,7 +138,7 @@
         <ul class="treeview-menu">
           <li><a href="{{url('')}}/list-administrator"><i class="fa fa-circle-o"></i> List Admin</a></li>
           <li><a href="{{url('')}}/inputadmin"><i class="fa fa-circle-o"></i> Tambah Admin</a></li>
-          <li><a href="{{url('')}}/list_user"><i class="fa fa-circle-o"></i> Status Admin</a></li>
+          <li><a href="{{url('')}}/list-user"><i class="fa fa-circle-o"></i> Status Admin</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -185,7 +187,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{url('')}}/lihatuser"><i class="fa fa-circle-o"></i> List User</a></li>
+          <li><a href="{{url('')}}/lihat-user"><i class="fa fa-circle-o"></i> List User</a></li>
         </ul>
       </li>
     </ul>

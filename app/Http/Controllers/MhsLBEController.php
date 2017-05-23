@@ -35,7 +35,7 @@ class MhsLBEController extends Controller
                 $user->id_lab = Auth::user()->id_lab;
                 $user->save();
             }
-            return redirect('/');
+            return redirect('tambahkan-mahasiswa-lbe');
         }
         else {
             return redirect('/');

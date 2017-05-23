@@ -41,6 +41,11 @@
             <!-- /.col -->
             <div class="col-md-6">
               <div class="form-group">
+                <label>NRP:</label>
+                <input type="text" class="form-control" name="nrp" value="{{$admin->nrp}}">
+              </div>
+
+              <div class="form-group">
                   <label>Alamat Asal:</label>
                   <input type="text" class="form-control" name="asal" value="{{$admin->alamat_asal}}">
                 </div>

@@ -49,7 +49,10 @@ class AdminController extends Controller
         return view('Administrator\list-administrator', $this->data);
     }
 
-
+    public function list_user()
+    {
+        return view('User\list-user');
+    }
 
     public function jadikan_admin($id)
     {
@@ -66,7 +69,7 @@ class AdminController extends Controller
         $admin->id_lab = $request->get('id_lab');
         $admin->save();
 
-        return redirect('list_user');
+        return redirect('list-user');
     }
 
     public function nonaktifkan_admin($id)
@@ -83,17 +86,7 @@ class AdminController extends Controller
         $admin->id_lab = null;
         $admin->save();
 
-        return redirect('list_user');
-    }
-
-    public function lihatuser()
-    {
-        return view('admin\lihatuser');
-    }
-
-    public function detailuser()
-    {
-        return view('admin\detailuser');
+        return redirect('list-user');
     }
 
     

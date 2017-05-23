@@ -72,7 +72,7 @@ class LBEController extends Controller
         $proyek->id_lab = Auth::user()->id_lab;
         $proyek->save();
 
-        return redirect('/');
+        return redirect('lihat-tugas-lbe');
     }
 
     public function input_tugas_lbe()
@@ -103,7 +103,7 @@ class LBEController extends Controller
             $tugas->upload_tugas = 0;
             $tugas->save();
         }
-        return redirect('/');
+        return redirect('input-tugas-lbe');
     }
 
     public function lihat_tugas_lbe()
@@ -120,16 +120,16 @@ class LBEController extends Controller
         }
     }
 
-    public function input_tugas(Request $request)
-    {
-    	$tugaslbe = new ProyekLab;
-        $tugaslbe->id_lab = $request->id_lab;
-        $tugaslbe->nama_proyek = $request->judul; //kiri database kanan form
-        $tugaslbe->keterangan = $request->tugas;
+    // public function input_tugas(Request $request)
+    // {
+    // 	$tugaslbe = new ProyekLab;
+    //     $tugaslbe->id_lab = $request->id_lab;
+    //     $tugaslbe->nama_proyek = $request->judul; //kiri database kanan form
+    //     $tugaslbe->keterangan = $request->tugas;
 
-        $tugaslbe->save();
-        return redirect('listtugas')->with('message','success');
-    }
+    //     $tugaslbe->save();
+    //     return redirect('listtugas')->with('message','success');
+    // }
 
     public function kumpulkan_tugas($id)
     {
@@ -182,7 +182,7 @@ class LBEController extends Controller
 
     public function listtugas()
     {
-    	$this->data['listtugas'] = ProyekLab::all();
+    	$this->data['listtugas'] = TugasLbe::all();
         return view('admin\listtugas', $this->data);
     }
 

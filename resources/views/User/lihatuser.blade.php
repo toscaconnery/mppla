@@ -1,12 +1,12 @@
 @extends('master.master')
-
 @section('content')
 
     <div class="row">
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title" style="font-weight: bold;">Daftar User Lab</h3>  
+                
+                  <h3 class="box-title" style="font-weight: bold;">Daftar User Aplikasi</h3>  
                   <!-- ntar nama labnya diambil dari database -->
                 </div>
                 <!-- /.box-header -->
@@ -18,12 +18,14 @@
                       <th>No. Handphone</th>
                       <th> </th>
                     </tr>
-                    <tr>
-                      <td>Nafia Rizky</td>
-                      <td>nafia.ry@gmail.com</td>
-                      <td>082216612220</td>
-                      <td><a href="{{url('')}}/detailuser">Lihat Detail</a></td>
-                    </tr>
+                    @foreach($user as $list)
+                      <tr>
+                        <td>{{$list->name}}</td>
+                        <td>{{$list->email}}</td>
+                        <td>{{$list->no_hp}}</td>
+                        <td><a href="{{url('')}}/detail-user/{{$list->id}}">Lihat Detail</a></td>
+                      </tr>
+                    @endforeach
                   </table>
                 </div>
                 <!-- /.box-body -->

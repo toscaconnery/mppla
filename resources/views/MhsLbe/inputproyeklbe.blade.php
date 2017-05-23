@@ -6,8 +6,8 @@
       <div class="col-md-6">
           <!-- general form elements disabled -->
           <div class="box box-warning">
-            <div class="box-title">
-              Input Proyek LBE
+            <div class="box-header with-border">
+              <h3 class="box-title">Masukkan Proyek LBE</h3>
             </div>
             <div class="box-body">
             @if($isadmin)
@@ -15,16 +15,14 @@
                 {{csrf_field()}}
                 <div class="form-group">
                   <label>Nama proyek</label>
-                  <br>
-                  <input type="text" name="nama_proyek">
+                  <input type="text" class="form-control" name="nama_proyek">
                 </div>
                 <div class="form-group">
                   <label>Keterangan</label>
-                  <br>
-                  <textarea name="keterangan" rows="15"></textarea>
+                  <textarea class="form-control" name="keterangan" rows="15"></textarea>
                 </div>
-                <div class="form-group">
-                  <button type="submit" class="btn button-primary">Save</button>
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
             @else

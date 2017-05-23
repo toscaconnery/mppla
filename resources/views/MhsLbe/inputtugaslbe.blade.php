@@ -7,7 +7,7 @@
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Input LBE</h3>
+              <h3 class="box-title">Masukkan Tugas LBE</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -15,10 +15,10 @@
                 <form role="form" action=" " method="POST">
                   {{csrf_field()}}
                   <!-- text input -->
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label>{{$nama_lab}}</label>
                     <h3></h3>
-                  </div>
+                  </div> -->
                     <!-- <input type="hidden" name="id_lab" value=""> -->
                   <div class="form-group">
                     <label>Judul Penugasan</label>
@@ -32,21 +32,26 @@
                   </div>
 
                   <!--Pilih mahasiswa-->
-                  <script type="text/javascript">
+                  <select class="form-control select2" multiple="multiple" name="mhs[]" style="width: 100%;">
+                    @foreach($mahasiswa as $list)
+                    <option value="{{$list->id}}">{{$list->name}}</option>
+                    @endforeach
+                  </select>
+                  <!-- <script type="text/javascript">
                     $(".js-example-basic-multiple").select2();
                   </script>
                   <select class="js-example-basic-multiple" multiple="multiple" name="mhs[]">
                     @foreach($mahasiswa as $list)
                     <option value="{{$list->id}}">{{$list->name}}</option>
                     @endforeach
-                  </select>
+                  </select> -->
 
                   <div class="box-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
                 </form>
               @else
-                <h3>{{$nama_lab}} belum memiliki proyek LBE untuk ditambahka tugas. Silahkan tambahkan proyek LBE terlebih dahulu.</h3>
+                <h3>{{$nama_lab}} belum memiliki proyek LBE sehingga tidak dapat memberikan tugas. Silakan tambahkan proyek LBE terlebih dahulu.</h3>
               @endif
             </div>
             <!-- /.box-body -->

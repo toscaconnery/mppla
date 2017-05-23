@@ -33,13 +33,14 @@ Route::get('kegiatanlab', 'UmumController@kegiatanlab');
 
 
 //Menampilkan halaman melihat data user lain
-Route::get('lihatuser', 'AdminController@lihatuser');
-Route::get('detailuser', 'AdminController@detailuser');
+// Route::get('lihatuser', 'AdminController@lihatuser');
+// Route::get('detailuser', 'AdminController@detailuser');
 
 /******** HALAMAN ADMIN *******/
-Route::get('inputadmin', 'AdminController@input_admin');
+Route::get('inputadmin', 'AdminController@input_administrator');
 Route::get('list-administrator', 'AdminController@list_administrator');
-Route::get('index-admin', 'AdminController@index');
+Route::get('index-admin', 'AdminController@index'); //home
+Route::get('list-user', 'AdminController@list_user');
 Route::get('jadikan_admin/{id}', 'AdminController@jadikan_admin');
 Route::post('update_jadikan_admin/{id}', 'AdminController@update_jadikan_admin');
 Route::get('nonaktifkan_admin/{id}', 'AdminController@nonaktifkan_admin');
@@ -47,23 +48,26 @@ Route::get('update_nonaktifkan_admin/{id}', 'AdminController@update_nonaktifkan_
 //Route::get('listpeminjaman', 'AdminController@list_pinjam'); Untuk dicek
 
 /******** LBE *******/
+//admin
 Route::get('tambahkan-proyek-lbe', 'LBEController@tambahkan_proyek_lbe');
 Route::post('tambahkan-proyek-lbe', 'LBEController@save_tambahkan_proyek_lbe');
 Route::get('input-tugas-lbe', 'LBEController@input_tugas_lbe');
 Route::post('input-tugas-lbe', 'LBEController@save_input_tugas_lbe');
-Route::get('lihat-tugas-lbe', 'LBEController@lihat_tugas_lbe');
+Route::get('listtugas', 'LBEController@listtugas');
 Route::get('tambahkan-mahasiswa-lbe', 'MhsLBEController@tambahkan_mahasiswa_lbe');
 Route::post('tambahkan-mahasiswa-lbe', 'MhsLBEController@save_tambahkan_mahasiswa_lbe');
-Route::get('kumpulkan-tugas-lbe/{id}', 'LBEController@kumpulkan_tugas');
-Route::post('kumpulkan-tugas-lbe/{id}', 'LBEController@save_kumpulkan_tugas');
 Route::get('lihat-progress-lbe','LBEController@lihat_progress_tugas_lbe');
 Route::get('download-jawaban-tugas-lbe/{id}', 'LBEController@download_jawaban_tugas_lbe');
 Route::get('input-modul-lbe', 'ModulController@input_modul_lbe');
 Route::post('input-modul-lbe', 'ModulController@save_input_modul_lbe');
+Route::get('listmodul', 'ModulController@list_modul');
+//mahasiswa
+Route::get('lihat-tugas-lbe', 'LBEController@lihat_tugas_lbe');
+Route::get('kumpulkan-tugas-lbe/{id}', 'LBEController@kumpulkan_tugas');
+Route::post('kumpulkan-tugas-lbe/{id}', 'LBEController@save_kumpulkan_tugas');
 Route::get('list-modul', 'ModulController@list_modul_lbe');
 Route::get('download-modul-lbe/{id}','ModulController@download_modul_lbe');
 
-// Route::get('listtugas', 'LBEController@listtugas');
 // Route::get('inputtugas', 'LBEController@inputtugas');
 // Route::post('inputtugas', 'LBEController@input_tugas');
 // Route::get('downloadprogres', 'LBEController@downloadprogres');
@@ -79,9 +83,9 @@ Route::post('edit-dosen/{id}', 'DosenController@update_dosen');
 
 
 /******** HALAMAN USER *******/
-Route::get('list-user', 'UserController@list_user');
+Route::get('lihat-user', 'UserController@list_user');
 Route::get('profil/{id}', 'UserController@profil');
-Route::post('profil/{id}', 'UseerController@update_profil');
+Route::post('profil/{id}', 'UserController@update_profil');
 Route::get('detail-user/{id}', 'UserController@detail_user');
 
 

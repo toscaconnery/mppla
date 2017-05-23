@@ -47,7 +47,7 @@ class KegiatanController extends Controller
         $this->data['kegiatan'] = DB::select('SELECT k.*, l.nama_lab
                                                 FROM kegiatan k, laboratorium l
                                                 WHERE k.id_lab = l.id
-                                                AND k.tanggal >= CURDATE()
+                                                -- AND k.tanggal >= CURDATE()
                                                 AND k.id_lab = '.$this->data['user']->id_lab);
         //dd($this->data['kegiatan'])
         return view('Kegiatan\lihat-kegiatan-laboratorium', $this->data);

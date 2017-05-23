@@ -12,7 +12,7 @@ class UserController extends Controller
     {
         $this->data['user'] = DB::select('SELECT * FROM users');
 
-        return view('User\list-user', $this->data);
+        return view('User\lihatuser', $this->data);
     }
 
 
@@ -40,6 +40,7 @@ class UserController extends Controller
         $profil->no_hp = $request->get('nohp');
         $profil->tanggal_lahir = $request->get('tgllahir');
         $profil->tempat_lahir = $request->get('tempatlhr');
+        $profil->nrp = $request->get('nrp');
         $profil->alamat_asal = $request->get('asal');
         $profil->alamat_surabaya = $request->get('addsby');
         $profil->agama = $request->get('agama');

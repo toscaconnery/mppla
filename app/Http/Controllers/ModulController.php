@@ -41,10 +41,18 @@ class ModulController extends Controller
             $modul->judul = $request->judul;
             $modul->modul = $path.$filename;
             $modul->save();
-            return redirect('/');
+            return redirect('list-modul');
         }
     }
 
+    //admin
+    public function list_modul()
+    {
+        $this->data['modul'] = DB::select('SELECT m.* FROM modul m');
+        return view('MhsLbe\list-modul', $this->data);
+    }
+
+    //mhs
     public function list_modul_lbe()
     {
     	$this->data['modul'] = DB::select('SELECT m.* FROM modul m');

@@ -7,7 +7,7 @@
             <div class="col-md-8" >
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title" style="font-weight: bold;">Progres LBE</h3>  
+                  <h3 class="box-title" style="font-weight: bold;">Modul LBE</h3>  
                   <!-- ntar nama labnya diambil dari database -->
                 </div>
                 <!-- /.box-header -->
@@ -15,8 +15,7 @@
                   <table class="table table-hover">
                     <tr>
                       <th>No.</th>
-                      <th>NRP</th>
-                      <th>Progress</th>
+                      <th>Modul</th>
                       <th>Action</th>
                     </tr>
                       @php
@@ -26,7 +25,7 @@
                         @foreach ($modul as $modul)                    
                         <tr>
                           <td>{{$x++}}</td>
-                          <td>{{$modul->judul}}</td>
+                          <td>{{$modul->judul}}</td>  
                           <td>
                               <a href="{{url('')}}/download-modul-lbe/{{$modul->id}}" class="fa fa-download">Download</a>
                           </td>

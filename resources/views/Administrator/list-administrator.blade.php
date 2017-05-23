@@ -18,7 +18,7 @@
                       <th>NRP</th>
                       <th>Laboratorium</th>
                       <th>No. Handphone</th>
-                      <th><i class="fa fa-edit"></i></th>
+                      <!-- <th><i class="fa fa-edit"></i></th> -->
                     </tr>
                     @php
                       $x = 1;
