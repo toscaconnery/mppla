@@ -85,7 +85,8 @@ class LaboratoriumController extends Controller
     }
 
     public function list_laboratorium() {
-        $this->data['laboratorium'] = DB::select('SELECT * FROM laboratorium');
+        $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l WHERE l.deleted_at IS NULL');
+
         return view('Laboratorium\list-laboratorium', $this->data);
     }
 
