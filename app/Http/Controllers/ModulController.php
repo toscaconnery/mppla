@@ -7,6 +7,7 @@ use DB;
 use App\Laboratorium;
 use Auth;
 use App\Modul;
+use Response;
 
 class ModulController extends Controller
 {
