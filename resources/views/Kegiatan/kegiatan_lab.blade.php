@@ -118,7 +118,7 @@
                 <div class="container">
                     <div class="section-heading">
                         <br>
-                        <h1 class="title wow fadeInDown" data-wow-delay=".3s">LABORATORIUM PEMROGRAMAN</h1>
+                        <h1 class="title wow fadeInDown" data-wow-delay=".3s">{{$laboratorium->nama_lab}}</h1>
                         <!-- <p class="wow fadeInDown" data-wow-delay=".5s">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed,<br> quasi dolores numquam dolor vero ex, tempora commodi repellendus quod laborum.
                         </p> -->
