@@ -27,9 +27,20 @@ class UserController extends Controller
 
     public function profil($id)
     {
-        $this->data['admin'] = DB::select('SELECT * from users WHERE id='.$id)[0];
-        // dd($this->data);
-        return view('Administrator\profil', $this->data);
+        if(Auth::check()){
+            if(Auth::user()->id == $id){
+                $this->data['admin'] = DB::select('SELECT * from users WHERE id='.$id)[0];
+
+                return view('Administrator\profil', $this->data);
+            }
+            else{
+                return redirect('/');
+            }
+        }
+        else{
+            return redirect('/');
+        }
+        
     }
 
     public function update_profil(Request $request, $id)
