@@ -66,6 +66,8 @@ class LaboratoriumController extends Controller
         $laboratorium->gambar = $path.$filename;
         $laboratorium->save();
 
+        \Session::flash('flash_message','successfully saved.');
+
         return redirect('list-laboratorium');
     }
 

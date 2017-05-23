@@ -124,18 +124,14 @@
                                 <h2>
                                 {{$laboratorium->nama_lab}}
                                 </h2>
-                                {{-- <p>
-                                    Laboratorium Pemrograman, atau sering disingkat menjadi LP, adalah salah satu laboratorium yang ada di Teknik Informatika ITS. Laboratorium ini bersifat umum, yakni siapa saja bisa menggunakan selama lab tidak dipakai untuk acara.
-                                </p>
-                                <p>
-                                    LP sering menjadi tempat belajar bagi mahasiswa Teknik Informatika. Di laboratorium ini diselenggarakan pula praktikum Dasar Pemrograman, Struktur Data, serta Basis Data. 
-                                </p>
-                                <p>
-                                    Workshop ini juga berfungsi sebagai common support bagi kebutuhan penggunaan komputer. Mahasiswa dapat menggunakan komputer yang ada untuk mengerjakan tugas dan akses internet sesuai aturan yang telah ditetapkan.
-                                </p> --}}
+
                                 <p>
                                     {{$laboratorium->deskripsi_lab}}
                                 </p>
+                                @if(Auth::user()->is_admin and Auth::user()->id_lab == $laboratorium->id)
+                                <a href="{{url('')}}/edit-deskripsi-laboratorium/{{$laboratorium->id}}"><span>Edit deskripsi</span></a>
+                                @endif
+                                
                             </div>
                             
                         </div>
