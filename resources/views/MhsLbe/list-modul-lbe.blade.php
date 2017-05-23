@@ -28,6 +28,7 @@
                           <td>{{$x++}}</td>
                           <td>{{$modul->judul}}</td>
                           <td>
+                            @if($modul->)
                               <a href="{{url('')}}/download-modul-lbe/{{$modul->id}}" class="fa fa-download">Download</a>
                           </td>
                         </tr>
