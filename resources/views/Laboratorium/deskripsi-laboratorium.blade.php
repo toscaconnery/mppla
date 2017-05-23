@@ -83,30 +83,28 @@
                     <div class="main-menu">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="index.html" >Home</a>
+                                <a href="#">
+                                    @if(Auth::check())
+                                        {{ Auth::user()->name }}
+                                    @endif
+                                </a>
                             </li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="service.html">Service</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="404.html">404 Page</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span class="caret"></span></a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="blog-fullwidth.html">Blog Full</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog Left sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right sidebar</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="contact.html">Login</a></li>
+                            <li><a href="{{url('')}}/">Home</a></li>
+                            <li><a href="#works">Laboratorium</a></li>
+                            @if(Auth::check())
+                                @if(Auth::user()->is_admin == 1)
+                                    <li><a href="{{url('')}}/index-admin">Dashboard</a></li>
+                                @else
+                                    <li><a href="{{url('')}}/lihat-tugas-lbe">Dashboard</a></li>
+                                @endif
+                            @endif
+                            <li><a href="{{url('')}}/lakukan-reservasi-laboratorium">Reservasi</a></li>
+                            @if(Auth::check())
+                                <li><a href="{{url('')}}/logout">Logout</a></li>
+                            @else
+                                <li><a href="{{url('')}}/login">Login</a></li>
+                                <li><a href="{{url('')}}/register">Register</a></li>
+                            @endif
                         </ul>
                     </div>
                 </nav>

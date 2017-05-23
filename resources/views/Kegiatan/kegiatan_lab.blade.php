@@ -95,14 +95,15 @@
                                 @if(Auth::user()->is_admin == 1)
                                     <li><a href="{{url('')}}/index-admin">Dashboard</a></li>
                                 @else
-                                    <li><a href="{{url('')}}/lihattugas">Dashboard</a></li>
+                                    <li><a href="{{url('')}}/lihat-tugas-lbe">Dashboard</a></li>
                                 @endif
                             @endif
-                            <li><a href="service.html">Reservasi</a></li>
+                            <li><a href="{{url('')}}/lakukan-reservasi-laboratorium">Reservasi</a></li>
                             @if(Auth::check())
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="{{url('')}}/logout">Logout</a></li>
                             @else
                                 <li><a href="{{url('')}}/login">Login</a></li>
+                                <li><a href="{{url('')}}/register">Register</a></li>
                             @endif
                         </ul>
                     </div>
@@ -125,7 +126,7 @@
                     </div>
                     <div class="row">
                         @foreach($kegiatan as $kegiatan)
-                        <div class="col-md-4 col-lg-4 col-xs-12">
+                        <div class="col-md-4 col-lg-4 col-xs-12" style="width: 360px; height: 300px;">
                             <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
                                 <div class="media-left">
                                     <div class="icon">
@@ -134,6 +135,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">{{$kegiatan->nama_kegiatan}}</h4>
+                                    <p>{{$kegiatan->tanggal}}</p>
                                     <p>{{$kegiatan->deskripsi}}</p>
                                 </div>
                             </div>

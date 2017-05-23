@@ -98,7 +98,7 @@
                                     <li><a href="{{url('')}}/lihat-tugas-lbe">Dashboard</a></li>
                                 @endif
                             @endif
-                            <li><a href="service.html">Reservasi</a></li>
+                            <li><a href="{{url('')}}/lakukan-reservasi-laboratorium">Reservasi</a></li>
                             @if(Auth::check())
                                 <li><a href="{{url('')}}/logout">Logout</a></li>
                             @else
