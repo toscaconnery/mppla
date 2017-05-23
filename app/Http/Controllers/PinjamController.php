@@ -23,6 +23,9 @@ class PinjamController extends Controller
         $this->data['laboratorium'] = DB::select('SELECT l.* 
                                                 FROM laboratorium l
                                                 WHERE l.reservasiable = 1');
+        $this->data['peminjaman'] = DB::select('SELECT p.*
+                                                FROM pinjam p
+                                                WHERE p.tanggal >= CURDATE()');
         return view('Pinjam\reservasi-laboratorium', $this->data);
     }
 

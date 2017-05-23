@@ -211,25 +211,27 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="box box-warning">
+                            <div class="box box-warning">
                                 <div class="box-header with-border">
                                     <h3 class="box-title"></h3>
                                 </div>
                                 <div class="box-body table-responsive no-padding">
                                     <table class="table table-hover">
                                         <tr>
+                                          <th>No</th>
                                           <th>Waktu</th>
                                           <th>Kegiatan</th>
                                         </tr>
-                                        @foreach($peminjaman as $pinjam)
+                                        @foreach($peminjaman as $data)
                                         <tr>
                                           <td>{{$x++}}</td>
-                                          <td>{{$data->name}}</td>
+                                          <td>{{$data->tanggal}}, {{$data->jam_mulai}}-{{$data->jam_selesai}}</td>
+                                          <td>{{$data->keperluan}}</td>
                                         </tr>
                                         @endforeach
                                     </table>
                                 </div>
-                            </div> -->                            
+                            </div>                            
                         </div>
                     </div>
                 </div>
