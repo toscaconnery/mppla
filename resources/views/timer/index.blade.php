@@ -179,7 +179,7 @@
                     <div class="section-heading">
                         <h1 class="title wow fadeInDown" data-wow-delay=".3s">LABORATORIUM TEKNIK INFORMATIKA</h1>
                         <p class="wow fadeInDown" data-wow-delay=".5s">
-                            Teknik Informatika ITS memiliki 11 laboratorium. Laboratorium ini berfungsi sebagai penunjang bagi <br> mahasiswa dan dosen dalam melaksanakan kegiatan belajar mengajar. Yuk, kita simak apa saja <br> laboratorium yang ada di Teknik Informatika!
+                            Teknik Informatika ITS memiliki {{$jumlah_laboratorium}} laboratorium. Laboratorium ini berfungsi sebagai penunjang bagi <br> mahasiswa dan dosen dalam melaksanakan kegiatan belajar mengajar. Yuk, kita simak apa saja <br> laboratorium yang ada di Teknik Informatika!
                         </p>
                     </div>
                     @foreach($laboratorium as $data)

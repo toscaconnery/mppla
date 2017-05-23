@@ -31,7 +31,8 @@ class HomeController extends Controller
     public function show_home()
     {
         $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l WHERE l.deleted_at IS NULL');
-        //dd($this->data['laboratorium']);
+        $this->data['jumlah_laboratorium'] = DB::select('SELECT COUNT(l.id) as jumlah FROM laboratorium l WHERE l.deleted_at IS NULL')[0]->jumlah;
+        //dd($this->data['jumlah_laboratorium']);
         return view('timer.index',$this->data); 
     }
 }

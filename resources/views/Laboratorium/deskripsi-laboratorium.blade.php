@@ -159,7 +159,7 @@
             <footer id="footer">
                 <div class="container">
                     <div class="col-md-8">
-                        <p class="copyright">Copyright: <span>2015</span> . Design and Developed by <a href="http://www.Themefisher.com">Themefisher</a></p>
+                        <p class="copyright">Copyright: <span>2017</span> . Design and Developed by <a href="https://www.facebook.com/nafia.yogayana">5114100017</a>-<a href="https://www.facebook.com/toscayconnery">5114100061</a>-<a href="https://www.facebook.com/muhammad.ishar7">5114100702</a> . SI Laboratorium Teknik Informatika ITS
                     </div>
                     <div class="col-md-4">
                         <!-- Social Media -->
