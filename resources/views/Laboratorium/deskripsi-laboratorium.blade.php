@@ -128,8 +128,10 @@
                                 <p>
                                     {{$laboratorium->deskripsi_lab}}
                                 </p>
-                                @if(Auth::user()->is_admin and Auth::user()->id_lab == $laboratorium->id)
-                                <a href="{{url('')}}/edit-deskripsi-laboratorium/{{$laboratorium->id}}"><span>Edit deskripsi</span></a>
+                                @if(Auth::check())
+                                    @if(Auth::user()->is_admin and Auth::user()->id_lab == $laboratorium->id)
+                                    <a href="{{url('')}}/edit-deskripsi-laboratorium/{{$laboratorium->id}}"><span>Edit deskripsi</span></a>
+                                    @endif
                                 @endif
                                 
                             </div>

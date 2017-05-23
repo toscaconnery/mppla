@@ -20,7 +20,7 @@
                       <th>ID</th>
                       <th>Nama Laboratorium</th>
                       <th>Keterangan</th>
-                      <th>Reservasi</th>
+                      <th>Bisa direservasi</th>
                       @if(Auth::user()->is_admin==2)
                       <th>Action</th>
                       @endif
