@@ -1,4 +1,4 @@
-@extends('master.master')
+@extends('master2.master')
 
 @section('content')
 
@@ -7,19 +7,19 @@
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-title">
-              Input Proyek LBE
+              List Tugas LBE
             </div>
             <div class="box-body">
-              <table>
+              <table class="table table-hover">
                 @php 
                   $x = 1;
                 @endphp
                 <tr>
                   <th>No.</th>
-                  <th>Title</th>
-                  <th>Task description</th>
-                  <th>Available from</th>
-                  <th>Finished at</th>
+                  <th>Judul Tugas</th>
+                  <th>Detail Tugas</th>
+                  <th>Tanggal Mulai</th>
+                  <th>Tanggal Selesai</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>

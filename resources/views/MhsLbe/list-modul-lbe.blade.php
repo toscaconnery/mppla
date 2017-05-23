@@ -1,4 +1,4 @@
-@extends('master.master')
+@extends('master2.master')
 
 @section('content')
 
@@ -28,7 +28,7 @@
                           <td>{{$modul->judul}}</td>  
                           <td>
                             @if($modul->modul)
-                              <a href="{{url('')}}/download-modul-lbe/{{$modul->id}}" class="fa fa-download">Download</a>
+                              <a href="{{url('')}}/download-modul-lbe/{{$modul->id}}" class="fa fa-download"> Download</a>
                             @endif
                           </td>
                         </tr>

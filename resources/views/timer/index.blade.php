@@ -184,15 +184,32 @@
                     </div>
                     @foreach($laboratorium as $data)
                     <div class="row">
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-                                <div class="img-wrapper">
-                                    @if($data->gambar)
-                                    <img src="{{url('')}}/{{$data->gambar}}" class="img-responsive" alt="this is a title" >
-                                    @else
-                                    <img src="{{url('')}}/logo-laboratorium/lab.jpg" class="img-responsive" alt="this is a title" >
+                        <div class="col-sm-4 col-lg-4 col-xs-12">
+                            <figure class="wow fadeInLeft animated portfolio-item" style="width: 360px;" data-wow-duration="500ms" data-wow-delay="0ms">
+                                <div class="img-wrapper" style="width: 360px; height: 360px;">
+                                    @if($data->id == 1)
+                                    <img src="{{url('')}}/logo-laboratorium/lp.png" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
+                                    <!-- <img src="{{url('')}}/{{$data->gambar}}" class="img-responsive" alt="this is a title" > -->
+                                    @elseif($data->id == 2)
+                                    <img src="{{url('')}}/logo-laboratorium/lpp.png" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
+                                    @elseif($data->id == 3)
+                                    <img src="{{url('')}}/logo-laboratorium/kcvkcv.png" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
+                                    @elseif($data->id == 4)
+                                    <img src="{{url('')}}/logo-laboratorium/ncc.png" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
+                                    @elseif($data->id == 5)
+                                    <img src="{{url('')}}/logo-laboratorium/rpl.png" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
+                                    @elseif($data->id == 6)
+                                    <img src="{{url('')}}/logo-laboratorium/ajk.png" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
+                                    @elseif($data->id == 7)
+                                    <img src="{{url('')}}/logo-laboratorium/igs.jpg" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
+                                    @elseif($data->id == 8)
+                                    <img src="{{url('')}}/logo-laboratorium/alpro1.jpg" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
+                                    @elseif($data->id == 9)
+                                    <img src="{{url('')}}/logo-laboratorium/mi.jpg" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
+                                    @elseif($data->id == 10)
+                                    <img src="{{url('')}}/logo-laboratorium/lab.jpg" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
                                     @endif
-                                    <div class="overlay">
+                                    <div class="overlay" style="width: 360px; height: 360px;">
                                         <div class="buttons">
                                             <a target="_blank" href="{{url('')}}/lihat-kegiatan/{{$data->id}}">Kegiatan</a>
                                             <a target="_blank" href="{{url('')}}/deskripsi-laboratorium/{{$data->id}}">Deskripsi</a>
