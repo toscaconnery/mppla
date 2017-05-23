@@ -9,7 +9,7 @@ class Laboratorium extends Model
     protected $table = 'laboratorium';
 
     protected $fillable = [
-    	'nama_lab', 'deskripsi_lab',
+    	'nama_lab', 'deskripsi_lab', 'gambar',
     ];
 
     public function admin(){

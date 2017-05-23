@@ -58,6 +58,12 @@ class LaboratoriumController extends Controller
     {
         $laboratorium = Laboratorium::find($id);
         $laboratorium->deskripsi_lab = $request->deskripsi_lab;
+        $file = $request->file('berkas');
+        $path = "logo-laboratorium/";
+        $fileextension = $file->getClientOriginalExtension();
+        $filename = date("Y-m-d-H-i-s").'-'.Auth::user()->id.'.'.$fileextension;
+        $file->move($path, $filename);
+        $laboratorium->gambar = $path.$filename;
         $laboratorium->save();
 
         return redirect('list-laboratorium');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -24,5 +26,12 @@ class HomeController extends Controller
     public function index()
     {
         return view('admin/login');
+    }
+
+    public function show_home()
+    {
+        $this->data['laboratorium'] = DB::select('SELECT l.* FROM laboratorium l WHERE l.deleted_at IS NULL');
+        //dd($this->data['laboratorium']);
+        return view('timer.index',$this->data); 
     }
 }

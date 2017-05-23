@@ -141,7 +141,11 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+                                @if($laboratorium->gambar)
+                                <img src="{{url('')}}/{{$laboratorium->gambar}}">
+                                @else
                                 <img src="{{url('')}}/timer/images/about/about.jpg" alt="">
+                                @endif
                             </div>
                         </div>
                     </div>
