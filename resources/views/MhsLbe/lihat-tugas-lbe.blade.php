@@ -3,13 +3,18 @@
 @section('content')
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-8">
           <!-- general form elements disabled -->
-          <div class="box box-warning">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"><b>List Tugas LBE</b></h3>  
+              <!-- ntar nama labnya diambil dari database -->
+            </div>
+          <!-- <div class="box box-warning">
             <div class="box-title">
               List Tugas LBE
-            </div>
-            <div class="box-body">
+            </div> -->
+            <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 @php 
                   $x = 1;

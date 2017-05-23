@@ -69,6 +69,7 @@ Route::get('kumpulkan-tugas-lbe/{id}', 'LBEController@kumpulkan_tugas');
 Route::post('kumpulkan-tugas-lbe/{id}', 'LBEController@save_kumpulkan_tugas');
 Route::get('list-modul', 'ModulController@list_modul_lbe');
 Route::get('download-modul-lbe/{id}','ModulController@download_modul_lbe');
+Route::get('histori', 'LBEController@historiprogres');
 
 // Route::get('inputtugas', 'LBEController@inputtugas');
 // Route::post('inputtugas', 'LBEController@input_tugas');
@@ -130,7 +131,7 @@ Route::get('lihat-kegiatan/{id}', 'KegiatanController@lihat_kegiatan_selected');
 Route::get('jadikan-mahasiswa-lbe/{id}', 'MhsLBEController@jadikan_mahasiswa_lbe');
 Route::get('lihattugas', 'MhsLBEController@lihattugas');
 Route::get('submitprogres', 'MhsLBEController@submitprogres');
-Route::get('histori', 'MhsLBEController@historiprogres');
+
 Route::get('modul', 'MhsLBEController@unduhmodul');
 Route::get('inputtugas','LBEController@input_tugas');
 

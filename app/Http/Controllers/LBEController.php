@@ -120,6 +120,7 @@ class LBEController extends Controller
         }
     }
 
+
     // public function input_tugas(Request $request)
     // {
     // 	$tugaslbe = new ProyekLab;
@@ -157,12 +158,26 @@ class LBEController extends Controller
             $tugas->upload_tugas = $path.$filename;
             $tugas->deleted_at = date("Y-m-d");
             $tugas->save();
-            return redirect('/');
+            return redirect('histori');
         }
         else{
             return redirect('/');
         }
         //dd($filemime);
+    }
+
+    public function historiprogres()
+    {
+        if(Auth::check())
+        {
+            $id_mhs = Auth::user()->id;
+            $this->data['tugas'] = DB::select('SELECT t.* FROM tugas_lbe t WHERE t.id_mhs = '.Auth::user()->id);
+            return view('MhsLbe\histori', $this->data);
+        }
+        else
+        {
+            return redirect('/');
+        }
     }
 
     public function lihat_progress_tugas_lbe()

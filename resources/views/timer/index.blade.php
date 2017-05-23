@@ -95,7 +95,7 @@
                                 @if(Auth::user()->is_admin == 1)
                                     <li><a href="{{url('')}}/index-admin">Dashboard</a></li>
                                 @else
-                                    <li><a href="{{url('')}}/lihattugas">Dashboard</a></li>
+                                    <li><a href="{{url('')}}/lihat-tugas-lbe">Dashboard</a></li>
                                 @endif
                             @endif
                             <li><a href="service.html">Reservasi</a></li>

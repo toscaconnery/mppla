@@ -101,10 +101,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{url('')}}/tambahkan-proyek-lbe"><i class="fa fa-circle-o"></i> Lihat Proyek</a></li>
-          <li><a href="{{url('')}}/input-tugas-lbe"><i class="fa fa-circle-o"></i> Lihat Penugasan</a></li>
-          <li><a href="{{url('')}}/listtugas"><i class="fa fa-circle-o"></i> Unggah Progress</a></li>
-          <li><a href="{{url('')}}/lihat-progress-lbe"><i class="fa fa-circle-o"></i> Histori Progress</a></li>
+          <li><a href="{{url('')}}/lihat-tugas-lbe"><i class="fa fa-circle-o"></i> Lihat Penugasan</a></li>
+          <li><a href="{{url('')}}/histori"><i class="fa fa-circle-o"></i> Histori Progress</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -115,7 +113,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{url('')}}/list-administrator"><i class="fa fa-circle-o"></i> Unduh Modul</a></li>
+          <li><a href="{{url('')}}/list-modul"><i class="fa fa-circle-o"></i> Unduh Modul</a></li>
         </ul>
       </li>
     </ul>

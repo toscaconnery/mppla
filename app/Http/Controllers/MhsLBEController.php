@@ -57,7 +57,16 @@ class MhsLBEController extends Controller
 
     public function historiprogres()
     {
-    	return view('MhsLbe\histori');
+        if(Auth::check())
+        {
+            $id_mhs = Auth::user()->id;
+            $this->data['tugas'] = DB::select('SELECT t.* FROM tugas_lbe t WHERE t.id_mhs = '.Auth::user()->id);
+            return view('MhsLbe\histori', $this->data);
+        }
+        else
+        {
+            return redirect('/');
+        }
     }
 
     public function unduhmodul()
