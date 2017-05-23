@@ -64,7 +64,8 @@ class KegiatanController extends Controller
                                                 WHERE k.id_lab = l.id
                                                 AND k.tanggal >= CURDATE()
                                                 AND k.id_lab = '.$id);
-        return view('Kegiatan\lihat-kegiatan-laboratorium-selected', $this->data);
+        //dd($this->data['kegiatan']);
+        return view('Kegiatan\kegiatan_lab', $this->data);
     }
 
 
