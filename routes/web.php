@@ -114,7 +114,7 @@ Route::get('deskripsi-laboratorium/{id}', 'LaboratoriumController@deskripsi_lab'
 /******** HALAMAN PINJAM ********/
 Route::get('lakukan-reservasi-laboratorium', 'PinjamController@lakukan_reservasi');
 Route::post('lakukan-reservasi-laboratorium', 'PinjamController@save_lakukan_reservasi');
-Route::get('lihat-jadwal-reservasi-laboratorium', 'PinjamController@lihat_jadwal_reservasi');
+Route::get('lihat-jadwal-reservasi-laboratorium', 'PinjamController@lihat_jadwal_reservasi_terverif');
 Route::get('lihat-semua-jadwal-reservasi-laboratorium', 'PinjamController@lihat_semua_jadwal_reservasi');
 Route::get('accept-peminjaman-laboratorium/{id}', 'PinjamController@accept_peminjaman_laboratorium');
 Route::get('decline-peminjaman-laboratorium/{id}', 'PinjamController@decline_peminjaman_laboratorium');

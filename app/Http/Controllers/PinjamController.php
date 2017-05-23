@@ -46,7 +46,7 @@ class PinjamController extends Controller
         return redirect('/');
     }
 
-    public function lihat_jadwal_reservasi()
+    public function lihat_jadwal_reservasi_terverif()
     {
         $this->data['jadwal'] = DB::select('SELECT p.*, l.nama_lab
                                             FROM pinjam p, laboratorium l 
