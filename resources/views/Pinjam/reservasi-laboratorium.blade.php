@@ -117,11 +117,11 @@
             <section id="about">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                           <!-- general form elements disabled -->
                           <div class="box box-warning">
                             <div class="box-header with-border">
-                              <h3 class="box-title">Fasilitas Laboratorium</h3>
+                              <h3 class="box-title">Reservasi Laboratorium</h3>
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
@@ -180,6 +180,56 @@
                             <!-- /.box-body -->
                           </div>
                           <!-- /.box -->
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="box box-warning">
+                                <div class="box-header with-border">
+                                  <h3 class="box-title">Jadwal Peminjaman Lab</h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                  <form role="form" action="" method="POST">
+
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                      <label>Nama Laboratorium:</label>
+                                      <select name="id_lab">
+                                        @foreach ($laboratorium as $data)
+                                        <option value="{{$data->id}}">{{$data->nama_lab}}</option>
+                                        @endforeach
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Tanggal:</label>
+                                      <input type="date" name="tanggal" class="form-control" >
+                                    </div>
+                                    <div class="box-footer">
+                                      <button type="submit" class="btn btn-primary">Lihat</button>
+                                    </div>
+                                  </form>
+                                </div>
+                            </div>
+
+                            <!-- <div class="box box-warning">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title"></h3>
+                                </div>
+                                <div class="box-body table-responsive no-padding">
+                                    <table class="table table-hover">
+                                        <tr>
+                                          <th>Waktu</th>
+                                          <th>Kegiatan</th>
+                                        </tr>
+                                        @foreach($peminjaman as $pinjam)
+                                        <tr>
+                                          <td>{{$x++}}</td>
+                                          <td>{{$data->name}}</td>
+                                        </tr>
+                                        @endforeach
+                                    </table>
+                                </div>
+                            </div> -->                            
                         </div>
                     </div>
                 </div>
