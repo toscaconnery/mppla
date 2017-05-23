@@ -13,15 +13,17 @@
 
 /*----- HALAMAN USER UMUM -----*/
 
-Route::get('/', function () {
-    return view('timer.index');
-});
+// Route::get('/', function () {
+//     return view('timer.index');
+// });
 
 
-Route::get('home', function ()  {
-    return view('timer.index');
-});
+// Route::get('home', function ()  {
+//     return view('timer.index');
+// });
 
+Route::get('/', 'HomeController@show_home');
+Route::get('home', 'HomeController@show_home');
 
 //Halaman Deskripsi masing2 lab
 Route::get('deskripsi-lab', 'UmumController@deskripsilab');
@@ -120,6 +122,7 @@ Route::get('decline-peminjaman-laboratorium/{id}', 'PinjamController@decline_pem
 Route::get('lihat-kegiatan', 'KegiatanController@lihat_kegiatan');
 Route::get('input-kegiatan', 'KegiatanController@input_kegiatan');
 Route::post('input-kegiatan', 'KegiatanController@save_input_kegiatan');
+Route::get('lihat-kegiatan/{id}', 'KegiatanController@lihat_kegiatan_selected');
 
 
 

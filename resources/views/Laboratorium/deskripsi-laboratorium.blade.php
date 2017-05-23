@@ -141,7 +141,11 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+                                @if($laboratorium->gambar)
+                                <img src="{{url('')}}/{{$laboratorium->gambar}}">
+                                @else
                                 <img src="{{url('')}}/timer/images/about/about.jpg" alt="">
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -155,7 +159,7 @@
             <footer id="footer">
                 <div class="container">
                     <div class="col-md-8">
-                        <p class="copyright">Copyright: <span>2015</span> . Design and Developed by <a href="http://www.Themefisher.com">Themefisher</a></p>
+                        <p class="copyright">Copyright: <span>2017</span> . Design and Developed by <a href="https://www.facebook.com/nafia.yogayana">5114100017</a>-<a href="https://www.facebook.com/toscayconnery">5114100061</a>-<a href="https://www.facebook.com/muhammad.ishar7">5114100702</a> . SI Laboratorium Teknik Informatika ITS
                     </div>
                     <div class="col-md-4">
                         <!-- Social Media -->

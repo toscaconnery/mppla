@@ -34,7 +34,7 @@ class KegiatanController extends Controller
         $kegiatan->jam_selesai = $request->jam_selesai;
 
         $kegiatan->save();
-        return redirect('input-kegiatan');
+        return redirect('lihat-kegiatan');
 
     }
 
@@ -51,6 +51,20 @@ class KegiatanController extends Controller
                                                 AND k.id_lab = '.$this->data['user']->id_lab);
         //dd($this->data['kegiatan'])
         return view('Kegiatan\lihat-kegiatan-laboratorium', $this->data);
+    }
+
+    public function lihat_kegiatan_selected($id)
+    {
+        $this->data['user'] = Auth::user();
+        $this->data['laboratorium'] = DB::select('SELECT l.*
+                                                FROM laboratorium l
+                                                WHERE l.id = '.$id)[0];
+        $this->data['kegiatan'] = DB::select('SELECT k.*, l.nama_lab
+                                                FROM kegiatan k, laboratorium l
+                                                WHERE k.id_lab = l.id
+                                                AND k.tanggal >= CURDATE()
+                                                AND k.id_lab = '.$id);
+        return view('Kegiatan\lihat-kegiatan-laboratorium-selected', $this->data);
     }
 
 

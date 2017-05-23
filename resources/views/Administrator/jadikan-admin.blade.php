@@ -245,7 +245,8 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.8
     </div>
-    <strong>Copyright &copy; 5114100017-5114100061-5114100702 .</strong> SI Laboratorium Teknik Informatika
+    <strong>Copyright: <span>2017</span> . Design and Developed by <a href="https://www.facebook.com/nafia.yogayana">5114100017</a>-<a href="https://www.facebook.com/toscayconnery">5114100061</a>-<a href="https://www.facebook.com/muhammad.ishar7">5114100702</a></strong> . SI Laboratorium Teknik Informatika ITS
+    {{-- <strong>Copyright &copy; 5114100017-5114100061-5114100702 .</strong> SI Laboratorium Teknik Informatika --}}
   </footer>
 
   <div class="control-sidebar-bg"></div>

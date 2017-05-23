@@ -179,25 +179,30 @@
                     <div class="section-heading">
                         <h1 class="title wow fadeInDown" data-wow-delay=".3s">LABORATORIUM TEKNIK INFORMATIKA</h1>
                         <p class="wow fadeInDown" data-wow-delay=".5s">
-                            Teknik Informatika ITS memiliki 11 laboratorium. Laboratorium ini berfungsi sebagai penunjang bagi <br> mahasiswa dan dosen dalam melaksanakan kegiatan belajar mengajar. Yuk, kita simak apa saja <br> laboratorium yang ada di Teknik Informatika!
+                            Teknik Informatika ITS memiliki {{$jumlah_laboratorium}} laboratorium. Laboratorium ini berfungsi sebagai penunjang bagi <br> mahasiswa dan dosen dalam melaksanakan kegiatan belajar mengajar. Yuk, kita simak apa saja <br> laboratorium yang ada di Teknik Informatika!
                         </p>
                     </div>
+                    @foreach($laboratorium as $data)
                     <div class="row">
                         <div class="col-sm-4 col-xs-12">
                             <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                                 <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/lp.png" class="img-responsive" alt="this is a title" >
+                                    @if($data->gambar)
+                                    <img src="{{url('')}}/{{$data->gambar}}" class="img-responsive" alt="this is a title" >
+                                    @else
+                                    <img src="{{url('')}}/logo-laboratorium/lab.jpg" class="img-responsive" alt="this is a title" >
+                                    @endif
                                     <div class="overlay">
                                         <div class="buttons">
-                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
-                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
+                                            <a target="_blank" href="{{url('')}}/lihat-kegiatan/{{$data->id}}">Kegiatan</a>
+                                            <a target="_blank" href="{{url('')}}/deskripsi-laboratorium/{{$data->id}}">Deskripsi</a>
                                         </div>
                                     </div>
                                 </div>
                                 <figcaption>
                                 <h4>
                                 <a href="#">
-                                    Laboratorium Pemrograman 1
+                                    {{$data->nama_lab}}
                                 </a>
                                 </h4>
                                 <p>
@@ -206,236 +211,8 @@
                                 </figcaption>
                             </figure>
                         </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-                                <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/lpp.png" class="img-responsive" alt="this is a title" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
-                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Laboratorium Pemrograman 2
-                                </a>
-                                </h4>
-                                <p>
-                                    
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-                                <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/alpro1.jpg" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
-                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Algoritma Pemrograman
-                                </a>
-                                </h4>
-                                <p>
-                                    
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
-                                <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/rpl.png" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
-                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Arsitektur Jaringan Komputer
-                                </a>
-                                </h4>
-                                <p>
-                                    
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="900ms">
-                                <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/mi.jpg" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
-                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Manajemen Informasi
-                                </a>
-                                </h4>
-                                <p>
-                                    
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                                <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/ncc.png" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
-                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Komputasi Berbasis Jaringan
-                                </a>
-                                </h4>
-                                <p>
-                                    
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                                <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/kcvkcv.png" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
-                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Komputasi Cerdas dan Visi
-                                </a>
-                                </h4>
-                                <p>
-                                    
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                                <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/igs.jpg" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
-                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Interaksi Grafika dan Seni
-                                </a>
-                                </h4>
-                                <p>
-                                    
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                                <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/mis.png" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
-                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Mobile Innovation Studio
-                                </a>
-                                </h4>
-                                <p>
-                                    
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                                <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/logo/rpl.png" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
-                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Rekayasa Perangkat Lunak
-                                </a>
-                                </h4>
-                                <p>
-                                    
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                                <div class="img-wrapper">
-                                    <img src="{{url('')}}/timer/images/portfolio/item-6.jpg" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a target="_blank" href="{{url('')}}/kegiatanlab">Kegiatan</a>
-                                            <a target="_blank" href="{{url('')}}/deskripsi-lab">Deskripsi</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Dasar dan Terapan Komputasi
-                                </a>
-                                </h4>
-                                <p>
-                                    
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
+                        @endforeach
+                        
                     </div>
                 </div>
             </section> <!-- #works -->

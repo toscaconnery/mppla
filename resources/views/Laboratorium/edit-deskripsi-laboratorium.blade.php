@@ -10,7 +10,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form" action="" method="POST">
+              <form role="form" action="" method="POST" enctype="multipart/form-data">
                 <!-- text input -->
                 {{ csrf_field() }}
 
@@ -25,9 +25,14 @@
 
                 <!-- textarea -->
                 <div class="form-group">
-                  <label>Deskripsi</label>
+                  <label>Deskripsi Laboratorium</label>
                   <textarea name="deskripsi_lab" class="form-control" rows="5">{{$laboratorium->deskripsi_lab}}</textarea>
                 </div>
+
+                <div class="form-group">
+                  <label>Logo Laboratorium</label>
+                  <input type="file" id="modul" name="berkas">
+                </div>                
 
                 <div class="box-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>

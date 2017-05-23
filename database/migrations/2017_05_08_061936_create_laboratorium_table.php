@@ -18,6 +18,7 @@ class CreateLaboratoriumTable extends Migration
             $table->string('nama_lab');
             $table->string('deskripsi_lab')->nullable();
             $table->integer('reservasiable')->default(0);
+            $table->string('gambar')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
