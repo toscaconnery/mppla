@@ -143,5 +143,5 @@ Auth::routes();
 
 Route::get('logout', function() {
 	Auth::logout();
-	return view('timer.index');
+	return redirect('/');
 });
