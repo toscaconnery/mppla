@@ -182,9 +182,11 @@
                             Teknik Informatika ITS memiliki {{$jumlah_laboratorium}} laboratorium. Laboratorium ini berfungsi sebagai penunjang bagi <br> mahasiswa dan dosen dalam melaksanakan kegiatan belajar mengajar. Yuk, kita simak apa saja <br> laboratorium yang ada di Teknik Informatika!
                         </p>
                     </div>
-                    @foreach($laboratorium as $data)
                     <div class="row">
+                        @foreach($laboratorium as $data)
+                    
                         <div class="col-sm-4 col-lg-4 col-xs-12">
+
                             <figure class="wow fadeInLeft animated portfolio-item" style="width: 360px;" data-wow-duration="500ms" data-wow-delay="0ms">
                                 <div class="img-wrapper" style="width: 360px; height: 360px;">
                                     @if($data->id == 1)
@@ -208,6 +210,8 @@
                                     <img src="{{url('')}}/logo-laboratorium/mi.jpg" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
                                     @elseif($data->id == 10)
                                     <img src="{{url('')}}/logo-laboratorium/lab.jpg" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
+                                    @elseif($data->id == 11)
+                                    <img src="{{url('')}}/logo-laboratorium/mis.png" style="width: 360px; height: 360px;" class="img-responsive" alt="this is a title" >
                                     @endif
                                     <div class="overlay" style="width: 360px; height: 360px;">
                                         <div class="buttons">

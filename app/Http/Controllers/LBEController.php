@@ -72,7 +72,7 @@ class LBEController extends Controller
         $proyek->id_lab = Auth::user()->id_lab;
         $proyek->save();
 
-        return redirect('lihat-tugas-lbe');
+        return redirect('input-tugas-lbe');
     }
 
     public function input_tugas_lbe()

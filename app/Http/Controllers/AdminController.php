@@ -51,7 +51,10 @@ class AdminController extends Controller
 
     public function list_user()
     {
-        return view('User\list-user');
+        $this->data['user'] = DB::select('SELECT u.*, l.nama_lab
+                                                    FROM users u, laboratorium l
+                                                    WHERE l.id = u.id_lab');
+        return view('User\list-user', $this->data);
     }
 
     public function jadikan_admin($id)

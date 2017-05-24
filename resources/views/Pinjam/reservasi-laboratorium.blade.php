@@ -185,46 +185,17 @@
                         <div class="col-md-6">
                             <div class="box box-warning">
                                 <div class="box-header with-border">
-                                  <h3 class="box-title">Jadwal Peminjaman Lab</h3>
-                                </div>
-                                <!-- /.box-header -->
-                                <div class="box-body">
-                                  <form role="form" action="" method="POST">
-
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                      <label>Nama Laboratorium:</label>
-                                      <select name="id_lab">
-                                        @foreach ($laboratorium as $data)
-                                        <option value="{{$data->id}}">{{$data->nama_lab}}</option>
-                                        @endforeach
-                                      </select>
-                                    </div>
-                                    <div class="form-group">
-                                      <label>Tanggal:</label>
-                                      <input type="date" name="tanggal" class="form-control" >
-                                    </div>
-                                    <div class="box-footer">
-                                      <button type="submit" class="btn btn-primary">Lihat</button>
-                                    </div>
-                                  </form>
-                                </div>
-                            </div>
-
-                            <div class="box box-warning">
-                                <div class="box-header with-border">
                                     <h3 class="box-title"></h3>
                                 </div>
                                 <div class="box-body table-responsive no-padding">
                                     <table class="table table-hover">
                                         <tr>
-                                          <th>No</th>
+                                          <!-- <th>No</th> -->
                                           <th>Waktu</th>
                                           <th>Kegiatan</th>
                                         </tr>
                                         @foreach($peminjaman as $data)
                                         <tr>
-                                          <td>{{$x++}}</td>
                                           <td>{{$data->tanggal}}, {{$data->jam_mulai}}-{{$data->jam_selesai}}</td>
                                           <td>{{$data->keperluan}}</td>
                                         </tr>

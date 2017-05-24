@@ -124,7 +124,7 @@
           <li><a href="{{url('')}}/input-tugas-lbe"><i class="fa fa-circle-o"></i> Beri Penugasan</a></li>
           <li><a href="{{url('')}}/listtugas"><i class="fa fa-circle-o"></i> Daftar Tugas</a></li>
           <li><a href="{{url('')}}/lihat-progress-lbe"><i class="fa fa-circle-o"></i> Progress</a></li> <!-- donlot tugas yg diupload-->
-          <li><a href="#"><i class="fa fa-circle-o"></i> Modul LBE</a></li>
+          <li><a href="{{url('')}}/input-modul-lbe"><i class="fa fa-circle-o"></i> Modul LBE</a></li>
           <li><a href="{{url('')}}/tambahkan-mahasiswa-lbe"><i class="fa fa-circle-o"></i> Input Peserta</a></li>
         </ul>
       </li>
