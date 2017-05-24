@@ -30,6 +30,13 @@
                 </div>
 
                 <div class="form-group">
+                  <label>Bisa direservasi</label>
+                  <br>
+                  <input type="radio" name="reservasiable" value=1 {{$laboratorium->reservasiable == 1 ? "checked" : ""}}>Bisa<br>
+                  <input type="radio" name="reservasiable" value=0 {{$laboratorium->reservasiable == 0 ? "checked" : ""}}>Tidak bisa<br>
+                </div>  
+
+                <div class="form-group">
                   <label>Logo Laboratorium</label>
                   <input type="file" id="modul" name="berkas">
                 </div>                
