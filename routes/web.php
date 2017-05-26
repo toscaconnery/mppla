@@ -46,7 +46,7 @@ Route::get('list-user', 'AdminController@list_user');
 Route::get('jadikan_admin/{id}', 'AdminController@jadikan_admin');
 Route::post('update_jadikan_admin/{id}', 'AdminController@update_jadikan_admin');
 Route::get('nonaktifkan_admin/{id}', 'AdminController@nonaktifkan_admin');
-Route::get('update_nonaktifkan_admin/{id}', 'AdminController@update_nonaktifkan_admin');
+Route::post('update_nonaktifkan_admin/{id}', 'AdminController@update_nonaktifkan_admin');
 //Route::get('listpeminjaman', 'AdminController@list_pinjam'); Untuk dicek
 
 /******** LBE *******/

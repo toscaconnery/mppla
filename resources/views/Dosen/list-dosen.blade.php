@@ -21,9 +21,12 @@
                       <th>Alamat</th>
                       <th>Action</th>
                     </tr>
+                    @php
+                      $x = 1;
+                    @endphp
                     @foreach($dosen as $dosen)
                       <tr>
-                        <td>{{$dosen->nip}}</td>
+                        <td>{{$x++}}</td>
                         <td><a href="{{url('')}}/detail-dosen/{{$dosen->id}}">{{$dosen->nama}}</a></td>
                         <td>{{$dosen->email}}</td>
                         <td>{{$dosen->no_hp}}</td>

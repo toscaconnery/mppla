@@ -86,7 +86,8 @@ class AdminController extends Controller
     {
         $admin = User::find($id);
         $admin->is_admin = null;
-        $admin->id_lab = null;
+        //dd('blabla');
+        // $admin->id_lab = null;
         $admin->save();
 
         return redirect('list-user');

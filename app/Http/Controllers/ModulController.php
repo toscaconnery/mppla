@@ -42,7 +42,7 @@ class ModulController extends Controller
             $modul->judul = $request->judul;
             $modul->modul = $path.$filename;
             $modul->save();
-            return redirect('list-modul');
+            return redirect('input-modul-lbe');
         }
     }
 

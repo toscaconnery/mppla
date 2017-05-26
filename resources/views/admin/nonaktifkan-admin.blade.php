@@ -7,7 +7,7 @@
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Detail Dosen</h3>
+              <h3 class="box-title">Detail User</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
